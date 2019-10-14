@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="apps.pixel.al.egykey">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".utilities.MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".activites.retaurant.galleryActivity.GalleryActivity"
+            ></activity>
+        <!--android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity"-->
+        <activity android:name=".TestActivity"></activity>
+        <activity
+            android:name=".activites.retaurant.ShareWebViewActivity"
+            android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity" />
+        <activity
+            android:name=".activites.retaurant.OpenPdfActivity"
+            android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity" />
+        <activity
+            android:name=".activites.retaurant.jobs.ApplicationJobActivity"
+            android:parentActivityName=".activites.retaurant.jobs.jobDetails.SelectedJobActivity" />
+        <activity
+            android:name=".activites.retaurant.jobs.jobDetails.SelectedJobActivity"
+            android:parentActivityName=".activites.retaurant.restaurants.RestaurantsActivity" />
+        <activity
+            android:name=".activites.retaurant.videoActivity.VideoRestuarantActivity"
+            android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity"
+            android:theme="@style/Theme.Transparent" />
+        <activity
+            android:name=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity"
+            android:parentActivityName=".activites.retaurant.restaurants.RestaurantsActivity" />
+        <activity
+            android:name=".activites.retaurant.restaurants.RestaurantsActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_2sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:background="@drawable/item_bg"
+        android:elevation="@dimen/_6sdp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_110sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_6sdp"
+            app:cardCornerRadius="@dimen/_4sdp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_bg_retaurant"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/test" />
+        </androidx.cardview.widget.CardView>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_65sdp"
+            android:layout_marginTop="@dimen/_94sdp"
+            android:padding="@dimen/_9sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.555"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/img_title" />
+
+            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                android:id="@+id/txt_since"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/_36sdp"
+                android:layout_marginEnd="@dimen/_90sdp"
+                android:padding="@dimen/_2sdp"
+                android:textColor="@color/pdlg_color_white"
+                android:textSize="@dimen/_4ssp" />
+
+            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/_90sdp"
+                android:layout_marginTop="@dimen/_36sdp"
+                android:padding="@dimen/_2sdp"
+                android:text="@string/since"
+                android:textColor="@color/pdlg_color_white"
+                android:textSize="@dimen/_4ssp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_logo"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:background="@drawable/placeholder_logo"
+                android:src="@drawable/test" />
+        </FrameLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_120sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="-16dp"
+                tools:layout_editor_absoluteY="-38dp">
+
+                <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                    android:id="@+id/title_english"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLength="23"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:text="Dar El fouad Hospital"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_7ssp"
+                    android:textStyle="bold" />
+
+                <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                    android:id="@+id/title_arabic"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_55sdp"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLength="23"
+                    android:paddingEnd="@dimen/_4sdp"
+                    android:text="مستشفي دار الفؤاد"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_7ssp"
+                    android:textStyle="bold" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

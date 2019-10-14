@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Egy Key</string>
+    <string name="jobs">Jobs</string>
+    <string name="get_copoun">Get Coupon</string>
+    <string name="egy_key">Egy-Key</string>
+    <string name="offers">Offers</string>
+    <string name="home">Home</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="views">Views</string>
+    <string name="calls">Calls</string>
+    <string name="fav">Favourites</string>
+    <string name="share">Share</string>
+    <string name="our_branches">Our branches</string>
+    <string name="latest_news">Latest News</string>
+    <string name="amemities">Available Services</string>
+    <string name="conditioning">Conditioning</string>
+    <string name="wifi">Wi-Fi</string>
+    <string name="delivery">Delivery</string>
+    <string name="parking">Parking</string>
+    <string name="food_area">Food Area</string>
+    <string name="animals">Escort Animals</string>
+    <string name="kids">Kids Area</string>
+    <string name="contact">Contact</string>
+    <string name="gym">Gym</string>
+    <string name="online_payment">Online Payment</string>
+    <string name="about">About</string>
+    <string name="offer">Offer</string>
+    <string name="offer_coupon">Any sandwich of your choice
+  And with it a combo for free</string>
+    <string name="experience_level">Experience Level</string>
+    <string name="education_level">Education Level</string>
+    <string name="employment_type">Employment Type</string>
+    <string name="salary">Salary</string>
+    <string name="apply">Apply</string>
+    <string name="name">Name</string>
+    <string name="email">E-mail</string>
+    <string name="phone_num">Mobile No.</string>
+    <string name="city">City</string>
+    <string name="education_qualifications">Educational Qualification</string>
+    <string name="choose_file">Choose File</string>
+    <string name="certificate_and_courses">Certificates and Courses</string>
+    <string name="cancel">Cancel</string>
+    <string name="call">Call</string>
+    <string name="selected_city">Selected City</string>
+    <string name="selected_your_years_of">Select your years of experience</string>
+    <string name="year">Year/s</string>
+    <string name="ok">Ok</string>
+    <string name="default_error">Some thing happed wrong</string>
+    <string name="pls_check_connection">Please Check Your Internet Connection And Try Again</string>
+    <string name="error_while_calling_this_num">Check num. and try again .</string>
+    <string name="social_links">Social Links :</string>
+    <string name="selected_phone_number">Select phone number</string>
+    <string name="pound">L.E</string>
+    <string name="cv">CV</string>
+    <string name="not_available">Not avaiable</string>
+    <string name="day_ago">day ago</string>
+    <string name="days_ago">days ago</string>
+    <string name="invalid_link">Link is invalid</string>
+    <string name="there_is_no">There\'s no avaiable branches</string>
+    <string name="since">Since</string>
+    <string name="all_day">24 hours</string>
+    <string name="there_is_no_avaiable">There\'s no aviable services</string>
+
+</resources>

@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.retaurant.home.HomeRestFragment">
+    <!--app:AniBackColor="#FDF6E3"-->
+    <!--app:AniForeColor="@color/colorPrimary"-->
+    <!--app:CircleSmaller="6"-->
+
+
+    <jp.co.recruit_lifestyle.android.widget.WaveSwipeRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:duration="700"
+                app:repeat_mode="restart">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:id="@+id/frame_view_pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_185sdp"
+                        android:background="@drawable/slider_shape_one">
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_185sdp"
+                            android:background="#D7B767"
+                            android:src="@drawable/slider_shape_two" />
+
+                        <!--<include-->
+                        <!--android:id="@+id/layout_video"-->
+                        <!--layout="@layout/activity_video_restuarant"-->
+                        <!--android:visibility="visible" />-->
+
+                        <androidx.viewpager.widget.ViewPager
+                            android:id="@+id/viewPager"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="@dimen/_30sdp" />
+
+                        <com.google.android.material.tabs.TabLayout
+                            android:id="@+id/indicator"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginBottom="@dimen/_30sdp"
+                            app:tabBackground="@drawable/indicator_selector"
+                            app:tabGravity="center"
+                            app:tabIndicatorHeight="0dp" />
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="bottom"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_3sdp">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_25sdp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/phone_"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/_5sdp"
+                                    android:src="@drawable/ic_phone" />
+
+                                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                    android:id="@+id/phone"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/pdlg_color_white"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <Space
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                                <View
+                                    android:layout_width="@dimen/_1sdp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="@dimen/_2sdp"
+                                    android:layout_marginBottom="@dimen/_2sdp"
+                                    android:background="#eeeeee" />
+
+                                <Space
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/favourites_"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/_5sdp"
+                                    android:src="@drawable/ic_unlike" />
+
+                                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                    android:id="@+id/favourites"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/pdlg_color_white"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <Space
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                                <View
+                                    android:layout_width="@dimen/_1sdp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="@dimen/_2sdp"
+                                    android:layout_marginBottom="@dimen/_2sdp"
+                                    android:background="#eeeeee" />
+
+                                <Space
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/share_"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/_5sdp"
+                                    android:src="@drawable/ic_share" />
+
+                                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                    android:id="@+id/share"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/pdlg_color_white"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <Space
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                                <View
+                                    android:layout_width="@dimen/_1sdp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="@dimen/_2sdp"
+                                    android:layout_marginBottom="@dimen/_2sdp"
+                                    android:background="#eeeeee" />
+
+                                <Space
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/view_"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/_5sdp"
+                                    android:src="@drawable/ic_views" />
+
+                                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                    android:id="@+id/views"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/pdlg_color_white"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <Space
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                                <View
+                                    android:layout_width="@dimen/_1sdp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="@dimen/_2sdp"
+                                    android:layout_marginBottom="@dimen/_2sdp"
+                                    android:background="#eeeeee" />
+
+                                <Space
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/menu"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:padding="@dimen/_5sdp"
+                                    android:src="@drawable/ic_details" />
+
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </FrameLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/linear_news"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_150sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/shape_light_app_color"
+                        android:orientation="vertical">
+
+                        <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_weight="30"
+                            android:gravity="start|center"
+                            android:text="@string/latest_news"
+                            android:textColor="@color/default_text_color"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_7sdp"
+                            android:background="#eeeeee" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rc_latest_news"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="100"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_2sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_2sdp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/linear_branches"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/shape_light_app_color"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp">
+
+
+                        <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                            android:id="@+id/all_branches"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="80"
+                            android:drawableStart="@drawable/ic_branch"
+                            android:drawablePadding="@dimen/_10sdp"
+                            android:gravity="start|center"
+                            android:text="@string/our_branches"
+                            android:textColor="@color/default_text_color"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/more_branches"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/_10sdp"
+                            android:src="@drawable/ic_more" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/expand_collpase_about"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/shape_light_app_color"
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_5sdp">
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/shape_light_app_color">
+
+
+                            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="80"
+                                android:drawableStart="@drawable/mark"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:gravity="start|center|top"
+                                android:text="@string/about"
+                                android:textColor="@color/default_text_color"
+                                android:textSize="@dimen/_13ssp" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/txt_about"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:src="@drawable/ic_more" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/expandable_about"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdp"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:layout_marginBottom="@dimen/_7sdp"
+                                android:background="#eeeeee" />
+
+                            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                android:id="@+id/type"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:drawableStart="@drawable/ic_type"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:gravity="start|center|top"
+                                android:textColor="@color/default_text_color"
+                                android:textSize="@dimen/_10ssp" />
+
+
+                            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                android:id="@+id/address"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:drawableStart="@drawable/ic_loc"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:gravity="start|center|top"
+                                android:textColor="@color/default_text_color"
+                                android:textSize="@dimen/_10ssp" />
+
+                            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                android:id="@+id/mail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:drawableStart="@drawable/ic_messenger"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:gravity="start|center|top"
+                                android:textColor="@color/hyper_link"
+                                android:textSize="@dimen/_10ssp" />
+
+                            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                android:id="@+id/phone_num"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:drawableStart="@drawable/ic_phone_small"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:gravity="start|center|top"
+                                android:textColor="@color/default_text_color"
+                                android:textSize="@dimen/_10ssp" />
+
+
+                            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                android:id="@+id/time"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:drawableStart="@drawable/ic_clock"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:gravity="start|center|top"
+                                android:textColor="@color/default_text_color"
+                                android:textSize="@dimen/_10ssp" />
+
+                            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                android:id="@+id/website"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:drawableStart="@drawable/ic_www"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:gravity="start|center|top"
+                                android:textColor="@color/default_text_color"
+                                android:textSize="@dimen/_10ssp" />
+
+
+                            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                android:id="@+id/desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:drawableStart="@drawable/ic_description"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:gravity="start|center|top"
+                                android:textColor="@color/default_text_color"
+                                android:textSize="@dimen/_10ssp" />
+
+                            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                android:id="@+id/hotline"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:drawableStart="@drawable/ic_hotline"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:gravity="start|center|top"
+                                android:textColor="@color/default_text_color"
+                                android:textSize="@dimen/_10ssp" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/expand_collpase_amenities"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/shape_light_app_color"
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_5sdp">
+
+
+                        <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_services"
+                            android:drawablePadding="@dimen/_10sdp"
+                            android:gravity="start|center|top"
+                            android:text="@string/amemities"
+                            android:textColor="@color/default_text_color"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_7sdp"
+                            android:background="#eeeeee" />
+
+
+                        <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                            android:id="@+id/txt_no_avaible_ser"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/there_is_no_avaiable"
+                            android:textColor="@color/default_text_color"
+                            android:textSize="@dimen/_12ssp"
+                            android:visibility="gone" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/condit"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_air_cond" />
+
+                                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/conditioning"
+
+                                    android:textColor="@color/default_text_color"
+                                    android:textSize="@dimen/_10ssp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/wifi"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_wifi" />
+
+                                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/wifi"
+                                    android:textColor="@color/default_text_color"
+                                    android:textSize="@dimen/_10ssp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/delivery"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_delivery" />
+
+                                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/delivery"
+                                    android:textColor="@color/default_text_color"
+                                    android:textSize="@dimen/_10ssp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/parking"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_parking" />
+
+                                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/parking"
+                                    android:textColor="@color/default_text_color"
+                                    android:textSize="@dimen/_10ssp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/food_area"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_id_food_area" />
+
+                                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/food_area"
+                                    android:textColor="@color/default_text_color"
+                                    android:textSize="@dimen/_10ssp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/expandable"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/escort_animals"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_animals" />
+
+                                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/animals"
+                                    android:textColor="@color/default_text_color"
+                                    android:textSize="@dimen/_10ssp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/kids_area"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_kids_area" />
+
+                                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/kids"
+                                    android:textColor="@color/default_text_color"
+                                    android:textSize="@dimen/_10ssp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/contract"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_contant" />
+
+                                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/contact"
+                                    android:textColor="@color/default_text_color"
+                                    android:textSize="@dimen/_10ssp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/gym"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_gym" />
+
+                                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/gym"
+                                    android:textColor="@color/default_text_color"
+                                    android:textSize="@dimen/_10ssp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/online_payment"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_online_payment" />
+
+                                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/online_payment"
+                                    android:textColor="@color/default_text_color"
+                                    android:textSize="@dimen/_10ssp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/show_more"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_5sdp"
+                            android:src="@drawable/ic_more" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+        </ScrollView>
+    </jp.co.recruit_lifestyle.android.widget.WaveSwipeRefreshLayout>
+
+
+</RelativeLayout>

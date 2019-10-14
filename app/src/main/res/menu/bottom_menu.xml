@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nav_jobs"
+        android:enabled="true"
+        android:icon="@drawable/ic_nav_jobs"
+        android:title="@string/jobs"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/nav_copoun"
+        android:enabled="true"
+        android:icon="@drawable/ic_nav_copoun"
+        android:title="@string/get_copoun"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/nav_home"
+        android:enabled="true"
+        android:title=""
+        app:showAsAction="ifRoom" />
+
+
+    <item
+        android:id="@+id/nav_egy_key"
+        android:enabled="true"
+        android:icon="@drawable/ic_nav_egy_key"
+        android:title="@string/egy_key"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/nav_offers"
+        android:enabled="true"
+        android:icon="@drawable/ic_nav_offer"
+        android:title="@string/offers"
+        app:showAsAction="ifRoom" />
+</menu>

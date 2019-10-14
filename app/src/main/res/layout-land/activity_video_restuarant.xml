@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<apps.pixel.al.egykey.utilities.ZoomLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".activites.retaurant.videoActivity.VideoRestuarantActivity">
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <!---->
+        <!--android:paddingTop="@dimen/_50sdp"-->
+        <!--android:paddingBottom="@dimen/_50sdp"-->
+
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/videoFullScreenPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#A6000000"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            app:controller_layout_id="@layout/exo_playback_control_view"
+            app:player_layout_id="@layout/exo_simple_player_view"
+            app:repeat_toggle_modes="none"
+            app:show_timeout="45000"
+            app:surface_type="texture_view"
+            app:use_controller="false" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewExit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="@dimen/_7sdp"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/ic_close" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewFull"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/_7sdp"
+            android:src="@drawable/exo_controls_fullscreen_enter" />
+
+
+        <ProgressBar
+            android:id="@+id/spinnerVideoDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_8sdp"
+            android:indeterminate="true" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/play_pause_btn"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_8sdp"
+            android:alpha="0.5"
+            android:background="@drawable/circle_shape"
+            android:src="@drawable/exo_controls_pause" />
+
+
+    </RelativeLayout>
+
+
+    <!--<androidx.appcompat.widget.AppCompatImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="#A6000000" />-->
+
+</apps.pixel.al.egykey.utilities.ZoomLayout>

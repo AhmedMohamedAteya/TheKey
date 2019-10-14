@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activites.retaurant.jobs.ApplicationJobActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/bg_toolbar"
+        android:elevation="@dimen/_4sdp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:gravity="center">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/arrow_back_page_two"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="0dp"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/ic_back" />
+
+            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_70sdp"
+                android:gravity="center"
+                android:text="@string/jobs"
+                android:textColor="@color/pdlg_color_white"
+                android:textSize="@dimen/_18ssp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_toStartOf="@+id/code"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_magnifier" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/code"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_code" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/app_bg" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top|center"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="?actionBarSize"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:gravity="top|center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_15sdp">
+
+            <!--<apps.pixel.al.egykey.utilities.CairoRegularTextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="start"-->
+            <!--android:text="Name"-->
+            <!--android:textColor="@color/default_text_color"-->
+            <!--android:textSize="@dimen/_12ssp" />-->
+
+            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:gravity="start"
+                android:text="@string/name"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/_14ssp" />
+
+
+            <apps.pixel.al.egykey.utilities.CairoBoldEditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/ic_bg_edit_text"
+                android:gravity="start|center"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14ssp" />
+
+
+            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:gravity="start"
+                android:text="@string/email"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/_14ssp" />
+
+            <apps.pixel.al.egykey.utilities.CairoBoldEditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/ic_bg_edit_text"
+                android:gravity="start|center"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14ssp" />
+
+
+            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:gravity="start"
+                android:text="@string/phone_num"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/_14ssp" />
+
+
+            <apps.pixel.al.egykey.utilities.CairoBoldEditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/ic_bg_edit_text"
+                android:gravity="start|center"
+                android:inputType="phone"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14ssp" />
+
+
+            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:gravity="start"
+                android:text="@string/city"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/_14ssp" />
+
+
+            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                android:id="@+id/txt_city"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/ic_bg_edit_text"
+                android:drawableEnd="@drawable/ic_arrow_bottom"
+                android:drawablePadding="@dimen/_10sdp"
+                android:gravity="center|start"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:textSize="@dimen/_14ssp" />
+
+
+            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:gravity="start"
+                android:text="@string/experience_level"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/_14ssp" />
+
+
+            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                android:id="@+id/txt_experience"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/ic_bg_edit_text"
+                android:drawableEnd="@drawable/ic_arrow_bottom"
+                android:drawablePadding="@dimen/_10sdp"
+                android:gravity="center|start"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14ssp" />
+
+
+            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:gravity="start"
+                android:text="@string/education_qualifications"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/_14ssp" />
+
+
+            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                android:id="@+id/txt_education"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/ic_bg_edit_text"
+                android:drawableEnd="@drawable/ic_arrow_bottom"
+                android:drawablePadding="@dimen/_10sdp"
+                android:gravity="center|start"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14ssp" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="@string/cv"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/_14ssp" />
+
+                <apps.pixel.al.egykey.utilities.CairoBoldButton
+                    android:id="@+id/choose_file"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:background="@drawable/ic_btn_bg"
+                    android:text="@string/choose_file"
+                    android:textColor="@color/pdlg_color_white"
+                    android:textSize="@dimen/_11ssp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <apps.pixel.al.egykey.utilities.CairoBoldEditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_140sdp"
+                android:background="@drawable/ic_bg_edit_text"
+                android:gravity="top|start"
+                android:hint="@string/certificate_and_courses"
+                android:inputType="textImeMultiLine|textMultiLine"
+                android:maxLength="140"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingTop="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_20sdp"
+                android:textColor="@color/pdlg_color_white"
+                android:textColorHint="@color/default_text_color"
+                android:textSize="@dimen/_14ssp" />
+
+            <apps.pixel.al.egykey.utilities.CairoBoldButton
+                android:id="@+id/btn_apply"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/ic_btn_bg"
+                android:elevation="@dimen/_10sdp"
+                android:gravity="center"
+                android:text="@string/apply"
+                android:textColor="@color/pdlg_color_white"
+                android:textSize="@dimen/_14ssp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>
