@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutDirection="ltr"
     tools:context=".fragments.retaurant.home.HomeRestFragment">
     <!--app:AniBackColor="#FDF6E3"-->
     <!--app:AniForeColor="@color/colorPrimary"-->
