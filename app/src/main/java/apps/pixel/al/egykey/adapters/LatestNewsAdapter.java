@@ -1,6 +1,7 @@
 package apps.pixel.al.egykey.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,17 +15,19 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import apps.pixel.al.egykey.R;
+import apps.pixel.al.egykey.models.NewsModel;
 import apps.pixel.al.egykey.utilities.CairoRegularTextView;
+import apps.pixel.al.egykey.utilities.Constant;
 
 public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsAdapter.ViewHolder> {
 
     private final LatestNewsAdapter.OnClickHandler onClickHandler;
     private final List<String> titlesList;
     private final List<String> descList;
-    private final List<String> urlsImages;
+    private final List<NewsModel> urlsImages;
     private Context context;
 
-    public LatestNewsAdapter(Context context, List<String> descList, List<String> titlesList, List<String> urlsImages, LatestNewsAdapter.OnClickHandler onClickHandler) {
+    public LatestNewsAdapter(Context context, List<String> descList, List<String> titlesList, List<NewsModel> urlsImages, LatestNewsAdapter.OnClickHandler onClickHandler) {
         this.context = context;
         this.descList = descList;
         this.titlesList = titlesList;
@@ -57,12 +60,16 @@ public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsAdapter.Vi
             holder.txtNewsDesc.setText(titlesList.get(listPosition));
 
 
-            Glide.with(context)
-                    .load(urlsImages.get(listPosition))
-                    .placeholder(R.drawable.place_holder_news)
-                    .into(holder.newsImg);
+            if (urlsImages.get(listPosition).getIsImg().equals("true".trim())) {
+                Glide.with(context)
+                        .load(urlsImages.get(listPosition).getApth())
+                        .placeholder(R.color.place_holder_color)
+                        .into(holder.newsImg);
 
 
+            } else {
+                Constant.initializeThumbnail(getContext(), holder.newsImg, urlsImages.get(listPosition).getApth());
+            }
         } catch (NullPointerException ignored) {
 
         }
@@ -77,7 +84,7 @@ public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsAdapter.Vi
     }
 
     public interface OnClickHandler {
-        void onNewsItemClick(int position);
+        void onNewsItemClick(String isImg, int position);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -105,7 +112,8 @@ public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsAdapter.Vi
         @Override
         public void onClick(View view) {
             int position = getAdapterPosition();
-            onClickHandler.onNewsItemClick(position);
+            onClickHandler.onNewsItemClick(urlsImages.get(position).getIsImg(), position);
+            Log.d("DETAILS_NEWS", "onClick: " + urlsImages.get(position).getIsImg() + "  " + position);
         }
     }
 }

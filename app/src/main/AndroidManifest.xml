@@ -13,19 +13,42 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activites.SettingsActivity"></activity>
+        <activity android:name=".activites.retaurant.SortByActivity" />
+        <activity android:name=".activites.beforeHome.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
-            android:name=".activites.retaurant.galleryActivity.GalleryActivity"
-            ></activity>
-        <!--android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity"-->
-        <activity android:name=".TestActivity"></activity>
+            android:name=".activites.beforeHome.VerficationActivity"
+            android:theme="@style/BeforeHome" />
+        <activity
+            android:name=".activites.beforeHome.ForgetPasswordActivity"
+            android:parentActivityName=".activites.beforeHome.SignInActivity"
+            android:theme="@style/BeforeHome" />
+        <activity
+            android:name=".activites.beforeHome.SignUpActivity"
+            android:parentActivityName=".activites.beforeHome.SignInActivity"
+            android:theme="@style/BeforeHome" />
+        <activity
+            android:name=".activites.beforeHome.SignInActivity"
+            android:theme="@style/BeforeHome" />
+        <activity android:name=".activites.retaurant.galleryActivity.GalleryActivity" /> <!-- android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity" -->
+        <activity android:name=".activites.retaurant.selectedRestaurant.SelectedRestaurantKotlinActivity" />
         <activity
             android:name=".activites.retaurant.ShareWebViewActivity"
-            android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity" />
+            android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activites.retaurant.OpenPdfActivity"
             android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity" />
@@ -38,20 +61,14 @@
         <activity
             android:name=".activites.retaurant.videoActivity.VideoRestuarantActivity"
             android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity"
-            android:theme="@style/Theme.Transparent" />
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="stateHidden|adjustResize" /> <!-- android:configChanges="orientation|screenSize|layoutDirection" -->
         <activity
             android:name=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity"
             android:parentActivityName=".activites.retaurant.restaurants.RestaurantsActivity" />
         <activity
             android:name=".activites.retaurant.restaurants.RestaurantsActivity"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

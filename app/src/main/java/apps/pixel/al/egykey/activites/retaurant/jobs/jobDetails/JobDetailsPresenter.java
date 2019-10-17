@@ -16,6 +16,8 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
 
+import static apps.pixel.al.egykey.activites.retaurant.jobs.jobDetails.SelectedJobActivity.swipeContainer;
+
 public class JobDetailsPresenter {
 
     private final Context context;
@@ -36,7 +38,7 @@ public class JobDetailsPresenter {
 
     void getSeletedJobDetails(String id) {
         if (Validation.isConnected(context)) {
-            dialogLoaderOne.show(fragmentManager, "");
+            swipeContainer.setRefreshing(true);
             mSubscriptions.add(NetworkUtil.getRetrofitNoHeader()
                     .getJobDetails(id)
                     .observeOn(AndroidSchedulers.mainThread())
@@ -48,17 +50,15 @@ public class JobDetailsPresenter {
     }
 
     private void handleResponse(JobDetailsModel jobDetailsModel) {
-        if (dialogLoaderOne.isAdded()) {
-            dialogLoaderOne.dismiss();
-        }
+        swipeContainer.setRefreshing(false);
+
         jobDetailsInterface.getJobDetails(jobDetailsModel);
     }
 
 
     private void handleError(Throwable throwable) {
-        if (dialogLoaderOne.isAdded()) {
-            dialogLoaderOne.dismiss();
-        }
+        swipeContainer.setRefreshing(false);
+
         Constant.handleError(context, throwable);
     }
 

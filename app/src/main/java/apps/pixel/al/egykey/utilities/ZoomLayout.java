@@ -8,7 +8,7 @@ import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.FrameLayout;
 
-public class ZoomLayout extends FrameLayout implements ScaleGestureDetector.OnScaleGestureListener {
+public final class ZoomLayout extends FrameLayout implements ScaleGestureDetector.OnScaleGestureListener {
 
     private static final String TAG = "ZoomLayout";
     private static final float MIN_ZOOM = 1.0f;

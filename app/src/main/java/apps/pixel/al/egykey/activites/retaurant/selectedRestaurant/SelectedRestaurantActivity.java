@@ -9,13 +9,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.app.NavUtils;
 
+import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import apps.pixel.al.egykey.R;
 import apps.pixel.al.egykey.fragments.FragmentCoupon;
-import apps.pixel.al.egykey.fragments.retaurant.jobs.JobsFragment;
 import apps.pixel.al.egykey.fragments.retaurant.OffersFramgent;
 import apps.pixel.al.egykey.fragments.retaurant.home.HomeRestFragment;
+import apps.pixel.al.egykey.fragments.retaurant.jobs.JobsFragment;
 import apps.pixel.al.egykey.utilities.Constant;
 import apps.pixel.al.egykey.utilities.CurvedBottomNavigationView;
 
@@ -26,12 +27,14 @@ public class SelectedRestaurantActivity extends AppCompatActivity implements Bot
     private CurvedBottomNavigationView mView;
     private AppCompatImageView mHome;
     private AppCompatImageView mImgForCoupon;
+    private AppCompatImageView mImgBack;
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
 
         NavUtils.navigateUpFromSameTask(this);
+        Animatoo.animateSwipeRight(this);
 
     }
 
@@ -47,6 +50,17 @@ public class SelectedRestaurantActivity extends AppCompatActivity implements Bot
     }
 
     private void initViews() {
+        mImgBack = findViewById(R.id.arrow_back_page_two);
+
+
+        mImgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+
+            }
+        });
+
         mImgForCoupon = findViewById(R.id.img_for_coupon_only);
         mImgForCoupon.setVisibility(View.GONE);
 

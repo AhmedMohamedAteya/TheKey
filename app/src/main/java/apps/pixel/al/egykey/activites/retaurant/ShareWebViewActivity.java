@@ -22,7 +22,7 @@ public class ShareWebViewActivity extends AppCompatActivity {
     private DialogLoader dialogLoader;
     private WebView mWebView;
 
-    private String url;
+    private String getUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,8 @@ public class ShareWebViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_share_web_view);
 
 
-        url = getIntent().getStringExtra(Constant.SHARE_LINK);
+        getUrl = getIntent().getStringExtra(Constant.SHARE_LINK);
+        Log.d("FB_LINK", "onCreate: " + getIntent().getStringExtra(Constant.SHARE_LINK));
 
         initViews();
 
@@ -41,10 +42,10 @@ public class ShareWebViewActivity extends AppCompatActivity {
         dialogLoader = new DialogLoader();
         mWebView = findViewById(R.id.web_view);
 
-        openWebSite();
+        openWebSite(getUrl);
     }
 
-    private void openWebSite() {
+    private void openWebSite(String url) {
         mWebView.getSettings().setJavaScriptEnabled(true); // enable javascript
         mWebView.setWebViewClient(new WebViewClient() {
 
@@ -82,7 +83,7 @@ public class ShareWebViewActivity extends AppCompatActivity {
         });
         mWebView.getSettings().setSupportZoom(true);
         mWebView.loadUrl(url.trim());
-        Log.d("URL_IS_", "");
+        Log.d("URL_IS_", url.trim());
     }
 
     @Override

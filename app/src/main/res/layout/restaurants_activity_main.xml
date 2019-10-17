@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginBottom="@dimen/_10sdp"
         android:background="@drawable/bg_toolbar"
-        android:elevation="@dimen/_4sdp"
+        android:elevation="@dimen/_6sdp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
@@ -35,7 +35,32 @@
                 android:padding="@dimen/_8sdp"
                 android:src="@drawable/ic_back" />
 
+            <apps.pixel.al.egykey.utilities.CairoBoldEditText
+                android:id="@+id/searchEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_toStartOf="@+id/ic_search"
+                android:layout_toEndOf="@id/arrow_back_page_two"
+                android:backgroundTint="@color/pdlg_color_white"
+                android:cursorVisible="true"
+                android:ems="10"
+                android:gravity="start|center"
+                android:hint="@string/restaurant_name"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLength="30"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="visible">
+
+                <requestFocus />
+            </apps.pixel.al.egykey.utilities.CairoBoldEditText>
+
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ic_search"
                 android:layout_width="@dimen/_30sdp"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="@dimen/_5sdp"
@@ -60,17 +85,34 @@
         android:id="@+id/image_view_bg_health"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
         android:background="@drawable/app_bg" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize"
-        android:paddingTop="@dimen/_5sdp"
-        android:paddingBottom="@dimen/_5sdp"/>
+        android:clickable="true"
+        android:fillViewport="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
 
+        <!--<androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginTop="?actionBarSize">-->
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?actionBarSize"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp" />
+
+        <!--</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </RelativeLayout>

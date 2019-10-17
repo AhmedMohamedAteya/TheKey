@@ -8,8 +8,7 @@
         android:id="@+id/imge_slider"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:src="@drawable/test" />
+        android:scaleType="fitXY" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
@@ -19,11 +18,14 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/video"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_70sdp"
         android:layout_centerInParent="true"
         android:layout_gravity="center"
-        android:src="@drawable/img_play_video"
-        android:visibility="visible" />
+        android:layout_margin="@dimen/_8sdp"
+        android:alpha="0.5"
+        android:background="@drawable/circle_black_shape"
+        android:backgroundTint="@color/pdlg_color_black"
+        android:src="@drawable/exo_icon_play" />
 
 </FrameLayout>

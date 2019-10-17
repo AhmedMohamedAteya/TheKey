@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.app.NavUtils;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.squareup.picasso.Picasso;
@@ -18,9 +19,12 @@ import apps.pixel.al.egykey.utilities.CairoBoldTextView;
 import apps.pixel.al.egykey.utilities.CairoRegularTextView;
 import apps.pixel.al.egykey.utilities.Constant;
 
+import static apps.pixel.al.egykey.utilities.Constant.setSwipeLayourColor;
+
 public class SelectedJobActivity extends AppCompatActivity implements JobDetailsInterface {
 
     //Constant.SELECTED_JOB_ID
+    public static SwipeRefreshLayout swipeContainer;
 
     private CairoBoldButton mBtnApply;
     private String selectedJobId;
@@ -52,6 +56,7 @@ public class SelectedJobActivity extends AppCompatActivity implements JobDetails
     }
 
     private void setUpUi() {
+        swipeContainer = findViewById(R.id.swipeContainer);
 
         mImg = findViewById(R.id.img);
 
@@ -67,6 +72,9 @@ public class SelectedJobActivity extends AppCompatActivity implements JobDetails
 
         jobDetailsPresenter = new JobDetailsPresenter(this, this);
         jobDetailsPresenter.getSeletedJobDetails(selectedJobId);
+
+        swipeContainer.setOnRefreshListener(() -> jobDetailsPresenter.getSeletedJobDetails(selectedJobId));
+        setSwipeLayourColor(this , swipeContainer);
 
 
         mBtnApply = findViewById(R.id.btn_apply);

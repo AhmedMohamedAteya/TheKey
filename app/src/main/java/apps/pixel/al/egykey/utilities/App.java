@@ -8,7 +8,7 @@ import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 
 import apps.pixel.al.egykey.R;
 
-public class App extends Application {
+public final class App extends Application {
     static {
         SmartRefreshLayout.setDefaultRefreshHeaderCreator((context, layout) -> {
             layout.setPrimaryColorsId(R.color.colorPrimary, android.R.color.white);//全局设置主题颜色

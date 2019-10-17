@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 import apps.pixel.al.egykey.R;
 import apps.pixel.al.egykey.adapters.restaurant.GalleryAdapter;
+import apps.pixel.al.egykey.fragments.retaurant.home.HomeRestFragment;
 import apps.pixel.al.egykey.utilities.Constant;
 import apps.pixel.al.egykey.utilities.PhotoFullPopupWindow;
 
@@ -39,8 +40,13 @@ public class GalleryActivity extends AppCompatActivity implements GalleryAdapter
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
 
-        initViews();
+        try {
+            path = HomeRestFragment.mListImgsPaths.get(0);
+            initViews();
 
+        } catch (Exception ignored) {
+            Constant.showInformationDialogForMenu(this, getString(R.string.there_is_no_avaiable_menu));
+        }
     }
 
     private void initViews() {

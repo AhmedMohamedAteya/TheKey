@@ -41,20 +41,19 @@
     <string name="education_qualifications">Educational Qualification</string>
     <string name="choose_file">Choose File</string>
     <string name="certificate_and_courses">Certificates and Courses</string>
-    <string name="cancel">Cancel</string>
     <string name="call">Call</string>
     <string name="selected_city">Selected City</string>
     <string name="selected_your_years_of">Select your years of experience</string>
     <string name="year">Year/s</string>
     <string name="ok">Ok</string>
-    <string name="default_error">Some thing happed wrong</string>
+    <string name="default_error">Something happened wrong</string>
     <string name="pls_check_connection">Please Check Your Internet Connection And Try Again</string>
     <string name="error_while_calling_this_num">Check num. and try again .</string>
     <string name="social_links">Social Links :</string>
     <string name="selected_phone_number">Select phone number</string>
-    <string name="pound">L.E</string>
+    <string name="pound">EGP</string>
     <string name="cv">CV</string>
-    <string name="not_available">Not avaiable</string>
+    <string name="not_available">Not available</string>
     <string name="day_ago">day ago</string>
     <string name="days_ago">days ago</string>
     <string name="invalid_link">Link is invalid</string>
@@ -62,5 +61,43 @@
     <string name="since">Since</string>
     <string name="all_day">24 hours</string>
     <string name="there_is_no_avaiable">There\'s no aviable services</string>
+    <string name="old_age">Old Age</string>
+    <string name="password">Password</string>
+    <string name="user_name">Username</string>
+    <string name="login">Login</string>
+    <string name="forget_password"><u>Forgot Password ?</u></string>
+    <string name="or">OR</string>
+    <string name="email_address">Email Address</string>
+    <string name="address">Address</string>
+    <string name="register">Register</string>
+    <string name="alreadt_had_account"><u>Already had account ?</u></string>
+    <string name="do_not_have_an_account"><u>Do not have an account ?</u></string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="forgot_pass_desc">We just need your registered Phone to send your password reset instruction</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="verfiy_phone">Verfication</string>
+    <string name="verify_desc">Please enter the code sent to your phone number</string>
+    <string name="continuee">Continue</string>
+    <string name="sort_by">Sort By</string>
+    <string name="near_by">Nearby</string>
+    <string name="rating">Rating</string>
+    <string name="done">Done</string>
+    <string name="restaurant_name">Write Restaurant Name here</string>
+    <string name="there_is_no_avaiable_num">There is no available numbers</string>
+    <string name="settings">Settings</string>
+    <string name="change_password">Change Password</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="terms_and_conditionss">Terms And Condition</string>
+    <string name="complaints_and_suggestions">Complaints and Suggestion</string>
+    <string name="about_us">About Us</string>
+    <string name="notifications">Notifications</string>
+
+    <string name="english">English</string>
+    <string name="arabic">عربي</string>
+    <string name="cancel">Cancel</string>
+    <string name="change_language">Change Language</string>
+    <string name="choose_nearest_branch">Choose Nearest Branch</string>
+    <string name="there_is_no_avaiable_menu">There is no avaiable menu</string>
+
 
 </resources>

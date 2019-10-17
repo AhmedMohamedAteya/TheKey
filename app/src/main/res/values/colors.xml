@@ -18,4 +18,6 @@
     <color name="chef">#777</color>
     <color name="timestamp">#777</color>
     <color name="hyper_link">#0000FF</color>
+    <color name="light_accent">#FDF6E3</color>
+    <color name="place_holder_color">#D7B767</color>
 </resources>

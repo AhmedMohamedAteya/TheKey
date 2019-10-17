@@ -1,63 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="jobs">Jobs</string>
-    <string name="get_copoun">Get Coupon</string>
+    <string name="jobs">وظائف</string>
+    <string name="get_copoun">الحصول على الكوبون</string>
     <string name="egy_key">Egy-Key</string>
-    <string name="offers">Offers</string>
-    <string name="home">Home</string>
-    <string name="views">Views</string>
-    <string name="calls">Calls</string>
-    <string name="fav">Favourites</string>
-    <string name="share">Share</string>
-    <string name="our_branches">Our branches</string>
-    <string name="latest_news">Latest News</string>
-    <string name="amemities">Available Services</string>
-    <string name="conditioning">Conditioning</string>
-    <string name="wifi">Wi-Fi</string>
-    <string name="delivery">Delivery</string>
-    <string name="parking">Parking</string>
-    <string name="food_area">Food Area</string>
-    <string name="animals">Escort Animals</string>
-    <string name="kids">Kids Area</string>
-    <string name="contact">Contact</string>
-    <string name="gym">Gym</string>
-    <string name="online_payment">Online Payment</string>
-    <string name="about">About</string>
-    <string name="offer">Offer</string>
+    <string name="offers">العروض</string>
+    <string name="home">الصفحة الرئيسية</string>
+    <string name="views">المشاهدات</string>
+    <string name="calls">المكالمات</string>
+    <string name="fav">المفضلة</string>
+    <string name="share">مشاركة</string>
+    <string name="our_branches">فروعنا</string>
+    <string name="latest_news">أحدث الأخبار</string>
+    <string name="amemities">الخدمات المتاحة</string>
+    <string name="conditioning">مكيف هواء</string>
+    <string name="wifi">واي فاي</string>
+    <string name="delivery">توصيل</string>
+    <string name="parking">موقف سيارات</string>
+    <string name="food_area">منطقة الغذاء</string>
+    <string name="animals">مرافقة الحيوانات</string>
+    <string name="kids">منطقة الاطفال
+</string>
+    <string name="contact">تواصل</string>
+    <string name="gym">نادي رياضي</string>
+    <string name="online_payment">الدفع الالكتروني</string>
+    <string name="about">
+</string>
+    <string name="offer">عرض</string>
     <string name="offer_coupon">أي ساندوتش من إختيارك
  و معاه كومبو ببلاش</string>
-    <string name="experience_level">Experience Level</string>
-    <string name="education_level">Education Level</string>
-    <string name="employment_type">Employment Type</string>
-    <string name="salary">Salary</string>
-    <string name="apply">Apply</string>
-    <string name="name">Name</string>
-    <string name="email">E-mail</string>
-    <string name="phone_num">Mobile No.</string>
-    <string name="city">City</string>
-    <string name="education_qualifications">Educational Qualification</string>
-    <string name="choose_file">Choose File</string>
-    <string name="certificate_and_courses">Certificates and Courses</string>
-    <string name="cancel">Cancel</string>
-    <string name="call">Call</string>
-    <string name="selected_city">Selected City</string>
-    <string name="selected_your_years_of">Select your years of experience</string>
-    <string name="year">Year/s</string>
-    <string name="ok">Ok</string>
-    <string name="default_error">Some thing happed wrong</string>
-    <string name="pls_check_connection">Please Check Your Internet Connection And Try Again</string>
-    <string name="error_while_calling_this_num">Check num. and try again .</string>
-    <string name="social_links">Social Links :</string>
-    <string name="selected_phone_number">Select phone number</string>
-    <string name="pound">L.E</string>
-    <string name="cv">CV</string>
-    <string name="not_available">Not avaiable</string>
-    <string name="day_ago">day ago</string>
-    <string name="days_ago">days ago</string>
-    <string name="invalid_link">Link is invalid</string>
-    <string name="there_is_no">There\'s no avaiable branches</string>
-    <string name="since">Since</string>
-    <string name="all_day">24 hours</string>
-    <string name="there_is_no_avaiable">There\'s no aviable services</string>
+    <string name="experience_level">مستوى الخبرة</string>
+    <string name="education_level">مستوى التعليم</string>
+    <string name="employment_type">نوع الوظيفة</string>
+    <string name="salary">الراتب</string>
+    <string name="apply">تقدم بطلب</string>
+    <string name="name">الأسم</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="phone_num">رقم الموبايل</string>
+    <string name="city">المدينة</string>
+    <string name="education_qualifications">المؤهل العلمي</string>
+    <string name="choose_file">اختر ملف</string>
+    <string name="certificate_and_courses">الشهادات والدورات</string>
+    <string name="call">اتصــال</string>
+    <string name="selected_city">المدينة المختارة</string>
+    <string name="selected_your_years_of">اختر سنوات خبرتك</string>
+    <string name="year">سنة/سنوات</string>
+    <string name="ok">حسنا</string>
+    <string name="default_error">حدث خطأ ما</string>
+    <string name="pls_check_connection">يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى</string>
+    <string name="error_while_calling_this_num">تحقق من الرقم و حاول مرة أخرى</string>
+    <string name="social_links">روابط مواقع التواصل الاجتماعي</string>
+    <string name="selected_phone_number">اختر رقم الهاتف
+</string>
+    <string name="pound">جنيه</string>
+    <string name="cv">السيرة الذاتية</string>
+    <string name="not_available">غير متوفر</string>
+    <string name="day_ago">منذ يوم</string>
+    <string name="days_ago">أيام مضت</string>
+    <string name="invalid_link">الرابط غير صالح</string>
+    <string name="there_is_no">لا يوجد فروع متاحة
+</string>
+    <string name="since">منذ</string>
+    <string name="all_day">24 ساعة</string>
+    <string name="there_is_no_avaiable">لا توجد خدمات متاحة</string>
+    <string name="old_age">كبار السن</string>
+    <string name="password">كلمه السر</string>
+    <string name="user_name">اسم المستخدم</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="forget_password"><u>هل نسيت كلمة المرور ؟</u></string>
+    <string name="or">
+</string>
+    <string name="email_address">عنوان بريد الكتروني</string>
+    <string name="address">عنوان</string>
+    <string name="register">تسجيل</string>
+    <string name="alreadt_had_account"><u>هل لديك حساب بالفعل؟</u></string>
+    <string name="do_not_have_an_account"><u>لا تملك حساب ؟</u></string>
+    <string name="forgot_password">هل نسيت كلمة المرور</string>
+    <string name="forgot_pass_desc">نحن بحاجة إلى هاتفك المسجل لإرسال تعليمات إعادة تعيين كلمة المرور الخاصة بك</string>
+    <string name="reset_password">إعادة تعيين كلمة المرور</string>
+    <string name="verfiy_phone">التحقق
+</string>
+    <string name="verify_desc">الرجاء إدخال الرمز المرسل إلى رقم هاتفك
+</string>
+    <string name="continuee">استمرار</string>
+    <string name="sort_by">فرز بواسطة</string>
+    <string name="near_by">أقرب مكان</string>
+    <string name="rating">التـقيم</string>
+    <string name="done">حـســنـا</string>
+    <string name="restaurant_name">اكتب اسم المطعم هنا
+</string>
+    <string name="there_is_no_avaiable_num">لا يوجد أرقام متاحة
+</string>
+    <string name="settings">الإعدادات</string>
+    <string name="change_password">تغيير كلمة المرور</string>
+    <string name="sign_out">خروج</string>
+    <string name="terms_and_conditionss">أحكام وشروط</string>
+    <string name="complaints_and_suggestions">الشكاوي والاقتراحات</string>
+    <string name="about_us">معلومات عنا</string>
+    <string name="notifications">إشعارات</string>
+
+
+    <string name="english">English</string>
+    <string name="arabic">عربي</string>
+    <string name="cancel">إلغاء</string>
+    <string name="change_language">تغير اللغة</string>
+    <string name="choose_nearest_branch">اختر أقرب فرع</string>
+    <string name="there_is_no_avaiable_menu">There is no avaiable menu</string>
+
 
 </resources>

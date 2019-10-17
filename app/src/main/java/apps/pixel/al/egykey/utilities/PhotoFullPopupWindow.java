@@ -28,7 +28,7 @@ import apps.pixel.al.egykey.R;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
-public class PhotoFullPopupWindow extends PopupWindow {
+public final class PhotoFullPopupWindow extends PopupWindow {
 
     private static PhotoFullPopupWindow instance = null;
     View view;

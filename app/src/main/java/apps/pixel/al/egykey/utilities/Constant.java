@@ -23,7 +23,13 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import com.blogspot.atifsoftwares.animatoolib.Animatoo;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import org.json.JSONObject;
 
@@ -55,9 +61,6 @@ public final class Constant {
     public static final String NEWS_DESC = "NEWS_DESC";
 
     public static final String SHARE_LINK = "SHARE_LINK";
-    public static final String FB_LINK = "TWITTER_LINK";
-    public static final String INSTAGRAM_LINK = "INSTAGRAM_LINK";
-    public static final String TWITTER_LINK = "TWITTER_LINK";
     public static final String SELECTED_JOB_ID = "SELECTED_JOB_ID";
     public static final float BITMAP_SCALE = 0.4f;
     public static final int BLUR_RADIUS = 8;
@@ -65,7 +68,12 @@ public final class Constant {
     public static final String CURRECT_POSITION_KEY = "KEY_CURRECT_POSITON";
     public static final String KEY_NUMBERS = "KEY_NUMBERS";
     public static final String GALLERY_IMGS = "GALLERY_IMGS_KEY";
-
+    public static final String CURRENT_POSITION = "CURRENT_POSITION";
+    public static final String IS_IMG = "IS_IMG";
+    public static final String SLIDER_HAS_VIDEO = "HAS_VIDEO";
+    public static String FB_LINK;
+    public static String INSTAGRAM_LINK;
+    public static String TWITTER_LINK;
 
     public static String convertFileToByteArray(File f) {
         byte[] byteArray = null;
@@ -97,6 +105,16 @@ public final class Constant {
 
         return Base64.encodeToString(imgByte, Base64.DEFAULT);
 
+    }
+
+    public static void setSwipeLayourColor(Context context, SwipeRefreshLayout swipeLayourColor) {
+        swipeLayourColor.setColorSchemeColors(context.getResources().getColor(R.color.pdlg_color_white));
+        swipeLayourColor.setColorSchemeResources(
+                R.color.colorAccent,
+                R.color.timestamp,
+                android.R.color.holo_orange_light,
+                android.R.color.black,
+                R.color.colorPrimary);
     }
 
     public static String getLng(Context context) {
@@ -142,7 +160,7 @@ public final class Constant {
     public static void runLayoutAnimation(final RecyclerView recyclerView) {
         final Context context = recyclerView.getContext();
         final LayoutAnimationController controller =
-                AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation);
+                AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_from_right); //TODO (Other Option)R.anim.layout_animation
 
         recyclerView.setLayoutAnimation(controller);
         recyclerView.getAdapter().notifyDataSetChanged();
@@ -261,6 +279,21 @@ public final class Constant {
                 .setIcon(R.drawable.ic_information)
                 .setTitle(message)
                 .addButton(context.getString(R.string.ok), android.R.color.white, R.color.color_blue, prettyDialog::dismiss)
+                .show();
+    }
+
+    public static void showInformationDialogForMenu(Context context, String message) {
+        PrettyDialog prettyDialog = new PrettyDialog(context);
+
+        prettyDialog.setCancelable(true);
+        prettyDialog
+                .setIcon(R.drawable.ic_information)
+                .setTitle(message)
+                .addButton(context.getString(R.string.ok), android.R.color.white, R.color.color_blue, () -> {
+                    prettyDialog.dismiss();
+                    ((AppCompatActivity) context).finish();
+                    Animatoo.animateSlideRight(context);
+                })
                 .show();
     }
 
@@ -473,4 +506,27 @@ public final class Constant {
         return (bitmap);
 
     }
+
+
+    public static void initializeThumbnail(Context context, AppCompatImageView imageView, String path) {
+        long microSecond = 1000000;
+
+        RequestOptions requestOptions = new RequestOptions()
+                .frame(microSecond)
+                .override(600, 200)
+                .fitCenter()
+                .placeholder(R.color.place_holder_color)//R.drawable.shape_light_app_color
+                .error(R.drawable.shape_light_app_color);
+
+        Glide.with(context)
+                .load(path)
+                .apply(requestOptions)
+                .thumbnail(Glide.with(context)
+                        .load(path))
+                .into(imageView);
+
+
+    }
+
+
 }

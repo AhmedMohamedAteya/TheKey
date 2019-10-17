@@ -10,6 +10,7 @@ import apps.pixel.al.egykey.models.retaurants.Restaurants;
 import apps.pixel.al.egykey.models.selectedRestaurant.SelectedRestaurant;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 import rx.Observable;
 
 public interface RetrofitInterface {
@@ -37,5 +38,8 @@ public interface RetrofitInterface {
 
     @GET("api/JobDetails/{id}")
     Observable<JobDetailsModel> getJobDetails(@Path("id") String id);
+
+    @GET("api/RestaurantSearch")
+    Observable<List<Restaurants>> searchOnRestaurant(@Query("Search") String name);
 
 }

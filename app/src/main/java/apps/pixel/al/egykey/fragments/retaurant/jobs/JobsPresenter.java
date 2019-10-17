@@ -18,7 +18,9 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
 
- class JobsPresenter {
+import static apps.pixel.al.egykey.fragments.retaurant.jobs.JobsFragment.swipeContainer;
+
+class JobsPresenter {
 
 
     private final Context context;
@@ -28,7 +30,7 @@ import rx.subscriptions.CompositeSubscription;
     private final FragmentManager fragmentManager;
     private final DialogLoader dialogLoaderOne;
 
-     JobsPresenter(Context context, JobsInterface jobsInterface) {
+    JobsPresenter(Context context, JobsInterface jobsInterface) {
         this.context = context;
         mSubscriptions = new CompositeSubscription();
         this.jobsInterface = jobsInterface;
@@ -39,7 +41,7 @@ import rx.subscriptions.CompositeSubscription;
 
     void getSelectedRestaurantJobs(String id) {
         if (Validation.isConnected(context)) {
-            dialogLoaderOne.show(fragmentManager, "");
+            swipeContainer.setRefreshing(true);
             mSubscriptions.add(NetworkUtil.getRetrofitNoHeader()
                     .getAllJobs(id)
                     .observeOn(AndroidSchedulers.mainThread())
@@ -51,17 +53,15 @@ import rx.subscriptions.CompositeSubscription;
     }
 
     private void handleResponse(List<JobModel> jobModels) {
-        if (dialogLoaderOne.isAdded()) {
-            dialogLoaderOne.dismiss();
-        }
+        swipeContainer.setRefreshing(false);
+
         jobsInterface.getAllJobs(jobModels);
 
     }
 
     private void handleError(Throwable throwable) {
-        if (dialogLoaderOne.isAdded()) {
-            dialogLoaderOne.dismiss();
-        }
+        swipeContainer.setRefreshing(false);
+
         Constant.handleError(context, throwable);
     }
 

@@ -72,7 +72,8 @@ public class VideoRestuarantActivity extends Activity implements Player.EventLis
     private AppCompatImageView imageViewFull;
 
     private RelativeLayout mRelative;
-    private long currentPosition;
+    private long currentPositionPortrait;
+    private long currentPositionLandscape;
 
 
     public static Intent getStartIntent(Context context, String videoUri) {
@@ -101,18 +102,18 @@ public class VideoRestuarantActivity extends Activity implements Player.EventLis
         Log.d("tag", "config changed");
         super.onConfigurationChanged(newConfig);
 
-        Log.d(TAG, "onConfigurationChanged: " + currentPosition);
-        if (player != null) {
-            player.seekTo(currentPosition);
-        }
-
-        int orientation = newConfig.orientation;
-        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            Log.d("CHANED_", "PORTRAIT");
-            if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                Log.d("CHANED_", "LANDSCAPE");
-            }
-        }
+//        Log.d(TAG, "onConfigurationChanged: " + currentPositionPortrait);
+//        if (player != null) {
+//            player.seekTo(currentPositionPortrait);
+//        }
+//
+//        int orientation = newConfig.orientation;
+//        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+//            Log.d("CHANED_", "PORTRAIT");
+//            if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+//                Log.d("CHANED_", "LANDSCAPE");
+//            }
+//        }
     }
 
     @Override
@@ -120,7 +121,14 @@ public class VideoRestuarantActivity extends Activity implements Player.EventLis
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        int orientation = this.getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            setTheme(R.style.Theme_TransparentPortraint);
+        } else {
+            setTheme(R.style.Theme_TransparentLandscape);
+        }
         setContentView(R.layout.activity_video_restuarant);
+
 
         if (getIntent().hasExtra(KEY_VIDEO_URL)) {
             videoUri = getIntent().getStringExtra(KEY_VIDEO_URL);
@@ -138,9 +146,6 @@ public class VideoRestuarantActivity extends Activity implements Player.EventLis
 
 
             imageViewFull = findViewById(R.id.imageViewFull);
-
-
-            int orientation = this.getResources().getConfiguration().orientation;
 
             try {
                 if (orientation == Configuration.ORIENTATION_PORTRAIT) {
@@ -306,13 +311,29 @@ public class VideoRestuarantActivity extends Activity implements Player.EventLis
 
     @Override
     public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
+        long currentPosition = player.getContentPosition();
+
+        //  Log.d(TAG, "onPlayerStateChanged: " + currentPosition);
+        int orientation = this.getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            currentPositionPortrait = player.getCurrentPosition();
+            player.seekTo(currentPositionLandscape);
+            Log.d(TAG, "onPlayerStateChanged: " + currentPositionLandscape);
+        }
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            currentPositionLandscape = player.getCurrentPosition();
+            player.seekTo(currentPositionLandscape);
+            Log.d(TAG, "onPlayerStateChanged: " + currentPositionPortrait);
+
+        }
+
         switch (playbackState) {
 
             case Player.STATE_BUFFERING:
                 spinnerVideoDetails.setVisibility(View.VISIBLE);
                 mBtnPlayPause.setVisibility(View.GONE);
 
-                // currentPosition = player.getBufferedPosition();
+                // currentPositionPortrait = player.getBufferedPosition();
                 break;
             case Player.STATE_ENDED:
                 mBtnPlayPause.setImageDrawable(getResources().getDrawable(R.drawable.exo_controls_repeat_all));
@@ -333,9 +354,9 @@ public class VideoRestuarantActivity extends Activity implements Player.EventLis
                 // status = PlaybackStatus.IDLE;
                 break;
         }
-        currentPosition = player.getCurrentPosition();
-        player.seekTo(currentPosition);
-        Log.d(TAG, "onPlayerStateChanged: " + currentPosition + "  " + player.getCurrentWindowIndex());
+
+
+        // player.seekTo(currentPositionPortrait);
 
     }
 

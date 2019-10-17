@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee"
+    tools:context=".activites.SettingsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/bg_toolbar"
+        android:elevation="@dimen/_6sdp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:gravity="center">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/arrow_back_page_two"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="0dp"
+                android:padding="@dimen/_8sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_20sdp"
+                android:src="@drawable/ic_back" />
+
+            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:gravity="center"
+                android:lines="1"
+                android:maxLength="30"
+                android:text="@string/settings"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14ssp"
+                android:visibility="visible">
+
+                <requestFocus />
+            </apps.pixel.al.egykey.utilities.CairoBoldTextView>
+
+            <Space
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="match_parent" />
+
+            <Space
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+        <requestFocus />
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?actionBarSize"
+        android:elevation="@dimen/_6sdp"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/change_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@android:color/white"
+            android:padding="@dimen/_13sdp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="80"
+                    android:gravity="start|center"
+                    android:text="@string/change_password"
+                    android:textColor="@color/pdlg_color_black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_arrow_for_settings" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </FrameLayout>
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/_1sdp"-->
+        <!--android:layout_marginTop="@dimen/_5sdp"-->
+        <!--android:layout_marginBottom="@dimen/_5sdp"-->
+        <!--android:background="@color/default_text_color" />-->
+
+        <FrameLayout
+            android:id="@+id/change_lang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@android:color/white"
+            android:padding="@dimen/_13sdp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="80"
+                    android:gravity="start|center"
+                    android:text="@string/change_language"
+                    android:textColor="@color/pdlg_color_black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_arrow_for_settings" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </FrameLayout>
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/_1sdp"-->
+        <!--android:layout_marginTop="@dimen/_5sdp"-->
+        <!--android:layout_marginBottom="@dimen/_5sdp"-->
+        <!--android:background="@color/default_text_color" />-->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@android:color/white"
+
+            android:padding="@dimen/_13sdp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="80"
+                    android:gravity="start|center"
+                    android:text="@string/notifications"
+                    android:textColor="@color/pdlg_color_black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <Switch
+                    android:id="@+id/notifications"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/default_text_color"
+                    android:checked="true"
+                    android:src="@drawable/ic_arrow_for_settings" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </FrameLayout>
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/_1sdp"-->
+        <!--android:layout_marginTop="@dimen/_5sdp"-->
+        <!--android:layout_marginBottom="@dimen/_5sdp"-->
+        <!--android:background="@color/default_text_color" />-->
+
+        <FrameLayout
+            android:id="@+id/about_us"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+
+            android:background="@android:color/white"
+            android:padding="@dimen/_13sdp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="80"
+                    android:gravity="start|center"
+                    android:text="@string/about_us"
+                    android:textColor="@color/pdlg_color_black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_arrow_for_settings" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </FrameLayout>
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/_1sdp"-->
+        <!--android:layout_marginTop="@dimen/_5sdp"-->
+        <!--android:layout_marginBottom="@dimen/_5sdp"-->
+        <!--android:background="@color/default_text_color" />-->
+
+        <FrameLayout
+            android:id="@+id/complaint_and_suggestions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+
+            android:background="@android:color/white"
+            android:padding="@dimen/_13sdp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="80"
+                    android:gravity="start|center"
+                    android:text="@string/complaints_and_suggestions"
+                    android:textColor="@color/pdlg_color_black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_arrow_for_settings" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </FrameLayout>
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/_1sdp"-->
+        <!--android:layout_marginTop="@dimen/_5sdp"-->
+        <!--android:layout_marginBottom="@dimen/_5sdp"-->
+        <!--android:background="@color/default_text_color" />-->
+
+        <FrameLayout
+            android:id="@+id/terms_and_condition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@android:color/white"
+            android:padding="@dimen/_13sdp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="80"
+                    android:gravity="start|center"
+                    android:text="@string/terms_and_conditionss"
+                    android:textColor="@color/pdlg_color_black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_arrow_for_settings" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </FrameLayout>
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/_1sdp"-->
+        <!--android:layout_marginTop="@dimen/_5sdp"-->
+        <!--android:layout_marginBottom="@dimen/_5sdp"-->
+        <!--android:background="@color/default_text_color" />-->
+
+        <FrameLayout
+            android:id="@+id/sign_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="@dimen/_13sdp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="80"
+                    android:gravity="start|center"
+                    android:text="@string/sign_out"
+                    android:textColor="@color/pdlg_color_black"
+                    android:textSize="@dimen/_12ssp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </FrameLayout>
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/_1sdp"-->
+        <!--android:layout_marginTop="@dimen/_5sdp"-->
+        <!--android:layout_marginBottom="@dimen/_5sdp"-->
+        <!--android:background="@color/default_text_color" />-->
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</RelativeLayout>

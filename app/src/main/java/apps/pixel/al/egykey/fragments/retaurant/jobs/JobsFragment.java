@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 
@@ -25,6 +26,8 @@ import apps.pixel.al.egykey.activites.retaurant.jobs.jobDetails.SelectedJobActiv
 import apps.pixel.al.egykey.adapters.restaurant.JobsAdapter;
 import apps.pixel.al.egykey.models.job.JobModel;
 import apps.pixel.al.egykey.utilities.Constant;
+
+import static apps.pixel.al.egykey.utilities.Constant.setSwipeLayourColor;
 
 
 public class JobsFragment extends Fragment implements JobsAdapter.OnClickHandler, JobsInterface {
@@ -39,6 +42,7 @@ public class JobsFragment extends Fragment implements JobsAdapter.OnClickHandler
     private List<String> listDates;
     private List<String> idList;
 
+    public static SwipeRefreshLayout swipeContainer;
 
     private JobsPresenter presenter;
 
@@ -55,11 +59,16 @@ public class JobsFragment extends Fragment implements JobsAdapter.OnClickHandler
     }
 
     private void initViews(View rootView) {
+        swipeContainer = rootView.findViewById(R.id.swipeContainer);
+
         sharedPreferences = getContext().getSharedPreferences(Constant.SHARED_PREFERENCE, Context.MODE_PRIVATE);
         selectedId = sharedPreferences.getString(Constant.RESTAURANT_SELECTED_ID, "");
 
         presenter = new JobsPresenter(getContext(), this);
         presenter.getSelectedRestaurantJobs(selectedId);
+        swipeContainer.setOnRefreshListener(() -> presenter.getSelectedRestaurantJobs(selectedId));
+        setSwipeLayourColor(getContext() , swipeContainer);
+
 
         idList = new ArrayList<>();
         listDates = new ArrayList<>();

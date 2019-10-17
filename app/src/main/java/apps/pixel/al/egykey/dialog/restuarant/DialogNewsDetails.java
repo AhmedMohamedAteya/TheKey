@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;
@@ -26,6 +27,7 @@ import apps.pixel.al.egykey.utilities.CairoBoldTextView;
 import apps.pixel.al.egykey.utilities.CairoRegularTextView;
 import apps.pixel.al.egykey.utilities.Constant;
 
+import static apps.pixel.al.egykey.utilities.Constant.KEY_VIDEO_URL;
 import static apps.pixel.al.egykey.utilities.Constant.NEWS_DESC;
 import static apps.pixel.al.egykey.utilities.Constant.NEWS_IMG;
 import static apps.pixel.al.egykey.utilities.Constant.NEWS_TITLE;
@@ -35,7 +37,9 @@ public class DialogNewsDetails extends DialogFragment {
     private CairoRegularTextView txtDesc;
     private CairoBoldTextView txtTitle;
     private SharedPreferences sharedPreferences;
+    private AppCompatImageView mImgPlayVideo;
 
+    private String isImg;
 
     private String imgUrl, title, desc;
 
@@ -76,6 +80,8 @@ public class DialogNewsDetails extends DialogFragment {
         imgNew = view.findViewById(R.id.img_new);
         txtDesc = view.findViewById(R.id.txt_desc);
         txtTitle = view.findViewById(R.id.txt_title);
+        mImgPlayVideo = view.findViewById(R.id.btn_play);
+        mImgPlayVideo.setVisibility(View.GONE);
 
         /*
         editor.putString(Constant.NEWS_IMG, img);
@@ -86,15 +92,34 @@ public class DialogNewsDetails extends DialogFragment {
         imgUrl = sharedPreferences.getString(NEWS_IMG, "");
         title = sharedPreferences.getString(NEWS_TITLE, "");
         desc = sharedPreferences.getString(NEWS_DESC, "");
+        isImg = sharedPreferences.getString(Constant.IS_IMG, "true");
 
         txtTitle.setText(title);
         txtDesc.setText(desc);
-        Picasso.get()
-                .load(imgUrl)
-                .fit()
-                .centerCrop()
-                .into(imgNew);
 
+        if (isImg.equals("true".trim())) {
+            Picasso.get()
+                    .load(imgUrl)
+                    .fit()
+                    .placeholder(R.color.place_holder_color)
+                    .centerCrop()
+                    .into(imgNew);
+        } else {
+            mImgPlayVideo.setVisibility(View.VISIBLE);
+            Constant.initializeThumbnail(getContext(), imgNew, imgUrl);
+        }
+
+        mImgPlayVideo.setOnClickListener(v -> {
+            DialogVideo dialogVideo = new DialogVideo();
+            Bundle bundle = new Bundle();
+            bundle.putString(KEY_VIDEO_URL, imgUrl);
+            dialogVideo.setArguments(bundle);
+
+            if (!dialogVideo.isAdded()) {
+                dialogVideo.show(((AppCompatActivity) getContext()).getSupportFragmentManager(), "11");
+            }
+
+        });
 
     }
 

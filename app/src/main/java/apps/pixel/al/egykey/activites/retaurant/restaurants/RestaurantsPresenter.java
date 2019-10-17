@@ -18,6 +18,8 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
 
+import static apps.pixel.al.egykey.activites.retaurant.restaurants.RestaurantsActivity.swipeContainer;
+
 
 public class RestaurantsPresenter {
     private final Context context;
@@ -38,11 +40,23 @@ public class RestaurantsPresenter {
         sharedPreferences = context.getSharedPreferences(Constant.SHARED_PREFERENCE, Context.MODE_PRIVATE);
     }
 
+
+    public void searchOnRestaurant(String partOnName) {
+        if (Validation.isConnected(context)) {
+            swipeContainer.setRefreshing(true);
+            mSubscriptions.add(NetworkUtil.getRetrofitNoHeader()
+                    .searchOnRestaurant(partOnName)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .subscribe(this::responseOfSearch, this::handleError));
+        } else {
+            Constant.showErrorDialog(context, context.getString(R.string.pls_check_connection));
+        }
+    }
+
     public void getAllRestaurants() {
         if (Validation.isConnected(context)) {
-            if (!dialogLoaderOne.isAdded()) {
-                dialogLoaderOne.show(fragmentManager, "");
-            }
+            swipeContainer.setRefreshing(true);
             mSubscriptions.add(NetworkUtil.getRetrofitNoHeader()
                     .getAllRestaurants()
                     .observeOn(AndroidSchedulers.mainThread())
@@ -54,17 +68,21 @@ public class RestaurantsPresenter {
     }
 
 
+    private void responseOfSearch(List<Restaurants> restaurants) {
+        swipeContainer.setRefreshing(false);
+
+        restaurantInterface.getAllRestaurants(restaurants);
+    }
+
     private void handleResponse(List<Restaurants> restaurants) {
-        if (dialogLoaderOne.isAdded()) {
-            dialogLoaderOne.dismiss();
-        }
+        swipeContainer.setRefreshing(false);
+
         restaurantInterface.getAllRestaurants(restaurants);
     }
 
     private void handleError(Throwable throwable) {
-        if (dialogLoaderOne.isAdded()) {
-            dialogLoaderOne.dismiss();
-        }
+        swipeContainer.setRefreshing(false);
+
         Constant.handleError(context, throwable);
     }
 

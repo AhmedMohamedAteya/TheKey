@@ -58,6 +58,27 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         notifyItemRangeChanged(position, arabicNames.size());
     }
 
+    public void clear() {
+        arabicNames.clear();
+        englishNames.clear();
+        urlsBackGrounds.clear();
+        urlsLogos.clear();
+        idList.clear();
+        sinceList.clear();
+        notifyDataSetChanged();
+    }
+
+    public void addAll(List<String> sinceList, List<String> idList, List<String> arabicNames, List<String> englishNames, List<String> urlsBackGrounds, List<String> urlsLogos) {
+        sinceList.addAll(this.sinceList);
+        idList.addAll(this.idList);
+        arabicNames.addAll(this.arabicNames);
+        englishNames.addAll(this.englishNames);
+        urlsBackGrounds.addAll(this.urlsBackGrounds);
+        urlsLogos.addAll(this.urlsLogos);
+
+        notifyDataSetChanged();
+    }
+
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int listPosition) {
 
@@ -75,7 +96,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
 
             Glide.with(context)
                     .load(urlsBackGrounds.get(listPosition))
-                    .placeholder(R.drawable.test)
+                    .placeholder(R.drawable.shape_light_app_color)
                     .into(holder.imgBgRetaurant);
 
 

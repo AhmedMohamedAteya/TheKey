@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activites.beforeHome.SignUpActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/before_home_bg" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_50sdp"
+            android:layout_marginEnd="@dimen/_50sdp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_20sdp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_profile"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginTop="45dp"
+                    android:src="@drawable/edit_img" />
+
+                <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                <!--android:layout_width="@dimen/_35sdp"-->
+                <!--android:layout_height="@dimen/_35sdp"-->
+                <!--android:layout_gravity="top|center"-->
+                <!--android:background="@drawable/circle_shape_white"-->
+                <!--android:layout_marginStart="@dimen/_42sdp"-->
+                <!--android:layout_marginTop="@dimen/_30sdp"-->
+                <!--/>-->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_add"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="top|center"
+                    android:layout_marginStart="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_34sdp"
+                    android:background="@drawable/circle_black_shape"
+                    android:src="@drawable/ic_plus" />
+            </FrameLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@android:color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:gravity="start|center"
+                    android:hint="@string/name"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:theme="@style/Theme.App.Base" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@android:color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:gravity="start|center"
+                    android:hint="@string/email_address"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:theme="@style/Theme.App.Base" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@android:color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:gravity="start|center"
+                    android:hint="@string/address"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:theme="@style/Theme.App.Base" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColorHint="@android:color/white"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/pdlg_color_white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:gravity="start|center"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:theme="@style/Theme.App.Base" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColorHint="@android:color/white"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/pdlg_color_white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_confirm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:gravity="start|center"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:theme="@style/Theme.App.Base" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@android:color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:gravity="start|center"
+                    android:hint="@string/phone_num"
+                    android:inputType="phone"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:theme="@style/Theme.App.Base" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <apps.pixel.al.egykey.utilities.CairoBoldButton
+                android:id="@+id/btn_register"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="@drawable/ic_shape_gradient_gold"
+                android:text="@string/register"
+                android:textColor="@color/pdlg_color_white"
+                android:textSize="@dimen/_14ssp" />
+
+
+            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                android:id="@+id/txt_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:paddingBottom="@dimen/_20sdp"
+                android:text="@string/alreadt_had_account"
+                android:textColor="@color/pdlg_color_white"
+                android:textSize="@dimen/_14ssp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

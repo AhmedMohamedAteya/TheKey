@@ -9,6 +9,9 @@
     android:clickable="true"
     android:focusable="true"
     android:focusableInTouchMode="true"
+    android:minWidth="1000dp"
+    android:minHeight="1000dp"
+    android:theme="@style/Theme.TransparentLandscape"
     tools:context=".activites.retaurant.videoActivity.VideoRestuarantActivity">
 
     <RelativeLayout
@@ -39,22 +42,25 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageViewExit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_margin="@dimen/_7sdp"
+            android:alpha="0.2"
+            android:background="@drawable/circle_black_shape"
             android:padding="@dimen/_10sdp"
             android:src="@drawable/ic_close" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageViewFull"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_margin="@dimen/_7sdp"
-            android:src="@drawable/exo_controls_fullscreen_enter" />
+            android:alpha="0.2"
+            android:background="@drawable/circle_black_shape" />
 
 
         <ProgressBar
@@ -68,13 +74,13 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/play_pause_btn"
-            android:layout_width="@dimen/_50sdp"
-            android:layout_height="@dimen/_50sdp"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
             android:layout_margin="@dimen/_8sdp"
-            android:alpha="0.5"
-            android:background="@drawable/circle_shape"
+            android:alpha="0.2"
+            android:background="@drawable/circle_black_shape"
             android:src="@drawable/exo_controls_pause" />
 
 

@@ -1,6 +1,5 @@
 package apps.pixel.al.egykey.dialog.restuarant;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -37,6 +36,8 @@ public class DialogShare extends DialogFragment implements View.OnClickListener 
     private AppCompatImageView imgTwitter;
     private AppCompatImageView imgInstagram;
 
+    private String fbLink, twitterLink, instagramLink;
+
 
     private int choosenIcon; //checkOnClickFun
 
@@ -72,7 +73,14 @@ public class DialogShare extends DialogFragment implements View.OnClickListener 
 
     private void initViews(View view) {
 
-        sharedPreferences = getContext().getSharedPreferences(Constant.SHARED_PREFERENCE, Context.MODE_PRIVATE);
+        //sharedPreferences = getContext().getSharedPreferences(Constant.SHARED_PREFERENCE, Context.MODE_PRIVATE);
+
+        fbLink = Constant.FB_LINK;
+        twitterLink = Constant.TWITTER_LINK;
+        instagramLink = Constant.INSTAGRAM_LINK;
+
+
+        Log.d("LINK_IS", "initViews: " + fbLink);
 
         seperatorOne = view.findViewById(R.id.seperator_one);
         seperatorTwo = view.findViewById(R.id.seperator_two);
@@ -86,7 +94,7 @@ public class DialogShare extends DialogFragment implements View.OnClickListener 
 
 
         try {
-            if (!URLUtil.isValidUrl(sharedPreferences.getString(Constant.TWITTER_LINK, ""))) {
+            if (!URLUtil.isValidUrl(twitterLink)) {
                 imgTwitter.setVisibility(View.GONE);
                 seperatorOne.setVisibility(View.GONE);
             }
@@ -96,7 +104,7 @@ public class DialogShare extends DialogFragment implements View.OnClickListener 
         }
 
         try {
-            if (!URLUtil.isValidUrl(sharedPreferences.getString(Constant.INSTAGRAM_LINK, ""))) {
+            if (!URLUtil.isValidUrl(instagramLink)) {
                 imgInstagram.setVisibility(View.GONE);
                 seperatorTwo.setVisibility(View.GONE);
             }
@@ -133,9 +141,10 @@ public class DialogShare extends DialogFragment implements View.OnClickListener 
         switch (v.getId()) {
             case R.id.img_fb:
                 choosenIcon = 1;
+                Log.d("FB_LINK", "onClick: " + fbLink);
                 try {
-                    if (!sharedPreferences.getString(Constant.FB_LINK, "").equals(""))
-                        openUrl.putExtra(Constant.SHARE_LINK, sharedPreferences.getString(Constant.FB_LINK, ""));
+                    if (!fbLink.equals(""))
+                        openUrl.putExtra(Constant.SHARE_LINK, fbLink);
                 } catch (NullPointerException ignored) {
                     imgFb.setVisibility(View.GONE);
                 }
@@ -145,8 +154,8 @@ public class DialogShare extends DialogFragment implements View.OnClickListener 
                 choosenIcon = 2;
 
                 try {
-                    if (!sharedPreferences.getString(Constant.TWITTER_LINK, "").equals(""))
-                        openUrl.putExtra(Constant.SHARE_LINK, sharedPreferences.getString(Constant.TWITTER_LINK, ""));
+                    if (!twitterLink.equals(""))
+                        openUrl.putExtra(Constant.SHARE_LINK, twitterLink);
                 } catch (NullPointerException ignored) {
                     imgTwitter.setVisibility(View.GONE);
                 }
@@ -155,8 +164,8 @@ public class DialogShare extends DialogFragment implements View.OnClickListener 
                 choosenIcon = 3;
 
                 try {
-                    if (!sharedPreferences.getString(Constant.INSTAGRAM_LINK, "").equals(""))
-                        openUrl.putExtra(Constant.SHARE_LINK, sharedPreferences.getString(Constant.INSTAGRAM_LINK, ""));
+                    if (!instagramLink.equals(""))
+                        openUrl.putExtra(Constant.SHARE_LINK, instagramLink);
                 } catch (NullPointerException ignored) {
                     imgInstagram.setVisibility(View.GONE);
                 }
@@ -167,7 +176,7 @@ public class DialogShare extends DialogFragment implements View.OnClickListener 
         //Constant.SHARE_LINK
 
         if (choosenIcon == 1) {
-            if (URLUtil.isValidUrl(sharedPreferences.getString(Constant.FB_LINK, ""))) {
+            if (URLUtil.isValidUrl(fbLink)) {
                 startActivity(openUrl);
                 Animatoo.animateWindmill(getContext());
             } else {
@@ -175,7 +184,7 @@ public class DialogShare extends DialogFragment implements View.OnClickListener 
             }
 
         } else if (choosenIcon == 2) {
-            if (URLUtil.isValidUrl(sharedPreferences.getString(Constant.TWITTER_LINK, ""))) {
+            if (URLUtil.isValidUrl(twitterLink)) {
                 startActivity(openUrl);
                 Animatoo.animateWindmill(getContext());
             } else {
@@ -184,7 +193,7 @@ public class DialogShare extends DialogFragment implements View.OnClickListener 
                 // Constant.showInformationDialog(getContext(), getString(R.string.invalid_link));
             }
         } else if (choosenIcon == 3) {
-            if (URLUtil.isValidUrl(sharedPreferences.getString(Constant.INSTAGRAM_LINK, ""))) {
+            if (URLUtil.isValidUrl(instagramLink)) {
                 startActivity(openUrl);
                 Animatoo.animateWindmill(getContext());
             } else {

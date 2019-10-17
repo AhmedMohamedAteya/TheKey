@@ -1,12 +1,14 @@
 package apps.pixel.al.egykey.adapters.restaurant;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
@@ -17,7 +19,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import apps.pixel.al.egykey.R;
-import apps.pixel.al.egykey.activites.retaurant.videoActivity.VideoRestuarantActivity;
+import apps.pixel.al.egykey.dialog.restuarant.DialogVideo;
 import apps.pixel.al.egykey.utilities.Constant;
 import apps.pixel.al.egykey.utilities.PhotoFullPopupWindow;
 
@@ -25,8 +27,8 @@ import static apps.pixel.al.egykey.utilities.Constant.KEY_VIDEO_URL;
 
 public class HomeSliderRestaAdapter extends PagerAdapter {
 
+    public static List<String> imageList;
     private Context context;
-    private List<String> imageList;
     private SharedPreferences sharedPreferences;
     private String videoUrl;
 
@@ -51,37 +53,52 @@ public class HomeSliderRestaAdapter extends PagerAdapter {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.item_slider, null);
 
+        videoUrl = sharedPreferences.getString(Constant.KEY_VIDEO_URL, "");
+
         AppCompatImageView imageView = view.findViewById(R.id.imge_slider);
 
         AppCompatImageView playVideo = view.findViewById(R.id.video);
-        if (position == 0) {
-            playVideo.setVisibility(View.VISIBLE);
-        } else {
-            playVideo.setVisibility(View.GONE);
+        playVideo.setVisibility(View.GONE);
+
+        if (sharedPreferences.getString(Constant.SLIDER_HAS_VIDEO, "false".trim()).equals("true".trim())) {
+            if (position == 0) {
+                Constant.initializeThumbnail(context, imageView, videoUrl);
+                Log.d("FOR_THUMBNIAL", videoUrl);
+                playVideo.setVisibility(View.VISIBLE);
+            } else {
+                playVideo.setVisibility(View.GONE);
+            }
         }
 
-        videoUrl = sharedPreferences.getString(Constant.KEY_VIDEO_URL, "");
 
         playVideo.setOnClickListener(v -> {
             //KEY_VIDEO_URL
-            Intent openVideo = new Intent(context, VideoRestuarantActivity.class);
-            openVideo.putExtra(KEY_VIDEO_URL, videoUrl);
-            context.startActivity(openVideo);
-            Animatoo.animateSplit(context);
+            handlingOfVideoClickListner();
+//            Intent openVideo = new Intent(context, VideoRestuarantActivity.class);
+//            openVideo.putExtra(KEY_VIDEO_URL, videoUrl);
+//            context.startActivity(openVideo);
+//            Animatoo.animateSplit(context);
 
 //            Intent openVideo = new Intent(context, VideoRestuarantFragment.class);
 //            openVideo.putExtra(KEY_VIDEO_URL, videoUrl);
         });
 
-        Picasso.get()
-                .load(imageList.get(position))
-                .fit()
-                .centerCrop()
-                .into(imageView);
+
+//        if (position != 0) {
+            Picasso.get()
+                    .load(imageList.get(position))
+                    .fit()
+                    .centerCrop()
+                    .into(imageView);
+       // }
 
         imageView.setOnClickListener(v -> {
             // Code to show image in full screen:
-            new PhotoFullPopupWindow(context, R.layout.popup_photo_full, imageView, imageList.get(position), null).setAnimationStyle(R.style.Animation);
+            if (position != 0)
+                new PhotoFullPopupWindow(context, R.layout.popup_photo_full, imageView, imageList.get(position), null).setAnimationStyle(R.style.Animation);
+            else
+                handlingOfVideoClickListner();
+
 
         });
 
@@ -89,6 +106,17 @@ public class HomeSliderRestaAdapter extends PagerAdapter {
         viewPager.addView(view, 0);
 
         return view;
+    }
+
+    private void handlingOfVideoClickListner() {
+        Bundle bundle = new Bundle();
+        bundle.putString(KEY_VIDEO_URL, videoUrl);
+        DialogVideo dialogVideo = new DialogVideo();
+        dialogVideo.setArguments(bundle);
+        if (!dialogVideo.isAdded()) {
+            dialogVideo.show(((AppCompatActivity) context).getSupportFragmentManager(), "1");
+            Animatoo.animateSplit(context);
+        }
     }
 
     @Override

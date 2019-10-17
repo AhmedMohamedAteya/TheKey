@@ -1,7 +1,7 @@
 package apps.pixel.al.egykey.utilities;
 
 
-public final class VideoPlayerConfig {
+public  final  class VideoPlayerConfig {
     //Minimum Video you want to buffer while Playing
     public static final int MIN_BUFFER_DURATION = 3000;
     //Max Video you want to buffer during PlayBack

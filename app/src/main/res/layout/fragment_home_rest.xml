@@ -10,7 +10,7 @@
     <!--app:CircleSmaller="6"-->
 
 
-    <jp.co.recruit_lifestyle.android.widget.WaveSwipeRefreshLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -52,7 +52,7 @@
                         <!--layout="@layout/activity_video_restuarant"-->
                         <!--android:visibility="visible" />-->
 
-                        <androidx.viewpager.widget.ViewPager
+                        <apps.pixel.al.egykey.utilities.ViewPagerCustomDuration
                             android:id="@+id/viewPager"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -247,6 +247,8 @@
                             android:layout_marginStart="@dimen/_10sdp"
                             android:layout_marginEnd="@dimen/_10sdp"
                             android:layout_weight="30"
+                            android:drawableStart="@drawable/ic_newspaper"
+                            android:drawablePadding="@dimen/_10sdp"
                             android:gravity="start|center"
                             android:text="@string/latest_news"
                             android:textColor="@color/default_text_color"
@@ -379,6 +381,7 @@
                                 android:drawableStart="@drawable/ic_loc"
                                 android:drawablePadding="@dimen/_10sdp"
                                 android:gravity="start|center|top"
+                                android:maxLines="3"
                                 android:textColor="@color/default_text_color"
                                 android:textSize="@dimen/_10ssp" />
 
@@ -391,17 +394,6 @@
                                 android:drawablePadding="@dimen/_10sdp"
                                 android:gravity="start|center|top"
                                 android:textColor="@color/hyper_link"
-                                android:textSize="@dimen/_10ssp" />
-
-                            <apps.pixel.al.egykey.utilities.CairoRegularTextView
-                                android:id="@+id/phone_num"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="@dimen/_10sdp"
-                                android:drawableStart="@drawable/ic_phone_small"
-                                android:drawablePadding="@dimen/_10sdp"
-                                android:gravity="start|center|top"
-                                android:textColor="@color/default_text_color"
                                 android:textSize="@dimen/_10ssp" />
 
 
@@ -436,19 +428,20 @@
                                 android:drawableStart="@drawable/ic_description"
                                 android:drawablePadding="@dimen/_10sdp"
                                 android:gravity="start|center|top"
+                                android:maxLines="3"
                                 android:textColor="@color/default_text_color"
                                 android:textSize="@dimen/_10ssp" />
 
-                            <apps.pixel.al.egykey.utilities.CairoRegularTextView
-                                android:id="@+id/hotline"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="@dimen/_10sdp"
-                                android:drawableStart="@drawable/ic_hotline"
-                                android:drawablePadding="@dimen/_10sdp"
-                                android:gravity="start|center|top"
-                                android:textColor="@color/default_text_color"
-                                android:textSize="@dimen/_10ssp" />
+                            <!--<apps.pixel.al.egykey.utilities.CairoRegularTextView-->
+                            <!--android:id="@+id/hotline"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginEnd="@dimen/_10sdp"-->
+                            <!--android:drawableStart="@drawable/ic_hotline"-->
+                            <!--android:drawablePadding="@dimen/_10sdp"-->
+                            <!--android:gravity="start|center|top"-->
+                            <!--android:textColor="@color/default_text_color"-->
+                            <!--android:textSize="@dimen/_10ssp" />-->
 
 
                         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -622,6 +615,29 @@
                             android:orientation="horizontal">
 
                             <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/old_age"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_old_age" />
+
+                                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/old_age"
+                                    android:textColor="@color/default_text_color"
+                                    android:textSize="@dimen/_10ssp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
                                 android:id="@+id/escort_animals"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -755,7 +771,7 @@
             </com.facebook.shimmer.ShimmerFrameLayout>
 
         </ScrollView>
-    </jp.co.recruit_lifestyle.android.widget.WaveSwipeRefreshLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
 </RelativeLayout>

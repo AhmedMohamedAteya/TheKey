@@ -26,9 +26,10 @@
                 android:layout_marginEnd="@dimen/_2sdp"
                 android:layout_marginBottom="@dimen/_2sdp"
                 android:layout_weight="40"
-                app:cardBackgroundColor="#D7B767"
+                app:cardBackgroundColor="@color/place_holder_color"
                 app:cardCornerRadius="@dimen/_3sdp"
                 app:cardElevation="0dp">
+
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/img_new"
@@ -36,10 +37,21 @@
                     android:layout_height="match_parent"
                     android:background="@android:color/transparent"
                     android:scaleType="fitXY"
-                    android:src="@drawable/test"
                     android:text="@string/ok"
                     android:textColor="#FAE9BF"
                     android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_play"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:alpha="0.2"
+                    android:background="@drawable/circle_black_shape"
+                    android:src="@drawable/exo_controls_play" />
+
             </androidx.cardview.widget.CardView>
 
 

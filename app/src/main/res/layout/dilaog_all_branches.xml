@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
             android:gravity="center"
-            android:text="Choose Nearest Branch"
+            android:text="@string/choose_nearest_branch"
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/_14ssp" />
 
