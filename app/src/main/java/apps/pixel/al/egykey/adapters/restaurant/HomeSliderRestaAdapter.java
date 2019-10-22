@@ -54,6 +54,7 @@ public class HomeSliderRestaAdapter extends PagerAdapter {
         View view = inflater.inflate(R.layout.item_slider, null);
 
         videoUrl = sharedPreferences.getString(Constant.KEY_VIDEO_URL, "");
+        Log.d("VIDEO_URL", "instantiateItem: " + videoUrl);
 
         AppCompatImageView imageView = view.findViewById(R.id.imge_slider);
 
@@ -85,19 +86,24 @@ public class HomeSliderRestaAdapter extends PagerAdapter {
 
 
 //        if (position != 0) {
-            Picasso.get()
-                    .load(imageList.get(position))
-                    .fit()
-                    .centerCrop()
-                    .into(imageView);
-       // }
+        Picasso.get()
+                .load(imageList.get(position))
+                .fit()
+                .centerCrop()
+                .into(imageView);
+        // }
 
         imageView.setOnClickListener(v -> {
             // Code to show image in full screen:
-            if (position != 0)
+            if (position != 0) {
                 new PhotoFullPopupWindow(context, R.layout.popup_photo_full, imageView, imageList.get(position), null).setAnimationStyle(R.style.Animation);
-            else
-                handlingOfVideoClickListner();
+            } else {
+                Log.d("URL_OF_VIEO_ZERO_", "instantiateItem: " + videoUrl);
+                if (videoUrl.equals("http://pixelserver-001-site61.ctempurl.com".trim()))
+                    new PhotoFullPopupWindow(context, R.layout.popup_photo_full, imageView, imageList.get(position), null).setAnimationStyle(R.style.Animation);
+                else
+                    handlingOfVideoClickListner();
+            }
 
 
         });

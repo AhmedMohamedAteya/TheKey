@@ -694,7 +694,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
             editoor.apply();
 
         } catch (NullPointerException e) {
-            editoor.putString(Constant.KEY_VIDEO_URL, "" + selectedRestaurant.getResturant().getVideo());
+            editoor.putString(Constant.KEY_VIDEO_URL, "");
             editoor.apply();
 
         }

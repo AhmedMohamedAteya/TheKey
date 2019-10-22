@@ -19,7 +19,11 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activites.SettingsActivity"></activity>
+        <activity android:name=".activites.beautyAndHealth.SelectedDepartmentActivity"></activity>
+        <activity android:name=".activites.beautyAndHealth.BeautyAndHealthActivty">
+
+        </activity>
+        <activity android:name=".activites.SettingsActivity" />
         <activity android:name=".activites.retaurant.SortByActivity" />
         <activity android:name=".activites.beforeHome.SplashActivity">
             <intent-filter>
@@ -28,6 +32,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".activites.beforeHome.VerficationActivity"
@@ -54,7 +59,7 @@
             android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity" />
         <activity
             android:name=".activites.retaurant.jobs.ApplicationJobActivity"
-            android:parentActivityName=".activites.retaurant.jobs.jobDetails.SelectedJobActivity" />
+            android:parentActivityName=".activites.retaurant.jobs.jobDetails.SelectedJobActivity"></activity>
         <activity
             android:name=".activites.retaurant.jobs.jobDetails.SelectedJobActivity"
             android:parentActivityName=".activites.retaurant.restaurants.RestaurantsActivity" />

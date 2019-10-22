@@ -98,6 +98,11 @@
     <string name="change_language">Change Language</string>
     <string name="choose_nearest_branch">Choose Nearest Branch</string>
     <string name="there_is_no_avaiable_menu">There is no avaiable menu</string>
+    <string name="hospital">Hospital</string>
+    <string name="doctor">Doctor</string>
+    <string name="pharmacy">Pharmacy</string>
+    <string name="beauty">Beauty</string>
+    <string name="write_here">What are you looking for ?</string>
 
 
 </resources>
