@@ -115,7 +115,7 @@
                         android:layout_gravity="center"
                         android:layout_weight="3"
                         android:gravity="center"
-                        android:text="@string/hospital"
+                        android:text="@string/rest"
                         android:textColor="@color/pdlg_color_white"
                         android:textSize="@dimen/_16ssp" />
 
