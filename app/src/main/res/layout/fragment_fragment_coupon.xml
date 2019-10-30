@@ -9,33 +9,32 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FAE9BF"
         android:scaleType="fitXY"
         android:src="@drawable/app_bg" />
 
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/_20sdp"
         android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="@dimen/_20sdp">
 
-            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+            <apps.pixel.al.egykey.utilities.CairoBoldTextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_120sdp"
                 android:gravity="center"
                 android:text="Discount"
                 android:textColor="@color/default_text_color"
-                android:textSize="@dimen/_62ssp"
+                android:textSize="@dimen/_32ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+            <apps.pixel.al.egykey.utilities.CairoBoldTextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_90sdp"
                 android:layout_marginTop="@dimen/_70sdp"
@@ -43,7 +42,7 @@
                 android:gravity="end"
                 android:text="COUPON"
                 android:textColor="@color/default_text_color"
-                android:textSize="@dimen/_52ssp"
+                android:textSize="@dimen/_24ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -61,66 +60,138 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_80sdp"
                     android:scaleType="fitXY"
                     android:src="@drawable/img_for_coupon" />
 
+                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                    android:id="@+id/txt_precentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_120sdp"
+                    android:gravity="top|center"
+                    android:text="10"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/_60sdp" />
+
                 <apps.pixel.al.egykey.utilities.CairoBoldTextView
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/_200sdp"
-                    android:layout_marginBottom="@dimen/_80sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_200sdp"
                     android:gravity="top|center"
                     android:text="%"
                     android:textColor="@color/default_text_color"
-                    android:textSize="@dimen/_100sdp" />
+                    android:textSize="@dimen/_50sdp" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+            <apps.pixel.al.egykey.utilities.CairoRegularTextView
                 android:id="@+id/text_one"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_280sdp"
+                android:layout_marginTop="@dimen/_210sdp"
                 android:gravity="center|start"
                 android:padding="@dimen/_10sdp"
                 android:text="@string/offer_coupon"
                 android:textColor="@color/default_text_color"
-                android:textSize="@dimen/_18ssp"
+                android:textSize="@dimen/_14ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+            <apps.pixel.al.egykey.utilities.CairoBoldTextView
                 android:id="@+id/text_two"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/_10sdp"
-                android:text="How to use thise coupon ?"
+                android:text="How to use this coupon ?"
                 android:textColor="@color/default_text_color"
-                android:textSize="@dimen/_20ssp"
+                android:textSize="@dimen/_14ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/text_one" />
 
-
-            <apps.pixel.al.egykey.utilities.CairoRegularTextView
-                android:id="@+id/text_three"
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_80sdp"
+                android:orientation="vertical"
                 android:padding="@dimen/_10sdp"
-                android:text="Visit our branche."
-                android:textColor="@color/default_text_color"
-                android:textSize="@dimen/_20ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_two" />
+                app:layout_constraintTop_toBottomOf="@+id/text_two">
 
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                        android:id="@+id/text_three"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="Visit our branche."
+                        android:textColor="@color/default_text_color"
+                        android:textSize="@dimen/_13ssp" />
+
+                    <!--<com.cooltechworks.views.ScratchTextView-->
+                    <!--android:id="@+id/promo_code"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_weight="2"-->
+                    <!--android:gravity="center|end"-->
+                    <!--android:text="GSGZT05D"-->
+                    <!--android:textColor="@color/default_text_color"-->
+                    <!--android:textSize="@dimen/_13ssp" />-->
+
+                    <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center|end"
+                        android:text="GSGZT05D"
+                        android:textColor="@color/default_text_color"
+                        android:textSize="@dimen/_13ssp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <!--<androidx.appcompat.widget.LinearLayoutCompat-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<apps.pixel.al.egykey.utilities.CairoRegularTextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="3" />-->
+
+                <!--<apps.pixel.al.egykey.utilities.CairoRegularTextView-->
+                <!--android:id="@+id/txt_scratch_to"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="2"-->
+                <!--android:gravity="center"-->
+                <!--android:text="@string/scratch_to_get_code"-->
+                <!--android:textColor="@color/default_text_color" />-->
+                <!--</androidx.appcompat.widget.LinearLayoutCompat>-->
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
+
+    <!--<com.anupkumarpanwar.scratchview.ScratchView-->
+        <!--android:id="@+id/scratch_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:tile_mode="CLAMP" />-->
+
+
 </RelativeLayout>

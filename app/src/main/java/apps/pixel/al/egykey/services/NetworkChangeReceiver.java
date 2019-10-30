@@ -21,7 +21,6 @@ import com.bumptech.glide.request.target.Target;
 
 import apps.pixel.al.egykey.R;
 import apps.pixel.al.egykey.activites.beforeHome.SignInActivity;
-import apps.pixel.al.egykey.activites.retaurant.restaurants.RestaurantsActivity;
 import apps.pixel.al.egykey.utilities.Validation;
 
 import static apps.pixel.al.egykey.activites.beforeHome.SplashActivity.gifImageView;

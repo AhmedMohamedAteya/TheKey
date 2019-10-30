@@ -8,20 +8,15 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 
-import com.blogspot.atifsoftwares.animatoolib.Animatoo;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import apps.pixel.al.egykey.R;
-import apps.pixel.al.egykey.activites.retaurant.restaurants.RestaurantsActivity;
-import apps.pixel.al.egykey.activites.retaurant.restaurants.RestaurantsPresenter;
 import apps.pixel.al.egykey.adapters.restaurant.RestaurantAdapter;
 import apps.pixel.al.egykey.utilities.CairoBoldEditText;
 import apps.pixel.al.egykey.utilities.Constant;

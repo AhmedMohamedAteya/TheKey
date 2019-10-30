@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activites.retaurant.restaurants.RestaurantsActivity">
+    tools:context=".activites.retaurant.restaurants.SelectedCateagoryActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -109,10 +109,22 @@
             android:layout_height="match_parent"
             android:layout_marginTop="?actionBarSize"
             android:paddingTop="@dimen/_5sdp"
-            android:paddingBottom="@dimen/_5sdp" />
+            android:paddingBottom="@dimen/_5sdp"
+            android:visibility="visible" />
 
         <!--</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
 
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <apps.pixel.al.egykey.utilities.CairoBoldTextView
+        android:id="@+id/txt_no_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/there_no_data"
+        android:textColor="@color/default_text_color"
+        android:textSize="@dimen/_16ssp"
+        android:visibility="gone" />
+
 </RelativeLayout>

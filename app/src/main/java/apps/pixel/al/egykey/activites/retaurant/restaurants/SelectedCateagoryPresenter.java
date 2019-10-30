@@ -2,6 +2,7 @@ package apps.pixel.al.egykey.activites.retaurant.restaurants;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -18,22 +19,24 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
 
-import static apps.pixel.al.egykey.activites.retaurant.restaurants.RestaurantsActivity.swipeContainer;
+import static apps.pixel.al.egykey.activites.retaurant.restaurants.SelectedCateagoryActivity.mRv;
+import static apps.pixel.al.egykey.activites.retaurant.restaurants.SelectedCateagoryActivity.mTxtNoDAta;
+import static apps.pixel.al.egykey.activites.retaurant.restaurants.SelectedCateagoryActivity.swipeContainer;
 
 
-public class RestaurantsPresenter {
+public class SelectedCateagoryPresenter {
     private final Context context;
     private final SharedPreferences sharedPreferences;
     private final CompositeSubscription mSubscriptions;
-    private final RestaurantInterface restaurantInterface;
+    private final SelectedCateagoryInterface selectedCateagoryInterface;
     private final FragmentManager fragmentManager;
     private final DialogLoader dialogLoaderOne;
 
 
-    public RestaurantsPresenter(Context context, RestaurantInterface restaurantInterface) {
+    public SelectedCateagoryPresenter(Context context, SelectedCateagoryInterface selectedCateagoryInterface) {
         this.context = context;
         mSubscriptions = new CompositeSubscription();
-        this.restaurantInterface = restaurantInterface;
+        this.selectedCateagoryInterface = selectedCateagoryInterface;
         fragmentManager = ((AppCompatActivity) context).getSupportFragmentManager();
         fragmentManager.executePendingTransactions();
         dialogLoaderOne = new DialogLoader();
@@ -71,16 +74,20 @@ public class RestaurantsPresenter {
     private void responseOfSearch(List<Restaurants> restaurants) {
         swipeContainer.setRefreshing(false);
 
-        restaurantInterface.getAllRestaurants(restaurants);
+        selectedCateagoryInterface.getAllRestaurants(restaurants);
     }
 
     private void handleResponse(List<Restaurants> restaurants) {
         swipeContainer.setRefreshing(false);
-
-        restaurantInterface.getAllRestaurants(restaurants);
+        mTxtNoDAta.setVisibility(View.GONE);
+        mRv.setVisibility(View.VISIBLE);
+        selectedCateagoryInterface.getAllRestaurants(restaurants);
     }
 
     private void handleError(Throwable throwable) {
+        mTxtNoDAta.setVisibility(View.VISIBLE);
+        mRv.setVisibility(View.GONE);
+
         swipeContainer.setRefreshing(false);
 
         Constant.handleError(context, throwable);

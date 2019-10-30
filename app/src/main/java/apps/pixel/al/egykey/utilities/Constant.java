@@ -71,6 +71,19 @@ public final class Constant {
     public static final String CURRENT_POSITION = "CURRENT_POSITION";
     public static final String IS_IMG = "IS_IMG";
     public static final String SLIDER_HAS_VIDEO = "HAS_VIDEO";
+
+    public static final String CAT_HOSPITAL = "CAT_HOSPITAL";
+    public static final String CAT_CLINIC = "CAT_CLINIC";
+    public static final String CAT_PHARMACY = "CAT_PHARMACY";
+    public static final String CAT_BEAUTY = "CAT_BEAUTY";
+    public static final String CAT_GYM = "CAT_GYM";
+
+    public static final String CAT_HOSPITAL_VALUE = "1";
+    public static final String CAT_CLINIC_VALUE = "2";
+    public static final String CAT_PHARMACY_VALUE = "3";
+    public static final String CAT_BEAUTY_VALUE = "4";
+    public static final String CAT_GYM_VALUE = "5";
+
     public static String FB_LINK;
     public static String INSTAGRAM_LINK;
     public static String TWITTER_LINK;

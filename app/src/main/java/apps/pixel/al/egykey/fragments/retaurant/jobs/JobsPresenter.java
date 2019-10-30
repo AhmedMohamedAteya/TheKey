@@ -2,6 +2,7 @@ package apps.pixel.al.egykey.fragments.retaurant.jobs;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -18,6 +19,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
 
+import static apps.pixel.al.egykey.fragments.retaurant.jobs.JobsFragment.mTxtNoData;
 import static apps.pixel.al.egykey.fragments.retaurant.jobs.JobsFragment.swipeContainer;
 
 class JobsPresenter {
@@ -54,14 +56,19 @@ class JobsPresenter {
 
     private void handleResponse(List<JobModel> jobModels) {
         swipeContainer.setRefreshing(false);
-
+        mTxtNoData.setVisibility(View.GONE);
         jobsInterface.getAllJobs(jobModels);
 
+        try {
+            jobModels.get(0).getID();
+        } catch (Exception ignored) {
+            mTxtNoData.setVisibility(View.VISIBLE);
+        }
     }
 
     private void handleError(Throwable throwable) {
         swipeContainer.setRefreshing(false);
-
+        mTxtNoData.setVisibility(View.VISIBLE);
         Constant.handleError(context, throwable);
     }
 

@@ -19,10 +19,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activites.beautyAndHealth.SelectedDepartmentActivity"></activity>
-        <activity android:name=".activites.beautyAndHealth.BeautyAndHealthActivty">
-
-        </activity>
+        <activity android:name=".activites.CateagoriesActivity"></activity>
+        <activity android:name=".activites.beautyAndHealth.SelectedDepartmentActivity" />
+        <activity android:name=".activites.beautyAndHealth.BeautyAndHealthActivty"></activity>
         <activity android:name=".activites.SettingsActivity" />
         <activity android:name=".activites.retaurant.SortByActivity" />
         <activity android:name=".activites.beforeHome.SplashActivity">
@@ -32,7 +31,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".activites.beforeHome.VerficationActivity"
@@ -59,10 +57,10 @@
             android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity" />
         <activity
             android:name=".activites.retaurant.jobs.ApplicationJobActivity"
-            android:parentActivityName=".activites.retaurant.jobs.jobDetails.SelectedJobActivity"></activity>
+            android:parentActivityName=".activites.retaurant.jobs.jobDetails.SelectedJobActivity" />
         <activity
             android:name=".activites.retaurant.jobs.jobDetails.SelectedJobActivity"
-            android:parentActivityName=".activites.retaurant.restaurants.RestaurantsActivity" />
+            android:parentActivityName=".activites.retaurant.restaurants.SelectedCateagoryActivity" />
         <activity
             android:name=".activites.retaurant.videoActivity.VideoRestuarantActivity"
             android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity"
@@ -70,9 +68,9 @@
             android:windowSoftInputMode="stateHidden|adjustResize" /> <!-- android:configChanges="orientation|screenSize|layoutDirection" -->
         <activity
             android:name=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity"
-            android:parentActivityName=".activites.retaurant.restaurants.RestaurantsActivity" />
+            android:parentActivityName=".activites.retaurant.restaurants.SelectedCateagoryActivity" />
         <activity
-            android:name=".activites.retaurant.restaurants.RestaurantsActivity"
+            android:name=".activites.retaurant.restaurants.SelectedCateagoryActivity"
             android:screenOrientation="portrait" />
     </application>
 

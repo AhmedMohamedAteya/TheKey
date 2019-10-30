@@ -103,6 +103,10 @@
     <string name="pharmacy">Pharmacy</string>
     <string name="beauty">Beauty</string>
     <string name="write_here">What are you looking for ?</string>
+    <string name="there_no_data">There\'s no data to show</string>
+    <string name="scratch_to_get_code">Scratch to get code</string>
+    <string name="donee">Done !</string>
+    <string name="clinic">Clinic</string>
 
 
 </resources>

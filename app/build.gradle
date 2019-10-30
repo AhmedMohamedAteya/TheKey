@@ -145,5 +145,9 @@ dependencies {
     //swipe refresh layout
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
 
+    //scratch_view
+    implementation 'com.github.AnupKumarPanwar:ScratchView:1.2'
+//    implementation 'com.github.cooltechworks:ScratchView:v1.1'
+
 
 }

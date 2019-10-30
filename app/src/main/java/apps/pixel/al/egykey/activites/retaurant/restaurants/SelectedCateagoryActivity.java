@@ -25,14 +25,16 @@ import apps.pixel.al.egykey.activites.retaurant.selectedRestaurant.SelectedResta
 import apps.pixel.al.egykey.adapters.restaurant.RestaurantAdapter;
 import apps.pixel.al.egykey.models.retaurants.Restaurants;
 import apps.pixel.al.egykey.utilities.CairoBoldEditText;
+import apps.pixel.al.egykey.utilities.CairoBoldTextView;
 import apps.pixel.al.egykey.utilities.Constant;
 
 import static apps.pixel.al.egykey.utilities.Constant.setSwipeLayourColor;
 
-public class RestaurantsActivity extends AppCompatActivity implements RestaurantAdapter.OnClickHandler, RestaurantInterface {
+public class SelectedCateagoryActivity extends AppCompatActivity implements RestaurantAdapter.OnClickHandler, SelectedCateagoryInterface {
 
     public static SwipeRefreshLayout swipeContainer;
-    private RecyclerView mRv;
+    public static RecyclerView mRv;
+    public static CairoBoldTextView mTxtNoDAta;
     private List<String> arabicNames;
     private List<String> idList;
     private List<String> englishNames;
@@ -40,8 +42,7 @@ public class RestaurantsActivity extends AppCompatActivity implements Restaurant
     private List<String> sinceList;
     private List<String> bgUrls;
     private RestaurantAdapter adapter;
-    private RestaurantsPresenter presenter;
-
+    private SelectedCateagoryPresenter presenter;
     private AppCompatImageView mImgSearch;
     private CairoBoldEditText mEditTextSearch;
 
@@ -53,13 +54,13 @@ public class RestaurantsActivity extends AppCompatActivity implements Restaurant
         initViews();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        presenter.getAllRestaurants();
-
-    }
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//
+//        presenter.getAllRestaurants();
+//
+//    }
 
     @Override
     public void onBackPressed() {
@@ -77,9 +78,13 @@ public class RestaurantsActivity extends AppCompatActivity implements Restaurant
 
     @SuppressLint("ClickableViewAccessibility")
     private void initViews() {
+        mTxtNoDAta = findViewById(R.id.txt_no_data);
+        mTxtNoDAta.setVisibility(View.GONE);
+
+
         swipeContainer = findViewById(R.id.swipeContainer);
         swipeContainer.setOnTouchListener((v, event) -> {
-            Constant.hideKeyboardFrom(RestaurantsActivity.this, v);
+            Constant.hideKeyboardFrom(SelectedCateagoryActivity.this, v);
             return true;
         });
 
@@ -110,7 +115,7 @@ public class RestaurantsActivity extends AppCompatActivity implements Restaurant
             }
             return false;
         });
-        presenter = new RestaurantsPresenter(this, this);
+        presenter = new SelectedCateagoryPresenter(this, this);
         presenter.getAllRestaurants();
 
         swipeContainer.setOnRefreshListener(() -> presenter.getAllRestaurants());

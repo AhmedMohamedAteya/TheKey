@@ -4,6 +4,6 @@ import java.util.List;
 
 import apps.pixel.al.egykey.models.retaurants.Restaurants;
 
-public interface RestaurantInterface {
+public interface SelectedCateagoryInterface {
     void getAllRestaurants(List<Restaurants> restaurants);
 }

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activites.CateagoriesActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/bg_toolbar"
+        android:elevation="@dimen/_6sdp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:gravity="center">
+
+
+            <Space
+                android:id="@+id/arrow_back_page_two"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="0dp"
+                android:padding="@dimen/_8sdp" />
+            <!--android:src="@drawable/ic_back"-->
+
+            <!--<apps.pixel.al.egykey.utilities.CairoBoldEditText-->
+            <!--android:id="@+id/searchEditText"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="@dimen/_5sdp"-->
+            <!--android:layout_marginEnd="@dimen/_5sdp"-->
+            <!--android:layout_toStartOf="@+id/ic_search"-->
+            <!--android:layout_toEndOf="@id/arrow_back_page_two"-->
+            <!--android:backgroundTint="@color/pdlg_color_white"-->
+            <!--android:cursorVisible="true"-->
+            <!--android:ems="10"-->
+            <!--android:gravity="start|center"-->
+            <!--android:hint="@string/write_here"-->
+            <!--android:imeOptions="actionDone"-->
+            <!--android:inputType="text"-->
+            <!--android:lines="1"-->
+            <!--android:maxLength="30"-->
+            <!--android:textColor="@android:color/white"-->
+            <!--android:textSize="@dimen/_12ssp"-->
+            <!--android:visibility="visible">-->
+
+            <!--<requestFocus />-->
+            <!--</apps.pixel.al.egykey.utilities.CairoBoldEditText>-->
+
+            <Space
+                android:id="@+id/ic_search"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_toStartOf="@+id/code"
+                android:padding="@dimen/_5sdp" />
+            <!--android:src="@drawable/ic_magnifier"-->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/code"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_code" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?actionBarSize"
+        android:fillViewport="true">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <FrameLayout
+                android:id="@+id/cat_hospital"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/hospital_bg">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:text="@string/hospital"
+                        android:textColor="@color/pdlg_color_white"
+                        android:textSize="@dimen/_16ssp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_arrow_right" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/cat_clinic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/clinic_bg">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:text="@string/clinic"
+                        android:textColor="@color/pdlg_color_white"
+                        android:textSize="@dimen/_16ssp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_arrow_right" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/cat_pharmacy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/pharmacy_bg">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:text="@string/pharmacy"
+                        android:textColor="@color/pdlg_color_white"
+                        android:textSize="@dimen/_16ssp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_arrow_right" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/cat_beauty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/beauty_bg">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:text="@string/beauty"
+                        android:textColor="@color/pdlg_color_white"
+                        android:textSize="@dimen/_16ssp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_arrow_right" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/cat_gym"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/hospital_bg">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:text="@string/gym"
+                        android:textColor="@color/pdlg_color_white"
+                        android:textSize="@dimen/_16ssp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_arrow_right" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </FrameLayout>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+</RelativeLayout>

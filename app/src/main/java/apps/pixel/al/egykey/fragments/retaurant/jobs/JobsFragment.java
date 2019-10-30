@@ -25,6 +25,7 @@ import apps.pixel.al.egykey.R;
 import apps.pixel.al.egykey.activites.retaurant.jobs.jobDetails.SelectedJobActivity;
 import apps.pixel.al.egykey.adapters.restaurant.JobsAdapter;
 import apps.pixel.al.egykey.models.job.JobModel;
+import apps.pixel.al.egykey.utilities.CairoBoldTextView;
 import apps.pixel.al.egykey.utilities.Constant;
 
 import static apps.pixel.al.egykey.utilities.Constant.setSwipeLayourColor;
@@ -33,6 +34,8 @@ import static apps.pixel.al.egykey.utilities.Constant.setSwipeLayourColor;
 public class JobsFragment extends Fragment implements JobsAdapter.OnClickHandler, JobsInterface {
 
     private SharedPreferences sharedPreferences;
+
+    public static CairoBoldTextView mTxtNoData ;
 
     private RecyclerView mRV;
     private List<String> listDescs;
@@ -60,6 +63,7 @@ public class JobsFragment extends Fragment implements JobsAdapter.OnClickHandler
 
     private void initViews(View rootView) {
         swipeContainer = rootView.findViewById(R.id.swipeContainer);
+        mTxtNoData = rootView.findViewById(R.id.txt_no_data);
 
         sharedPreferences = getContext().getSharedPreferences(Constant.SHARED_PREFERENCE, Context.MODE_PRIVATE);
         selectedId = sharedPreferences.getString(Constant.RESTAURANT_SELECTED_ID, "");
