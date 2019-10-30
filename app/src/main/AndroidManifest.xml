@@ -47,14 +47,13 @@
             android:name=".activites.beforeHome.SignInActivity"
             android:theme="@style/BeforeHome" />
         <activity android:name=".activites.retaurant.galleryActivity.GalleryActivity" /> <!-- android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity" -->
-        <activity android:name=".activites.retaurant.selectedRestaurant.SelectedRestaurantKotlinActivity" />
         <activity
             android:name=".activites.retaurant.ShareWebViewActivity"
-            android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity"
+            android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedItemKotlinActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activites.retaurant.OpenPdfActivity"
-            android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity" />
+            android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedItemKotlinActivity" />
         <activity
             android:name=".activites.retaurant.jobs.ApplicationJobActivity"
             android:parentActivityName=".activites.retaurant.jobs.jobDetails.SelectedJobActivity" />
@@ -63,11 +62,11 @@
             android:parentActivityName=".activites.retaurant.restaurants.SelectedCateagoryActivity" />
         <activity
             android:name=".activites.retaurant.videoActivity.VideoRestuarantActivity"
-            android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity"
+            android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedItemKotlinActivity"
             android:screenOrientation="behind"
             android:windowSoftInputMode="stateHidden|adjustResize" /> <!-- android:configChanges="orientation|screenSize|layoutDirection" -->
         <activity
-            android:name=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity"
+            android:name=".activites.retaurant.selectedRestaurant.SelectedItemKotlinActivity"
             android:parentActivityName=".activites.retaurant.restaurants.SelectedCateagoryActivity" />
         <activity
             android:name=".activites.retaurant.restaurants.SelectedCateagoryActivity"

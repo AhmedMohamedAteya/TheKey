@@ -11,7 +11,7 @@ import java.util.List;
 
 import apps.pixel.al.egykey.R;
 import apps.pixel.al.egykey.dialog.DialogLoader;
-import apps.pixel.al.egykey.models.retaurants.Restaurants;
+import apps.pixel.al.egykey.models.retaurants.SelectedCat;
 import apps.pixel.al.egykey.network.NetworkUtil;
 import apps.pixel.al.egykey.utilities.Constant;
 import apps.pixel.al.egykey.utilities.Validation;
@@ -71,13 +71,13 @@ public class SelectedCateagoryPresenter {
     }
 
 
-    private void responseOfSearch(List<Restaurants> restaurants) {
+    private void responseOfSearch(List<SelectedCat> restaurants) {
         swipeContainer.setRefreshing(false);
 
         selectedCateagoryInterface.getAllRestaurants(restaurants);
     }
 
-    private void handleResponse(List<Restaurants> restaurants) {
+    private void handleResponse(List<SelectedCat> restaurants) {
         swipeContainer.setRefreshing(false);
         mTxtNoDAta.setVisibility(View.GONE);
         mRv.setVisibility(View.VISIBLE);
@@ -91,6 +91,21 @@ public class SelectedCateagoryPresenter {
         swipeContainer.setRefreshing(false);
 
         Constant.handleError(context, throwable);
+    }
+
+
+    //Beauty
+    public void getAllBeautyData() {
+        if (Validation.isConnected(context)) {
+            swipeContainer.setRefreshing(true);
+            mSubscriptions.add(NetworkUtil.getRetrofitNoHeader()
+                    .getAllBeautyCenterData()
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .subscribe(this::handleResponse, this::handleError));
+        } else {
+            Constant.showErrorDialog(context, context.getString(R.string.pls_check_connection));
+        }
     }
 
 }

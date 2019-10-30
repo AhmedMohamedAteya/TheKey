@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
@@ -21,9 +22,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import apps.pixel.al.egykey.R;
-import apps.pixel.al.egykey.activites.retaurant.selectedRestaurant.SelectedRestaurantKotlinActivity;
+import apps.pixel.al.egykey.activites.retaurant.selectedRestaurant.SelectedItemKotlinActivity;
 import apps.pixel.al.egykey.adapters.restaurant.RestaurantAdapter;
-import apps.pixel.al.egykey.models.retaurants.Restaurants;
+import apps.pixel.al.egykey.models.retaurants.SelectedCat;
 import apps.pixel.al.egykey.utilities.CairoBoldEditText;
 import apps.pixel.al.egykey.utilities.CairoBoldTextView;
 import apps.pixel.al.egykey.utilities.Constant;
@@ -116,7 +117,15 @@ public class SelectedCateagoryActivity extends AppCompatActivity implements Rest
             return false;
         });
         presenter = new SelectedCateagoryPresenter(this, this);
-        presenter.getAllRestaurants();
+        if (getIntent().hasExtra(Constant.CAT_THAT_SELECTED)) {
+            if (getIntent().getStringExtra(Constant.CAT_THAT_SELECTED).equals(Constant.CAT_HOSPITAL_VALUE)) {
+                presenter.getAllRestaurants();
+            } else if (getIntent().getStringExtra(Constant.CAT_THAT_SELECTED).equals(Constant.CAT_BEAUTY_VALUE)) {
+                Toast.makeText(this, "IT's BEAUTY", Toast.LENGTH_SHORT).show();
+                presenter.getAllBeautyData();
+            }
+        }
+
 
         swipeContainer.setOnRefreshListener(() -> presenter.getAllRestaurants());
 
@@ -146,7 +155,7 @@ public class SelectedCateagoryActivity extends AppCompatActivity implements Rest
 
 
     @Override
-    public void getAllRestaurants(List<Restaurants> restaurants) {
+    public void getAllRestaurants(List<SelectedCat> restaurants) {
 
         try {
             adapter.clear();
@@ -170,8 +179,9 @@ public class SelectedCateagoryActivity extends AppCompatActivity implements Rest
     public void onClick(String id) {
         hideSoftKeyboardAfterSearch();
 
-        Intent intent = new Intent(this, SelectedRestaurantKotlinActivity.class);
-        intent.putExtra(Constant.RESTAURANT_SELECTED_ID, id);
+        Intent intent = new Intent(this, SelectedItemKotlinActivity.class);
+        intent.putExtra(Constant.ITEM_SELECTED_ID, id);
+        intent.putExtra(Constant.CAT_THAT_SELECTED, getIntent().getStringExtra(Constant.CAT_THAT_SELECTED));
         Log.d("ID_RESTAURANT", "onCreateView: " + id);
 
         startActivity(intent);

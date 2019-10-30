@@ -6,7 +6,7 @@ import java.util.List;
 import apps.pixel.al.egykey.models.ResponseHomeOthers;
 import apps.pixel.al.egykey.models.job.JobModel;
 import apps.pixel.al.egykey.models.jobDetails.JobDetailsModel;
-import apps.pixel.al.egykey.models.retaurants.Restaurants;
+import apps.pixel.al.egykey.models.retaurants.SelectedCat;
 import apps.pixel.al.egykey.models.selectedRestaurant.SelectedRestaurant;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -16,7 +16,7 @@ import rx.Observable;
 public interface RetrofitInterface {
 
     @GET("api/Resturant")
-    Observable<List<Restaurants>> getAllRestaurants();
+    Observable<List<SelectedCat>> getAllRestaurants();
 
     @GET("api/ResturantDetails/{id}")
     Observable<SelectedRestaurant> getSelectedRestaurant(@Path("id") String id);
@@ -40,6 +40,14 @@ public interface RetrofitInterface {
     Observable<JobDetailsModel> getJobDetails(@Path("id") String id);
 
     @GET("api/RestaurantSearch")
-    Observable<List<Restaurants>> searchOnRestaurant(@Query("Search") String name);
+    Observable<List<SelectedCat>> searchOnRestaurant(@Query("Search") String name);
 
+    //Beauty
+    //BeautyCenter
+    @GET("api/BeautyCenter")
+    Observable<List<SelectedCat>> getAllBeautyCenterData();
+
+
+    @GET("api/BeautyDetails/{id}")
+    Observable<SelectedRestaurant> getAllBeautyData(@Path("id") String id);
 }

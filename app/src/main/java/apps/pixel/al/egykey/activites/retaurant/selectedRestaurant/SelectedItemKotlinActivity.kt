@@ -14,9 +14,10 @@ import com.etebarian.meowbottomnavigation.MeowBottomNavigation
 import kotlinx.android.synthetic.main.selected_restaurant_kotlin.*
 
 
-class SelectedRestaurantKotlinActivity : AppCompatActivity() {
+class SelectedItemKotlinActivity : AppCompatActivity() {
 
     private var selectedResId: String? = null
+    private var selectedCat: String? = null
     private var mImgBack: AppCompatImageView? = null
     private var mImgForCoupon: AppCompatImageView? = null
 
@@ -34,7 +35,8 @@ class SelectedRestaurantKotlinActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.selected_restaurant_kotlin)
 
-        selectedResId = intent.getStringExtra(Constant.RESTAURANT_SELECTED_ID)
+        selectedResId = intent.getStringExtra(Constant.ITEM_SELECTED_ID)
+        selectedCat = intent.getStringExtra(Constant.CAT_THAT_SELECTED)
 
         mImgForCoupon = findViewById(R.id.img_for_coupon_only)
         mImgForCoupon?.setVisibility(View.GONE)
@@ -85,7 +87,9 @@ class SelectedRestaurantKotlinActivity : AppCompatActivity() {
         mImgForCoupon?.setVisibility(View.GONE)
         val homeRestFragment = HomeRestFragment()
         val bundle = Bundle()
-        bundle.putString(Constant.RESTAURANT_SELECTED_ID, selectedResId)
+        bundle.putString(Constant.ITEM_SELECTED_ID, selectedResId)
+        bundle.putString(Constant.CAT_THAT_SELECTED, selectedCat)
+
         homeRestFragment.arguments = bundle
 
         supportFragmentManager.beginTransaction().replace(R.id.fragment_container, homeRestFragment).addToBackStack(null)

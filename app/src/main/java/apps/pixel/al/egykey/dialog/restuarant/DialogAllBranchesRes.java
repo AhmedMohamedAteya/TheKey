@@ -63,7 +63,7 @@ public class DialogAllBranchesRes extends DialogFragment implements AllBranchesA
         }
 
         sharedPreferences = getContext().getSharedPreferences(Constant.SHARED_PREFERENCE, Context.MODE_PRIVATE);
-        selectedId = sharedPreferences.getString(Constant.RESTAURANT_SELECTED_ID, "");
+        selectedId = sharedPreferences.getString(Constant.ITEM_SELECTED_ID, "");
 
         presenter = new HomePresenter(getContext(), this);
         presenter.getSelectedRestaurant(selectedId);

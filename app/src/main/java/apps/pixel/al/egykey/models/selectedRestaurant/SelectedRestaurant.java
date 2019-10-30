@@ -12,7 +12,17 @@ public class SelectedRestaurant {
 
     private Amenities Amenities;
 
+    private Beauty Beauty ;
+
     private About About;
+
+    public Beauty getBeauty() {
+        return Beauty;
+    }
+
+    public void setBeauty(Beauty beauty) {
+        this.Beauty = beauty;
+    }
 
     public List<News> getNews() {
         return news;

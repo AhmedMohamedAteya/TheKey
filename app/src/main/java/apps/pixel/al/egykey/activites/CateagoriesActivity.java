@@ -56,23 +56,23 @@ public class CateagoriesActivity extends AppCompatActivity implements View.OnCli
         Intent intent = new Intent(this, SelectedCateagoryActivity.class);
         switch (v.getId()) {
             case R.id.cat_hospital:
-                intent.putExtra(Constant.CAT_HOSPITAL, Constant.CAT_HOSPITAL_VALUE);
+                intent.putExtra(Constant.CAT_THAT_SELECTED, Constant.CAT_HOSPITAL_VALUE);
                 startActivity(intent);
                 break;
             case R.id.cat_clinic:
-                intent.putExtra(Constant.CAT_CLINIC, Constant.CAT_CLINIC_VALUE);
+                intent.putExtra(Constant.CAT_THAT_SELECTED, Constant.CAT_CLINIC_VALUE);
                 startActivity(intent);
                 break;
             case R.id.cat_pharmacy:
-                intent.putExtra(Constant.CAT_PHARMACY, Constant.CAT_PHARMACY_VALUE);
+                intent.putExtra(Constant.CAT_THAT_SELECTED, Constant.CAT_PHARMACY_VALUE);
                 startActivity(intent);
                 break;
             case R.id.cat_beauty:
-                intent.putExtra(Constant.CAT_BEAUTY, Constant.CAT_BEAUTY_VALUE);
+                intent.putExtra(Constant.CAT_THAT_SELECTED, Constant.CAT_BEAUTY_VALUE);
                 startActivity(intent);
                 break;
             case R.id.cat_gym:
-                intent.putExtra(Constant.CAT_GYM, Constant.CAT_GYM_VALUE);
+                intent.putExtra(Constant.CAT_THAT_SELECTED, Constant.CAT_GYM_VALUE);
                 startActivity(intent);
                 break;
         }

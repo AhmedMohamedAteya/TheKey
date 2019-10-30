@@ -135,7 +135,7 @@ public class SelectedDepartmentActivity extends AppCompatActivity {
     }
 
 //    @Override
-//    public void getAllRestaurants(List<Restaurants> restaurants) {
+//    public void getAllRestaurants(List<SelectedCat> restaurants) {
 //
 //        try {
 //            adapter.clear();
@@ -161,7 +161,7 @@ public class SelectedDepartmentActivity extends AppCompatActivity {
 //    public void onClick(String id) {
 //        hideSoftKeyboardAfterSearch();
 //
-//     //   Intent intent = new Intent(this, SelectedRestaurantKotlinActivity.class);
+//     //   Intent intent = new Intent(this, SelectedItemKotlinActivity.class);
 //    //    intent.putExtra(Constant., id);
 //
 //        startActivity(intent);

@@ -46,6 +46,8 @@ import apps.pixel.al.egykey.utilities.CairoRegularTextView;
 import apps.pixel.al.egykey.utilities.Constant;
 import apps.pixel.al.egykey.utilities.ViewPagerCustomDuration;
 
+import static apps.pixel.al.egykey.utilities.Constant.CAT_BEAUTY_VALUE;
+import static apps.pixel.al.egykey.utilities.Constant.CAT_HOSPITAL_VALUE;
 import static apps.pixel.al.egykey.utilities.Constant.collapse;
 import static apps.pixel.al.egykey.utilities.Constant.expand;
 
@@ -121,6 +123,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
     private String newImg;
     private boolean haveNumbers;
 
+    private String selectedCat;
 
     private Handler handler;
     private int delay = 3000; //milliseconds
@@ -144,10 +147,13 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
         View rootView = inflater.inflate(R.layout.fragment_home_rest, container, false);
         sharedPreferences = getContext().getSharedPreferences(Constant.SHARED_PREFERENCE, Context.MODE_PRIVATE);
 
-        selectedRestaurantId = getArguments().getString(Constant.RESTAURANT_SELECTED_ID);
+        selectedRestaurantId = getArguments().getString(Constant.ITEM_SELECTED_ID);
+        selectedCat = getArguments().getString(Constant.CAT_THAT_SELECTED);
+
+
         Log.d("ID_RESTAURANT", "onCreateView: " + selectedRestaurantId);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(Constant.RESTAURANT_SELECTED_ID, selectedRestaurantId);
+        editor.putString(Constant.ITEM_SELECTED_ID, selectedRestaurantId);
         editor.apply();
 
         handler = new Handler();
@@ -157,7 +163,11 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
 
         presenter = new HomePresenter(getContext(), this);
 
-        presenter.getSelectedRestaurant(selectedRestaurantId);
+        if (selectedCat.equals(Constant.CAT_HOSPITAL_VALUE)) {
+            presenter.getSelectedRestaurant(selectedRestaurantId);
+        } else if (selectedCat.equals(Constant.CAT_BEAUTY_VALUE)) {
+            presenter.getSelectedBeautyCenter(selectedRestaurantId);
+        }
 
         return rootView;
     }
@@ -367,6 +377,9 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
         listNumbersDAta.clear();
         mRefreshLayout.setRefreshing(false);
         Log.d("SIZE_OF_NUMBERS", "getSelectedRestaurantData: " + listNumbersDAta.size());
+
+        handlingOfMenu(selectedRestaurant);
+
         handlingOfNumbers(selectedRestaurant);
 
         handlingOfNews(selectedRestaurant);
@@ -382,7 +395,6 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
         //imageViewPagerList.clear();
         handlingOfSlider(selectedRestaurant, editoor);
 
-        handlingOfMenu(selectedRestaurant);
 
         loadRecyclerData();
 
@@ -474,39 +486,41 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
     }
 
     private void handlingOfAbout(SelectedRestaurant selectedRestaurant) {
-        address.setText(selectedRestaurant.getAbout().getAddress().trim());
+        if (selectedCat.equals(Constant.CAT_HOSPITAL_VALUE)) {
 
-        try {
-            if (selectedRestaurant.getAbout().getOpenAllDay().equals("true".trim()))
+            address.setText(selectedRestaurant.getAbout().getAddress().trim());
+
+            try {
+                if (selectedRestaurant.getAbout().getOpenAllDay().equals("true".trim()))
+                    time.setText(getString(R.string.all_day));
+                else if (selectedRestaurant.getAbout().getOpenAllDay().equals("false".trim()))
+                    time.setText(selectedRestaurant.getAbout().getStartTime() + " : " + selectedRestaurant.getAbout().getEndTime());
+            } catch (NullPointerException e) {
                 time.setText(getString(R.string.all_day));
-            else if (selectedRestaurant.getAbout().getOpenAllDay().equals("false".trim()))
-                time.setText(selectedRestaurant.getAbout().getStartTime() + " : " + selectedRestaurant.getAbout().getEndTime());
-        } catch (NullPointerException e) {
-            time.setText(getString(R.string.all_day));
-        }
-
-        try {
-            if (Constant.getLng(getContext()).equals("ar")) {
-                mTxtType.setText(selectedRestaurant.getAbout().getRestaurantType_NameAR());
-            } else {
-                mTxtType.setText(selectedRestaurant.getAbout().getRestaurantType_Name());
             }
-        } catch (NullPointerException ignored) {
 
-        }
+            try {
+                if (Constant.getLng(getContext()).equals("ar")) {
+                    mTxtType.setText(selectedRestaurant.getAbout().getRestaurantType_NameAR());
+                } else {
+                    mTxtType.setText(selectedRestaurant.getAbout().getRestaurantType_Name());
+                }
+            } catch (NullPointerException ignored) {
+
+            }
 
 
-        try {
-            if (selectedRestaurant.getAbout().getWebsite().equals("null".trim())) {
+            try {
+                if (selectedRestaurant.getAbout().getWebsite().equals("null".trim())) {
+                    website.setText(getString(R.string.not_available));
+                } else {
+                    website.setText(selectedRestaurant.getAbout().getWebsite());
+                    // }
+                }
+            } catch (NullPointerException e) {
                 website.setText(getString(R.string.not_available));
-            } else {
-                website.setText(selectedRestaurant.getAbout().getWebsite());
-                // }
             }
-        } catch (NullPointerException e) {
-            website.setText(getString(R.string.not_available));
-        }
-        desc.setText(selectedRestaurant.getAbout().getDescription());
+            desc.setText(selectedRestaurant.getAbout().getDescription());
 
 //
 //        try {
@@ -516,10 +530,100 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
 //        }
 
 
-        favourites.setText(selectedRestaurant.getResturant().getFavourits());
-        shareTxt.setText(selectedRestaurant.getResturant().getShare());
-        views.setText(selectedRestaurant.getResturant().getViews());
-        phone.setText(selectedRestaurant.getResturant().getCalls());
+            try {
+                favourites.setText(selectedRestaurant.getResturant().getFavourits());
+            } catch (Exception inogred) {
+
+            }
+
+            try {
+                shareTxt.setText(selectedRestaurant.getResturant().getShare());
+            } catch (Exception inogred) {
+
+            }
+
+            try {
+                views.setText(selectedRestaurant.getResturant().getViews());
+            } catch (Exception inogred) {
+
+            }
+
+            try {
+                phone.setText(selectedRestaurant.getResturant().getCalls());
+            } catch (Exception inogred) {
+
+            }
+
+
+        } else if (selectedCat.equals(CAT_BEAUTY_VALUE)) {
+            address.setText(selectedRestaurant.getAbout().getAddress().trim());
+
+            try {
+                if (selectedRestaurant.getAbout().getOpenAllDay().equals("true".trim()))
+                    time.setText(getString(R.string.all_day));
+                else if (selectedRestaurant.getAbout().getOpenAllDay().equals("false".trim()))
+                    time.setText(selectedRestaurant.getAbout().getStartTime() + " : " + selectedRestaurant.getAbout().getEndTime());
+            } catch (NullPointerException e) {
+                time.setText(getString(R.string.all_day));
+            }
+
+            try {
+                if (Constant.getLng(getContext()).equals("ar")) {
+                    mTxtType.setText(selectedRestaurant.getAbout().getRestaurantType_NameAR());
+                } else {
+                    mTxtType.setText(selectedRestaurant.getAbout().getRestaurantType_Name());
+                }
+            } catch (NullPointerException ignored) {
+
+            }
+
+
+            try {
+                if (selectedRestaurant.getAbout().getWebsite().equals("null".trim())) {
+                    website.setText(getString(R.string.not_available));
+                } else {
+                    website.setText(selectedRestaurant.getAbout().getWebsite());
+                    // }
+                }
+            } catch (NullPointerException e) {
+                website.setText(getString(R.string.not_available));
+            }
+            desc.setText(selectedRestaurant.getAbout().getDescription());
+
+//
+//        try {
+//            hotLine.setText(selectedRestaurant.getAbout().getHotLine());
+//        } catch (NullPointerException ignored) {
+//            hotLine.setText(getString(R.string.not_available));
+//        }
+
+
+            try {
+                favourites.setText(selectedRestaurant.getBeauty().getFavourits());
+            } catch (Exception ignored) {
+
+            }
+            try {
+                shareTxt.setText(selectedRestaurant.getBeauty().getShare());
+            } catch (Exception ignored) {
+
+            }
+
+            try {
+                views.setText(selectedRestaurant.getBeauty().getViews());
+            } catch (Exception ignored) {
+
+            }
+
+            try {
+                phone.setText(selectedRestaurant.getBeauty().getCalls());
+            } catch (Exception ignored) {
+
+            }
+
+        }
+
+
     }
 
     private void handlingOfNumbers(SelectedRestaurant selectedRestaurant) {
@@ -674,38 +778,105 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
     }
 
     private void handlingOfSlider(SelectedRestaurant selectedRestaurant, SharedPreferences.Editor editoor) {
-        imageViewPagerList = new ArrayList<>();
-        if (!selectedRestaurant.getResturant().getVideo().equals("")) {
-            imageViewPagerList.add("http://pixelserver-001-site61.ctempurl.com".trim());
-            editoor.putString(Constant.SLIDER_HAS_VIDEO, "true".trim());
+        if (selectedCat.equals(CAT_HOSPITAL_VALUE)) {
+            imageViewPagerList = new ArrayList<>();
+            try {
+
+                if (!selectedRestaurant.getResturant().getVideo().equals("")) {
+                    imageViewPagerList.add("http://pixelserver-001-site61.ctempurl.com".trim());
+                    editoor.putString(Constant.SLIDER_HAS_VIDEO, "true".trim());
+                    editoor.apply();
+                } else {
+                    editoor.putString(Constant.SLIDER_HAS_VIDEO, "false".trim());
+                    editoor.apply();
+                }
+
+            } catch (Exception ignored) {
+                editoor.putString(Constant.SLIDER_HAS_VIDEO, "false".trim());
+                editoor.apply();
+            }
+            try {
+                Log.d("handlingOfSlider", "handlingOfSlider: " + selectedRestaurant.getResturant().getVideo().equals(""));
+                for (int i = 0; i < selectedRestaurant.getResturant().getImages().size(); i++) {
+                    imageViewPagerList.add("http://pixelserver-001-site61.ctempurl.com".trim() + selectedRestaurant.getResturant().getImages().get(i).getImage());
+
+                }
+            } catch (Exception ignored) {
+//            imageViewPagerList.add("http://pixelserver-001-site61.ctempurl.com".trim() + selectedRestaurant.getResturant().getImages().get(i).getImage());
+                for (int i = 0; i < selectedRestaurant.getResturant().getImages().size(); i++) {
+                    imageViewPagerList.add("http://pixelserver-001-site61.ctempurl.com".trim()
+                            + selectedRestaurant.getResturant().getImages().get(i).getImage());
+                }
+            }
+
+
+            try {
+                editoor.putString(Constant.KEY_VIDEO_URL, "http://pixelserver-001-site61.ctempurl.com".trim() + selectedRestaurant.getResturant().getVideo());
+                editoor.apply();
+
+            } catch (NullPointerException e) {
+                editoor.putString(Constant.KEY_VIDEO_URL, "");
+                editoor.apply();
+            }
+
+
+            sliderAdapter = new HomeSliderRestaAdapter(getContext(), imageViewPagerList);
+            viewPager.setAdapter(sliderAdapter);
+            indicator.setupWithViewPager(viewPager, true);
+
+            Log.d("VIDEO_URL", "getSelectedRestaurantData: " + "http://pixelserver-001-site61.ctempurl.com".trim() + selectedRestaurant.getResturant().getVideo());
             editoor.apply();
-        } else {
-            editoor.putString(Constant.SLIDER_HAS_VIDEO, "false".trim());
+        }else if (selectedCat.equals(CAT_BEAUTY_VALUE)){
+            imageViewPagerList = new ArrayList<>();
+            try {
+
+                if (!selectedRestaurant.getBeauty().getVideo().equals("")) {
+                    imageViewPagerList.add("http://pixelserver-001-site61.ctempurl.com".trim());
+                    editoor.putString(Constant.SLIDER_HAS_VIDEO, "true".trim());
+                    editoor.apply();
+                } else {
+                    editoor.putString(Constant.SLIDER_HAS_VIDEO, "false".trim());
+                    editoor.apply();
+                }
+
+            } catch (Exception ignored) {
+                editoor.putString(Constant.SLIDER_HAS_VIDEO, "false".trim());
+                editoor.apply();
+            }
+            try {
+                for (int i = 0; i < selectedRestaurant.getBeauty().getImages().size(); i++) {
+                    imageViewPagerList.add("http://pixelserver-001-site61.ctempurl.com".trim() + selectedRestaurant.getBeauty().getImages().get(i).getImage());
+
+                }
+            } catch (Exception ignored) {
+//            imageViewPagerList.add("http://pixelserver-001-site61.ctempurl.com".trim() + selectedRestaurant.getResturant().getImages().get(i).getImage());
+                for (int i = 0; i < selectedRestaurant.getBeauty().getImages().size(); i++) {
+                    imageViewPagerList.add("http://pixelserver-001-site61.ctempurl.com".trim()
+                            + selectedRestaurant.getBeauty().getImages().get(i).getImage());
+                }
+            }
+
+
+            try {
+                editoor.putString(Constant.KEY_VIDEO_URL, "http://pixelserver-001-site61.ctempurl.com".trim() + selectedRestaurant.getBeauty().getVideo());
+                editoor.apply();
+
+            } catch (NullPointerException e) {
+                editoor.putString(Constant.KEY_VIDEO_URL, "");
+                editoor.apply();
+            }
+
+
+            sliderAdapter = new HomeSliderRestaAdapter(getContext(), imageViewPagerList);
+            viewPager.setAdapter(sliderAdapter);
+            indicator.setupWithViewPager(viewPager, true);
+
+            Log.d("VIDEO_URL", "getSelectedRestaurantData: " + "http://pixelserver-001-site61.ctempurl.com".trim() + selectedRestaurant.getBeauty().getVideo());
             editoor.apply();
         }
-        Log.d("handlingOfSlider", "handlingOfSlider: " + selectedRestaurant.getResturant().getVideo().equals(""));
-        for (int i = 0; i < selectedRestaurant.getResturant().getImages().size(); i++) {
-            imageViewPagerList.add("http://pixelserver-001-site61.ctempurl.com".trim() + selectedRestaurant.getResturant().getImages().get(i).getImage());
 
-        }
 
-        try {
-            editoor.putString(Constant.KEY_VIDEO_URL, "http://pixelserver-001-site61.ctempurl.com".trim() + selectedRestaurant.getResturant().getVideo());
-            editoor.apply();
-
-        } catch (NullPointerException e) {
-            editoor.putString(Constant.KEY_VIDEO_URL, "");
-            editoor.apply();
-
-        }
-
-        sliderAdapter = new HomeSliderRestaAdapter(getContext(), imageViewPagerList);
-        viewPager.setAdapter(sliderAdapter);
-        indicator.setupWithViewPager(viewPager, true);
-
-        Log.d("VIDEO_URL", "getSelectedRestaurantData: " + "http://pixelserver-001-site61.ctempurl.com".trim() + selectedRestaurant.getResturant().getVideo());
-        editoor.apply();
-    }
+}
 
     @Override
     public void onResume() {
@@ -821,6 +992,10 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
 
     @Override
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-        presenter.getSelectedRestaurant(selectedRestaurantId);
+        if (selectedCat.equals(CAT_HOSPITAL_VALUE)) {
+            presenter.getSelectedRestaurant(selectedRestaurantId);
+        } else if (selectedCat.equals(CAT_BEAUTY_VALUE)) {
+            presenter.getSelectedBeautyCenter(selectedRestaurantId);
+        }
     }
 }

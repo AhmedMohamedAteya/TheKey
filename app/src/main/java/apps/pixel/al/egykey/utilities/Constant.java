@@ -51,7 +51,7 @@ public final class Constant {
     public static final String SHARED_PREFERENCE = "MySharedPreference";
     public static final String LANGUAGE = "LANG";
     public static final String BASE_URL_HTTP = "http://pixelserver-001-site61.ctempurl.com/".trim();
-    public static final String RESTAURANT_SELECTED_ID = "RESTAURANT_SELECTED_ID";
+    public static final String ITEM_SELECTED_ID = "ITEM_SELECTED_ID";
     public static final String KEY_VIDEO_URL = "VIDEO_URL_KEY";
     public static final String Like_STATUS = "LIKE_STATUS";
     public static final String PDF_URL = "PDF_URL";
@@ -83,6 +83,7 @@ public final class Constant {
     public static final String CAT_PHARMACY_VALUE = "3";
     public static final String CAT_BEAUTY_VALUE = "4";
     public static final String CAT_GYM_VALUE = "5";
+    public static final String CAT_THAT_SELECTED = "CAT_THAT_SELECTED";
 
     public static String FB_LINK;
     public static String INSTAGRAM_LINK;

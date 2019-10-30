@@ -77,7 +77,7 @@ public class DialogPhone extends DialogFragment implements CallAdapter.OnClickHa
 
     private void initViews(View view) {
         sharedPreferences = getContext().getSharedPreferences(Constant.SHARED_PREFERENCE, Context.MODE_PRIVATE);
-        selectedId = sharedPreferences.getString(Constant.RESTAURANT_SELECTED_ID, "");
+        selectedId = sharedPreferences.getString(Constant.ITEM_SELECTED_ID, "");
 
         //presenter = new HomePresenter(getContext(), this);
         //presenter.getSelectedRestaurant(selectedId);
@@ -169,7 +169,7 @@ public class DialogPhone extends DialogFragment implements CallAdapter.OnClickHa
 
 
 //    @Override
-//    public void getSelectedRestaurantData(SelectedRestaurant selectedRestaurant) {
+//    public void getSelectedRestaurantData(SelectedBeauty selectedRestaurant) {
 //
 //
 //    }

@@ -161,4 +161,21 @@ public class HomePresenter {
     }
 
 
+    //Beauty
+    public void getSelectedBeautyCenter(String id) {
+        if (Validation.isConnected(context)) {
+            if (!mRefreshLayout.isRefreshing()) {
+                mRefreshLayout.setRefreshing(true);
+            }
+
+            mSubscriptions.add(NetworkUtil.getRetrofitNoHeader()
+                    .getAllBeautyData(id)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .subscribe(this::handleResponse, this::handleError));
+        } else {
+            Constant.showErrorDialog(context, context.getString(R.string.pls_check_connection));
+        }
+    }
+
 }

@@ -66,7 +66,7 @@ public class JobsFragment extends Fragment implements JobsAdapter.OnClickHandler
         mTxtNoData = rootView.findViewById(R.id.txt_no_data);
 
         sharedPreferences = getContext().getSharedPreferences(Constant.SHARED_PREFERENCE, Context.MODE_PRIVATE);
-        selectedId = sharedPreferences.getString(Constant.RESTAURANT_SELECTED_ID, "");
+        selectedId = sharedPreferences.getString(Constant.ITEM_SELECTED_ID, "");
 
         presenter = new JobsPresenter(getContext(), this);
         presenter.getSelectedRestaurantJobs(selectedId);

@@ -1,6 +1,6 @@
 package apps.pixel.al.egykey.models.retaurants;
 
-public class Restaurants {
+public class SelectedCat {
     private String CoverImage;
 
     private String Since;

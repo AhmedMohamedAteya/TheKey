@@ -43,7 +43,7 @@ public class SelectedRestaurantActivity extends AppCompatActivity implements Bot
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selected_restaurant);
 
-        selectedResId = getIntent().getStringExtra(Constant.RESTAURANT_SELECTED_ID);
+        selectedResId = getIntent().getStringExtra(Constant.ITEM_SELECTED_ID);
 
         initViews();
 
@@ -127,7 +127,7 @@ public class SelectedRestaurantActivity extends AppCompatActivity implements Bot
         mImgForCoupon.setVisibility(View.GONE);
         HomeRestFragment homeRestFragment = new HomeRestFragment();
         Bundle bundle = new Bundle();
-        bundle.putString(Constant.RESTAURANT_SELECTED_ID, selectedResId);
+        bundle.putString(Constant.ITEM_SELECTED_ID, selectedResId);
         homeRestFragment.setArguments(bundle);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, homeRestFragment).addToBackStack(null)
