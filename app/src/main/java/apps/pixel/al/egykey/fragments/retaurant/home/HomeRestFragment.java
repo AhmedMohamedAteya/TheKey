@@ -351,8 +351,13 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
 
         //smart_refresh
         mRefreshLayout.setOnRefreshListener(() -> {
-            presenter.getSelectedRestaurant(selectedRestaurantId);
-            mShimmer.startShimmerAnimation();
+            if (selectedCat.equals(CAT_HOSPITAL_VALUE)) {
+                presenter.getSelectedRestaurant(selectedRestaurantId);
+                mShimmer.startShimmerAnimation();
+            } else if (selectedCat.equals(CAT_BEAUTY_VALUE)) {
+                presenter.getSelectedBeautyCenter(selectedRestaurantId);
+                mShimmer.startShimmerAnimation();
+            }
         });
     }
 
@@ -826,7 +831,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
 
             Log.d("VIDEO_URL", "getSelectedRestaurantData: " + "http://pixelserver-001-site61.ctempurl.com".trim() + selectedRestaurant.getResturant().getVideo());
             editoor.apply();
-        }else if (selectedCat.equals(CAT_BEAUTY_VALUE)){
+        } else if (selectedCat.equals(CAT_BEAUTY_VALUE)) {
             imageViewPagerList = new ArrayList<>();
             try {
 
@@ -876,7 +881,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
         }
 
 
-}
+    }
 
     @Override
     public void onResume() {
