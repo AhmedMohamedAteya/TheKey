@@ -56,7 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_15sdp"
                 android:layout_gravity="end"
-                android:layout_marginTop="@dimen/_36sdp"
+                android:layout_marginTop="@dimen/_35sdp"
                 android:layout_marginEnd="@dimen/_90sdp"
                 android:padding="@dimen/_2sdp"
                 android:textColor="@color/pdlg_color_white"
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_marginStart="@dimen/_90sdp"
-                android:layout_marginTop="@dimen/_36sdp"
+                android:layout_marginTop="@dimen/_35sdp"
                 android:padding="@dimen/_2sdp"
                 android:text="@string/since"
                 android:textColor="@color/pdlg_color_white"
@@ -106,12 +106,12 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/_9sdp"
                     android:layout_weight="1"
-                    android:gravity="start|center"
+                    android:gravity="center"
                     android:maxLength="23"
                     android:paddingStart="@dimen/_4sdp"
                     android:text="Dar El fouad Hospital"
                     android:textColor="@android:color/white"
-                    android:textSize="@dimen/_9ssp"
+                    android:textSize="@dimen/_10ssp"
                     android:textStyle="bold" />
 
                 <apps.pixel.al.egykey.utilities.CairoBoldTextView
@@ -122,12 +122,12 @@
                     android:layout_marginStart="@dimen/_55sdp"
                     android:layout_marginEnd="@dimen/_9sdp"
                     android:layout_weight="1"
-                    android:gravity="start|center"
+                    android:gravity="center"
                     android:maxLength="23"
                     android:paddingEnd="@dimen/_4sdp"
                     android:text="مستشفي دار الفؤاد"
                     android:textColor="@android:color/white"
-                    android:textSize="@dimen/_7ssp"
+                    android:textSize="@dimen/_10ssp"
                     android:textStyle="bold" />
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.constraintlayout.widget.ConstraintLayout>

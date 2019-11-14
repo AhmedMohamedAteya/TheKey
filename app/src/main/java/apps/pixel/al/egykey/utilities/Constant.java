@@ -78,11 +78,12 @@ public final class Constant {
     public static final String CAT_BEAUTY = "CAT_BEAUTY";
     public static final String CAT_GYM = "CAT_GYM";
 
-    public static final String CAT_HOSPITAL_VALUE = "1";
+    public static final String CAT_RESTAURANT_VALUE = "1";
     public static final String CAT_CLINIC_VALUE = "2";
     public static final String CAT_PHARMACY_VALUE = "3";
     public static final String CAT_BEAUTY_VALUE = "4";
     public static final String CAT_GYM_VALUE = "5";
+    public static final String CAT_HOSPITAL_VALUE = "6";
     public static final String CAT_THAT_SELECTED = "CAT_THAT_SELECTED";
 
     public static String FB_LINK;

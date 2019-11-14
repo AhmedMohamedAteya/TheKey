@@ -9,8 +9,7 @@ import androidx.core.widget.NestedScrollView;
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 
 import apps.pixel.al.egykey.R;
-import apps.pixel.al.egykey.activites.CateagoriesActivity;
-import apps.pixel.al.egykey.activites.retaurant.restaurants.SelectedCateagoryActivity;
+import apps.pixel.al.egykey.activites.HomeActivity;
 import apps.pixel.al.egykey.utilities.CairoBoldButton;
 import apps.pixel.al.egykey.utilities.CairoRegularTextView;
 import apps.pixel.al.egykey.utilities.Constant;
@@ -53,7 +52,7 @@ public class SignInActivity extends AppCompatActivity {
         });
 
         mBtnLogin.setOnClickListener(v -> {
-            Intent openHome = new Intent(SignInActivity.this, CateagoriesActivity.class);
+            Intent openHome = new Intent(SignInActivity.this, HomeActivity.class);
             openHome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(openHome);
             Animatoo.animateSplit(this);

@@ -14,9 +14,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import apps.pixel.al.egykey.R;
 import apps.pixel.al.egykey.fragments.FragmentCoupon;
-import apps.pixel.al.egykey.fragments.retaurant.OffersFramgent;
-import apps.pixel.al.egykey.fragments.retaurant.home.HomeRestFragment;
-import apps.pixel.al.egykey.fragments.retaurant.jobs.JobsFragment;
+import apps.pixel.al.egykey.fragments.selectedCatHome.OffersFramgent;
+import apps.pixel.al.egykey.fragments.selectedCatHome.home.HomeRestFragment;
+import apps.pixel.al.egykey.fragments.selectedCatHome.jobs.JobsFragment;
 import apps.pixel.al.egykey.utilities.Constant;
 import apps.pixel.al.egykey.utilities.CurvedBottomNavigationView;
 
@@ -35,7 +35,6 @@ public class SelectedRestaurantActivity extends AppCompatActivity implements Bot
 
         NavUtils.navigateUpFromSameTask(this);
         Animatoo.animateSwipeRight(this);
-
     }
 
     @Override

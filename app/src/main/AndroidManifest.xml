@@ -19,9 +19,15 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activites.CateagoriesActivity"></activity>
+        <activity android:name=".activites.HomeActivity"></activity>
+        <activity
+            android:name=".activites.hotels.HotelsActivity"
+            android:parentActivityName=".activites.HomeActivity" />
+        <activity
+            android:name=".activites.CateagoriesActivity"
+            android:parentActivityName=".activites.HomeActivity" />
         <activity android:name=".activites.beautyAndHealth.SelectedDepartmentActivity" />
-        <activity android:name=".activites.beautyAndHealth.BeautyAndHealthActivty"></activity>
+        <activity android:name=".activites.beautyAndHealth.BeautyAndHealthActivty" />
         <activity android:name=".activites.SettingsActivity" />
         <activity android:name=".activites.retaurant.SortByActivity" />
         <activity android:name=".activites.beforeHome.SplashActivity">
@@ -70,6 +76,7 @@
             android:parentActivityName=".activites.retaurant.restaurants.SelectedCateagoryActivity" />
         <activity
             android:name=".activites.retaurant.restaurants.SelectedCateagoryActivity"
+            android:parentActivityName=".activites.HomeActivity"
             android:screenOrientation="portrait" />
     </application>
 

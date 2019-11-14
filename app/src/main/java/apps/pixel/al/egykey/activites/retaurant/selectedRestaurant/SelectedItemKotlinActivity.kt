@@ -6,9 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import apps.pixel.al.egykey.R
 import apps.pixel.al.egykey.fragments.FragmentCoupon
-import apps.pixel.al.egykey.fragments.retaurant.OffersFramgent
-import apps.pixel.al.egykey.fragments.retaurant.home.HomeRestFragment
-import apps.pixel.al.egykey.fragments.retaurant.jobs.JobsFragment
+import apps.pixel.al.egykey.fragments.selectedCatHome.OffersFramgent
+import apps.pixel.al.egykey.fragments.selectedCatHome.home.HomeRestFragment
+import apps.pixel.al.egykey.fragments.selectedCatHome.jobs.JobsFragment
 import apps.pixel.al.egykey.utilities.Constant
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation
 import kotlinx.android.synthetic.main.selected_restaurant_kotlin.*

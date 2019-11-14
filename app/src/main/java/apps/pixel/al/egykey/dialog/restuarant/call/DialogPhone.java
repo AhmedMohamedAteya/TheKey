@@ -28,7 +28,7 @@ import apps.pixel.al.egykey.adapters.restaurant.CallAdapter;
 import apps.pixel.al.egykey.utilities.CairoBoldButton;
 import apps.pixel.al.egykey.utilities.Constant;
 
-import static apps.pixel.al.egykey.fragments.retaurant.home.HomeRestFragment.listNumbersDAta;
+import static apps.pixel.al.egykey.fragments.selectedCatHome.home.HomeRestFragment.listNumbersDAta;
 
 public class DialogPhone extends DialogFragment implements CallAdapter.OnClickHandler, SelectedInterface {
 
@@ -169,7 +169,7 @@ public class DialogPhone extends DialogFragment implements CallAdapter.OnClickHa
 
 
 //    @Override
-//    public void getSelectedRestaurantData(SelectedBeauty selectedRestaurant) {
+//    public void getSelectedItemInCatData(SelectedBeauty selectedRestaurant) {
 //
 //
 //    }

@@ -8,10 +8,10 @@ import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.core.app.NavUtils;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -29,6 +29,10 @@ import apps.pixel.al.egykey.utilities.CairoBoldEditText;
 import apps.pixel.al.egykey.utilities.CairoBoldTextView;
 import apps.pixel.al.egykey.utilities.Constant;
 
+import static apps.pixel.al.egykey.utilities.Constant.CAT_BEAUTY_VALUE;
+import static apps.pixel.al.egykey.utilities.Constant.CAT_GYM_VALUE;
+import static apps.pixel.al.egykey.utilities.Constant.CAT_HOSPITAL_VALUE;
+import static apps.pixel.al.egykey.utilities.Constant.CAT_PHARMACY_VALUE;
 import static apps.pixel.al.egykey.utilities.Constant.setSwipeLayourColor;
 
 public class SelectedCateagoryActivity extends AppCompatActivity implements RestaurantAdapter.OnClickHandler, SelectedCateagoryInterface {
@@ -46,6 +50,9 @@ public class SelectedCateagoryActivity extends AppCompatActivity implements Rest
     private SelectedCateagoryPresenter presenter;
     private AppCompatImageView mImgSearch;
     private CairoBoldEditText mEditTextSearch;
+    private AppCompatImageView mImgBack;
+
+    private AppCompatImageView mImgBackGround;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,11 +81,23 @@ public class SelectedCateagoryActivity extends AppCompatActivity implements Rest
                 mEditTextSearch.getText().clear();
 
             hideSoftKeyboardAfterSearch();
+        } else {
+            NavUtils.navigateUpFromSameTask(this);
+            Animatoo.animateSwipeRight(this);
         }
     }
 
     @SuppressLint("ClickableViewAccessibility")
     private void initViews() {
+
+
+        mImgBack = findViewById(R.id.arrow_back_page_two);
+        mImgBack.setOnClickListener(v -> {
+            onBackPressed();
+        });
+
+        mImgBackGround = findViewById(R.id.back_ground_image);
+
         mTxtNoDAta = findViewById(R.id.txt_no_data);
         mTxtNoDAta.setVisibility(View.GONE);
 
@@ -107,7 +126,18 @@ public class SelectedCateagoryActivity extends AppCompatActivity implements Rest
                 mEditTextSearch.setVisibility(View.GONE);
 
                 if (mEditTextSearch.getText().length() > 0)
-                    presenter.searchOnRestaurant(mEditTextSearch.getText().toString().trim());
+                    if (getIntent().getStringExtra(Constant.CAT_THAT_SELECTED).equals(Constant.CAT_RESTAURANT_VALUE)) {
+                        presenter.searchOnRestaurant(mEditTextSearch.getText().toString().trim());
+                    } else if (getIntent().getStringExtra(Constant.CAT_THAT_SELECTED).equals(CAT_BEAUTY_VALUE)) {
+                        presenter.searchOnBeauty(mEditTextSearch.getText().toString().trim());
+                    } else if (getIntent().getStringExtra(Constant.CAT_THAT_SELECTED).equals(CAT_GYM_VALUE)) {
+                        presenter.searchOnGym(mEditTextSearch.getText().toString().trim());
+                    } else if (getIntent().getStringExtra(Constant.CAT_THAT_SELECTED).equals(CAT_HOSPITAL_VALUE)) {
+                        presenter.searchOnHospital(mEditTextSearch.getText().toString().trim());
+                    }else if (getIntent().getStringExtra(Constant.CAT_THAT_SELECTED).equals(CAT_PHARMACY_VALUE)) {
+                        presenter.searchOnPharmacy(mEditTextSearch.getText().toString().trim());
+                    }
+
 
                 if (mEditTextSearch.getText().length() > 0)
                     mEditTextSearch.getText().clear();
@@ -118,16 +148,57 @@ public class SelectedCateagoryActivity extends AppCompatActivity implements Rest
         });
         presenter = new SelectedCateagoryPresenter(this, this);
         if (getIntent().hasExtra(Constant.CAT_THAT_SELECTED)) {
-            if (getIntent().getStringExtra(Constant.CAT_THAT_SELECTED).equals(Constant.CAT_HOSPITAL_VALUE)) {
-                presenter.getAllRestaurants();
-            } else if (getIntent().getStringExtra(Constant.CAT_THAT_SELECTED).equals(Constant.CAT_BEAUTY_VALUE)) {
-                Toast.makeText(this, "IT's BEAUTY", Toast.LENGTH_SHORT).show();
-                presenter.getAllBeautyData();
+            switch (getIntent().getStringExtra(Constant.CAT_THAT_SELECTED)) {
+                case Constant.CAT_RESTAURANT_VALUE:
+                    presenter.getAllRestaurants();
+                    mImgBackGround.setImageDrawable(getResources().getDrawable(R.drawable.resta_bg));
+                    break;
+                case Constant.CAT_BEAUTY_VALUE:
+                    presenter.getAllBeautyData();
+                    mImgBackGround.setImageDrawable(getResources().getDrawable(R.drawable.bg_health));
+                    break;
+                case Constant.CAT_GYM_VALUE:
+                    presenter.getAllGymData();
+                    mImgBackGround.setImageDrawable(getResources().getDrawable(R.drawable.bg_health));
+                    break;
+                case Constant.CAT_HOSPITAL_VALUE:
+                    presenter.getAllHospitalData();
+                    mImgBackGround.setImageDrawable(getResources().getDrawable(R.drawable.bg_health));
+                    break;
+                case Constant.CAT_PHARMACY_VALUE:
+                    presenter.getAllPharmaciesData();
+                    mImgBackGround.setImageDrawable(getResources().getDrawable(R.drawable.bg_health));
+                    break;
             }
         }
 
 
-        swipeContainer.setOnRefreshListener(() -> presenter.getAllRestaurants());
+        swipeContainer.setOnRefreshListener(() -> {
+            if (getIntent().hasExtra(Constant.CAT_THAT_SELECTED)) {
+                switch (getIntent().getStringExtra(Constant.CAT_THAT_SELECTED)) {
+                    case Constant.CAT_RESTAURANT_VALUE:
+                        presenter.getAllRestaurants();
+                        mImgBackGround.setImageDrawable(getResources().getDrawable(R.drawable.resta_bg));
+                        break;
+                    case Constant.CAT_BEAUTY_VALUE:
+                        presenter.getAllBeautyData();
+                        mImgBackGround.setImageDrawable(getResources().getDrawable(R.drawable.bg_health));
+                        break;
+                    case Constant.CAT_GYM_VALUE:
+                        presenter.getAllGymData();
+                        mImgBackGround.setImageDrawable(getResources().getDrawable(R.drawable.bg_health));
+                        break;
+                    case Constant.CAT_HOSPITAL_VALUE:
+                        presenter.getAllHospitalData();
+                        mImgBackGround.setImageDrawable(getResources().getDrawable(R.drawable.bg_health));
+                        break;
+                    case Constant.CAT_PHARMACY_VALUE:
+                        presenter.getAllPharmaciesData();
+                        mImgBackGround.setImageDrawable(getResources().getDrawable(R.drawable.bg_health));
+                        break;
+                }
+            }
+        });
 
         // Configure the refreshing colors
         setSwipeLayourColor(this, swipeContainer);

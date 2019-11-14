@@ -1,4 +1,4 @@
-package apps.pixel.al.egykey.fragments.retaurant.jobs;
+package apps.pixel.al.egykey.fragments.selectedCatHome.jobs;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -19,8 +19,8 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
 
-import static apps.pixel.al.egykey.fragments.retaurant.jobs.JobsFragment.mTxtNoData;
-import static apps.pixel.al.egykey.fragments.retaurant.jobs.JobsFragment.swipeContainer;
+import static apps.pixel.al.egykey.fragments.selectedCatHome.jobs.JobsFragment.mTxtNoData;
+import static apps.pixel.al.egykey.fragments.selectedCatHome.jobs.JobsFragment.swipeContainer;
 
 class JobsPresenter {
 

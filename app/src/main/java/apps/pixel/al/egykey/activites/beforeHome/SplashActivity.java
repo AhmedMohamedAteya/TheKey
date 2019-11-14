@@ -46,10 +46,7 @@ public class SplashActivity extends AppCompatActivity {
 
         } else {
             gifImageView.setVisibility(View.VISIBLE);
-
             //gifImageView.setImageResource(R.drawable.loadder_giff);
-
-
         }
     }
 

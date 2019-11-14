@@ -25,8 +25,8 @@ import java.util.List;
 
 import apps.pixel.al.egykey.R;
 import apps.pixel.al.egykey.adapters.restaurant.AllBranchesAdapter;
-import apps.pixel.al.egykey.fragments.retaurant.home.HomeInterface;
-import apps.pixel.al.egykey.fragments.retaurant.home.HomePresenter;
+import apps.pixel.al.egykey.fragments.selectedCatHome.home.HomeInterface;
+import apps.pixel.al.egykey.fragments.selectedCatHome.home.HomePresenter;
 import apps.pixel.al.egykey.models.selectedRestaurant.SelectedRestaurant;
 import apps.pixel.al.egykey.utilities.Constant;
 
@@ -113,7 +113,7 @@ public class DialogAllBranchesRes extends DialogFragment implements AllBranchesA
     }
 
     @Override
-    public void getSelectedRestaurantData(SelectedRestaurant selectedRestaurant) {
+    public void getSelectedItemInCatData(SelectedRestaurant selectedRestaurant) {
         listDAta = new ArrayList<>();
         for (int i = 0; i < selectedRestaurant.getOurbranches().size(); i++) {
             listDAta = new ArrayList<>();

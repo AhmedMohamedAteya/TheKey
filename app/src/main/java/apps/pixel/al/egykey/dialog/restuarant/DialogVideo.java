@@ -177,7 +177,7 @@ public class DialogVideo extends DialogFragment implements DialogCityAdapter.OnC
 
         //  if (getArguments().hasExtra(KEY_VIDEO_URL)) {
         videoUri = getArguments().getString(KEY_VIDEO_URL);
-        Log.d("videoUri", "getSelectedRestaurantData: " + Constant.BASE_PATH_MEDIA + videoUri);
+        Log.d("videoUri", "getSelectedItemInCatData: " + Constant.BASE_PATH_MEDIA + videoUri);
 
         initViews(view);
 

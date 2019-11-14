@@ -4,7 +4,7 @@ package apps.pixel.al.egykey.models.selectedRestaurant;
 import java.util.List;
 
 public class SelectedRestaurant {
-    private List<News> news;
+    private List<News> News;
 
     private Resturant Resturant;
 
@@ -12,9 +12,40 @@ public class SelectedRestaurant {
 
     private Amenities Amenities;
 
-    private Beauty Beauty ;
+    private Beauty Beauty;
+
+    private Gym Gym;
+
+    private Hospital hospital;
+
+    private Pharmacy pharmacy;
+
 
     private About About;
+
+    public Pharmacy getPharmacy() {
+        return pharmacy;
+    }
+
+    public void setPharmacy(Pharmacy pharmacy) {
+        this.pharmacy = pharmacy;
+    }
+
+    public Hospital getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
+    }
+
+    public apps.pixel.al.egykey.models.selectedRestaurant.Gym getGym() {
+        return Gym;
+    }
+
+    public void setGym(apps.pixel.al.egykey.models.selectedRestaurant.Gym gym) {
+        Gym = gym;
+    }
 
     public Beauty getBeauty() {
         return Beauty;
@@ -25,11 +56,11 @@ public class SelectedRestaurant {
     }
 
     public List<News> getNews() {
-        return news;
+        return News;
     }
 
     public void setNews(List<News> news) {
-        this.news = news;
+        this.News = news;
     }
 
     public Resturant getResturant() {
@@ -66,7 +97,7 @@ public class SelectedRestaurant {
 
     @Override
     public String toString() {
-        return "ClassPojo [news = " + news + ", Resturant = " + Resturant + ", Ourbranches = " + Ourbranches + ", Amenities = " + Amenities + ", About = " + About + "]";
+        return "ClassPojo [news = " + News + ", Resturant = " + Resturant + ", Ourbranches = " + Ourbranches + ", Amenities = " + Amenities + ", About = " + About + "]";
     }
 }
 

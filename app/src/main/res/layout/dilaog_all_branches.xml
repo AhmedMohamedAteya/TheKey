@@ -25,7 +25,7 @@
         <!--android:layout_marginTop="?actionBarSize"-->
         <!--android:background="#ffffff"-->
         <!--android:scaleType="fitXY" />-->
-    <!--android:src="@drawable/app_bg"-->
+    <!--android:src="@drawable/resta_bg"-->
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"

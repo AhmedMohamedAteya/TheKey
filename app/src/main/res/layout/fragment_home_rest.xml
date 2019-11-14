@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layoutDirection="ltr"
-    tools:context=".fragments.retaurant.home.HomeRestFragment">
+    tools:context=".fragments.selectedCatHome.home.HomeRestFragment">
     <!--app:AniBackColor="#FDF6E3"-->
     <!--app:AniForeColor="@color/colorPrimary"-->
     <!--app:CircleSmaller="6"-->
@@ -225,7 +225,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:padding="@dimen/_5sdp"
-                                    android:src="@drawable/ic_details" />
+                                    android:src="@drawable/ic_barcode" />
 
 
                             </androidx.appcompat.widget.LinearLayoutCompat>

@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/app_bg" />
+        android:src="@drawable/resta_bg" />
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -187,11 +188,11 @@
 
     </ScrollView>
 
-    <!--<com.anupkumarpanwar.scratchview.ScratchView-->
-        <!--android:id="@+id/scratch_view"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--app:tile_mode="CLAMP" />-->
+    <com.anupkumarpanwar.scratchview.ScratchView
+        android:id="@+id/scratch_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:tile_mode="CLAMP" />
 
 
 </RelativeLayout>

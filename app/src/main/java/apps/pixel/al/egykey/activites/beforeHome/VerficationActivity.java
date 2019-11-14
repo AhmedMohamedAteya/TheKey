@@ -11,7 +11,7 @@ import androidx.core.widget.NestedScrollView;
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 
 import apps.pixel.al.egykey.R;
-import apps.pixel.al.egykey.activites.CateagoriesActivity;
+import apps.pixel.al.egykey.activites.HomeActivity;
 import apps.pixel.al.egykey.utilities.CairoBoldButton;
 import apps.pixel.al.egykey.utilities.CairoBoldEditText;
 import apps.pixel.al.egykey.utilities.Constant;
@@ -62,7 +62,7 @@ public class VerficationActivity extends AppCompatActivity {
         editText4 = findViewById(R.id.txt_four);
 
         mBtnContinue.setOnClickListener(v -> {
-            Intent openHome = new Intent(VerficationActivity.this, CateagoriesActivity.class);
+            Intent openHome = new Intent(VerficationActivity.this, HomeActivity.class);
             openHome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(openHome);
             Animatoo.animateSplit(this);

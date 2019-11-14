@@ -7,6 +7,9 @@ import android.widget.FrameLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.core.app.NavUtils;
+
+import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 
 import apps.pixel.al.egykey.R;
 import apps.pixel.al.egykey.activites.retaurant.restaurants.SelectedCateagoryActivity;
@@ -15,11 +18,21 @@ import apps.pixel.al.egykey.utilities.Constant;
 public class CateagoriesActivity extends AppCompatActivity implements View.OnClickListener {
 
     private AppCompatImageView code;
-    private FrameLayout catHospital;
     private FrameLayout catClinic;
     private FrameLayout catPharmacy;
+    private FrameLayout catHospital;
     private FrameLayout catBeauty;
     private FrameLayout catGym;
+
+    private AppCompatImageView mImgBack;
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        NavUtils.navigateUpFromSameTask(this);
+        Animatoo.animateSwipeRight(this);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +44,12 @@ public class CateagoriesActivity extends AppCompatActivity implements View.OnCli
 
     private void initViews() {
 
-        code = findViewById(R.id.code);
+        mImgBack = findViewById(R.id.arrow_back_page_two);
+        mImgBack.setOnClickListener(v -> {
+            onBackPressed();
+        });
 
-        catHospital = findViewById(R.id.cat_hospital);
-        catHospital.setOnClickListener(this);
+        code = findViewById(R.id.code);
 
         catClinic = findViewById(R.id.cat_clinic);
         catClinic.setOnClickListener(this);
@@ -48,6 +63,8 @@ public class CateagoriesActivity extends AppCompatActivity implements View.OnCli
         catGym = findViewById(R.id.cat_gym);
         catGym.setOnClickListener(this);
 
+        catHospital = findViewById(R.id.cat_hospital);
+        catHospital.setOnClickListener(this);
 
     }
 
@@ -55,25 +72,35 @@ public class CateagoriesActivity extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
         Intent intent = new Intent(this, SelectedCateagoryActivity.class);
         switch (v.getId()) {
-            case R.id.cat_hospital:
-                intent.putExtra(Constant.CAT_THAT_SELECTED, Constant.CAT_HOSPITAL_VALUE);
-                startActivity(intent);
-                break;
-            case R.id.cat_clinic:
-                intent.putExtra(Constant.CAT_THAT_SELECTED, Constant.CAT_CLINIC_VALUE);
-                startActivity(intent);
-                break;
+//            case R.id.cat_restaurant:
+//                intent.putExtra(Constant.CAT_THAT_SELECTED, Constant.CAT_RESTAURANT_VALUE);
+//                startActivity(intent);
+//                Animatoo.animateSwipeLeft(this);
+//                break;
+//            case R.id.cat_clinic:
+//                intent.putExtra(Constant.CAT_THAT_SELECTED, Constant.CAT_CLINIC_VALUE);
+//                startActivity(intent);
+//                Animatoo.animateSwipeLeft(this);
+//                break;
             case R.id.cat_pharmacy:
                 intent.putExtra(Constant.CAT_THAT_SELECTED, Constant.CAT_PHARMACY_VALUE);
                 startActivity(intent);
+                Animatoo.animateSwipeLeft(this);
                 break;
             case R.id.cat_beauty:
                 intent.putExtra(Constant.CAT_THAT_SELECTED, Constant.CAT_BEAUTY_VALUE);
                 startActivity(intent);
+                Animatoo.animateSwipeLeft(this);
                 break;
             case R.id.cat_gym:
                 intent.putExtra(Constant.CAT_THAT_SELECTED, Constant.CAT_GYM_VALUE);
                 startActivity(intent);
+                Animatoo.animateSwipeLeft(this);
+                break;
+            case R.id.cat_hospital:
+                intent.putExtra(Constant.CAT_THAT_SELECTED, Constant.CAT_HOSPITAL_VALUE);
+                startActivity(intent);
+                Animatoo.animateSwipeLeft(this);
                 break;
         }
     }

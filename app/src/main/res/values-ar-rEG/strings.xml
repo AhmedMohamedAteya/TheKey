@@ -104,7 +104,7 @@
     <string name="cancel">إلغاء</string>
     <string name="change_language">تغير اللغة</string>
     <string name="choose_nearest_branch">اختر أقرب فرع</string>
-    <string name="there_is_no_avaiable_menu">There is no avaiable menu</string>
+    <string name="there_is_no_avaiable_menu">There is no available prices show</string>
     <string name="hospital">Hospital</string>
     <string name="doctor">Doctor</string>
     <string name="pharmacy">Pharmacy</string>
@@ -115,6 +115,12 @@
     <string name="donee">Done !</string>
     <string name="clinic">Clinic</string>
     <string name="rest">Restaurant</string>
+    <string name="hotels">Hotels</string>
+    <string name="tourism">Tourism</string>
+    <string name="health">Health</string>
+    <string name="education">Education</string>
+    <string name="market">Market</string>
+    <string name="genral_service">General Service</string>
 
 
 </resources>
