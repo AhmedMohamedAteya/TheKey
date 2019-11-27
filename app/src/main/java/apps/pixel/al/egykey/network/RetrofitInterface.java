@@ -6,6 +6,9 @@ import java.util.List;
 import apps.pixel.al.egykey.models.ResponseHomeOthers;
 import apps.pixel.al.egykey.models.job.JobModel;
 import apps.pixel.al.egykey.models.jobDetails.JobDetailsModel;
+import apps.pixel.al.egykey.models.menu.MainMenu;
+import apps.pixel.al.egykey.models.menu.SubMenu;
+import apps.pixel.al.egykey.models.menu.SubMenuDetails;
 import apps.pixel.al.egykey.models.retaurants.SelectedCat;
 import apps.pixel.al.egykey.models.selectedRestaurant.SelectedRestaurant;
 import retrofit2.http.GET;
@@ -64,6 +67,7 @@ public interface RetrofitInterface {
 
     @GET("api/BeautySearch")
     Observable<List<SelectedCat>> searchOnBeauty(@Query("Search") String name);
+
     //GYM
     @GET("api/Gym")
     Observable<List<SelectedCat>> getAllGyms();
@@ -130,5 +134,15 @@ public interface RetrofitInterface {
     @GET("api/PharmacySearch")
     Observable<List<SelectedCat>> searchOnPharmacy(@Query("Search") String name);
 
+    //http://pixelserver-001-site61.ctempurl.com/
+    @GET("api/MenuRestaurant/{id}")
+    Observable<List<MainMenu>> getMainMenu(@Path("id") String id);
+
+    @GET("api/SupSupMenu/{id}")
+    Observable<List<SubMenu>> getSubMenu(@Path("id") String id, @Query("idMenu") String subId);
+
+    //api/SupSupMenuDetails
+    @GET("api/SupSupMenuDetails/{id}")
+    Observable<SubMenuDetails> getSubMenuDetails(@Path("id") String id);
 
 }

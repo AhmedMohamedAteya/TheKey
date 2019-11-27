@@ -20,4 +20,7 @@
     <color name="hyper_link">#0000FF</color>
     <color name="light_accent">#FDF6E3</color>
     <color name="place_holder_color">#D7B767</color>
+    <color name="white">#ffffff</color>
+    <color name="seperator">#CDC9C0</color>
+    <color name="colorHint">#777</color>
 </resources>

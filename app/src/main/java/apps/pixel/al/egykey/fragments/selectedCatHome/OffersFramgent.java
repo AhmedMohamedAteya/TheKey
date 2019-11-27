@@ -15,6 +15,7 @@ import java.util.List;
 
 import apps.pixel.al.egykey.R;
 import apps.pixel.al.egykey.adapters.restaurant.OfferResAdapter;
+import apps.pixel.al.egykey.utilities.CairoRegularTextView;
 import apps.pixel.al.egykey.utilities.Constant;
 
 public class OffersFramgent extends Fragment implements OfferResAdapter.OnClickHandler {
@@ -25,6 +26,8 @@ public class OffersFramgent extends Fragment implements OfferResAdapter.OnClickH
     private List<String> listImgLocation;
     private List<String> listPresentange;
     private List<String> listImages;
+
+    private CairoRegularTextView mTxtPrecentage, mTxtAfterScratch;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -38,6 +38,7 @@ public class DialogAllBranchesRes extends DialogFragment implements AllBranchesA
 
 
     private String selectedId;
+    private String selectedCat;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,13 +65,32 @@ public class DialogAllBranchesRes extends DialogFragment implements AllBranchesA
 
         sharedPreferences = getContext().getSharedPreferences(Constant.SHARED_PREFERENCE, Context.MODE_PRIVATE);
         selectedId = sharedPreferences.getString(Constant.ITEM_SELECTED_ID, "");
+        selectedCat = sharedPreferences.getString(Constant.CAT_THAT_SELECTED, "");
 
         presenter = new HomePresenter(getContext(), this);
-        presenter.getSelectedRestaurant(selectedId);
 
+        switch (selectedCat) {
+            case Constant.CAT_RESTAURANT_VALUE:
+                presenter.getSelectedRestaurant(selectedId);
+                break;
+            case Constant.CAT_GYM_VALUE:
+                presenter.getSelectedGymCenter(selectedId);
+                break;
+            case Constant.CAT_BEAUTY_VALUE:
+                presenter.getSelectedBeautyCenter(selectedId);
+                break;
+            case Constant.CAT_CLINIC_VALUE:
+                //   presenter.getD(selectedId);
+                break;
+            case Constant.CAT_HOSPITAL_VALUE:
+                presenter.getSelectedHospital(selectedId);
+                break;
+            case Constant.CAT_PHARMACY_VALUE:
+                presenter.getSelectedPharmacy(selectedId);
+                break;
 
+        }
         initViews(view);
-
 
         return view;
     }
@@ -116,7 +136,6 @@ public class DialogAllBranchesRes extends DialogFragment implements AllBranchesA
     public void getSelectedItemInCatData(SelectedRestaurant selectedRestaurant) {
         listDAta = new ArrayList<>();
         for (int i = 0; i < selectedRestaurant.getOurbranches().size(); i++) {
-            listDAta = new ArrayList<>();
             listDAta.add(selectedRestaurant.getOurbranches().get(i).getAddress());
         }
         loadRecyclerData();

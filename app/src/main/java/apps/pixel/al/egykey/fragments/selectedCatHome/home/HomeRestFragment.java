@@ -159,6 +159,8 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
         Log.d("ID_RESTAURANT", "onCreateView: " + selectedRestaurantId);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(Constant.ITEM_SELECTED_ID, selectedRestaurantId);
+        editor.putString(Constant.CAT_THAT_SELECTED, selectedCat);
+
         editor.apply();
 
         handler = new Handler();
@@ -191,13 +193,6 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
         }
 
         return rootView;
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-
     }
 
 
@@ -365,6 +360,8 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
         linearBranches = rootView.findViewById(R.id.linear_branches);
         if (!hasBranches)
             linearBranches.setVisibility(View.GONE);
+        else
+            linearBranches.setVisibility(View.VISIBLE);
 
         linearBranches.setOnClickListener(v -> {
             DialogAllBranchesRes dialogAllBranchesRes = new DialogAllBranchesRes();
@@ -446,6 +443,22 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
         Constant.TWITTER_LINK = "";
         Constant.INSTAGRAM_LINK = "";
 
+        int passed;
+
+        try {
+            selectedRestaurant.getOurbranches().get(0).getAddress();
+            passed = 1;
+        } catch (Exception ignored) {
+            hasBranches = false;
+            linearBranches.setVisibility(View.GONE);
+            passed = 0;
+        }
+
+        if (passed == 1) {
+            hasBranches = true;
+            linearBranches.setVisibility(View.VISIBLE);
+        }
+
 
         SharedPreferences.Editor editoor = sharedPreferences.edit();
 
@@ -481,27 +494,16 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
 
         try {
             videoUri = selectedRestaurant.getResturant().getVideo();
-        } catch (NullPointerException igored) {
+        } catch (Exception igored) {
             videoUri = "";
         }
-
-        try {
-            selectedRestaurant.getOurbranches().get(0).getAddress();
-            hasBranches = true;
-            linearBranches.setVisibility(View.VISIBLE);
-
-        } catch (NullPointerException ignored) {
-            hasBranches = false;
-            linearBranches.setVisibility(View.GONE);
-        }
-
 
         try {
             selectedRestaurant.getNews().get(0).getTitle();
             hasNews = true;
             mLinearNews.setVisibility(View.VISIBLE);
 
-        } catch (NullPointerException ignored) {
+        } catch (Exception ignored) {
             hasNews = false;
             mLinearNews.setVisibility(View.GONE);
 
@@ -514,13 +516,13 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
 //            editoor.putString(Constant.FB_LINK, selectedRestaurant.getResturant().getFaceBook());
 //            editoor.apply();
 
-        } catch (NullPointerException e) {
+        } catch (Exception e) {
             Constant.FB_LINK = "";
 
         }
         try {
             Constant.INSTAGRAM_LINK = selectedRestaurant.getResturant().getInstagram();
-        } catch (NullPointerException ignored) {
+        } catch (Exception ignored) {
             Constant.INSTAGRAM_LINK = "";
 
 //            editoor.putString(Constant.INSTAGRAM_LINK, "");
@@ -530,7 +532,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
         try {
             Constant.TWITTER_LINK = selectedRestaurant.getResturant().getTwitter();
             // editoor.putString(Constant.TWITTER_LINK, selectedRestaurant.getResturant().getTwitter());
-        } catch (NullPointerException ignored) {
+        } catch (Exception ignored) {
             Constant.TWITTER_LINK = "";
 
 //            editoor.putString(Constant.TWITTER_LINK, "");
@@ -547,7 +549,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
             } else {
                 txtMessenger.setText(selectedRestaurant.getAbout().getMessenger());
             }
-        } catch (NullPointerException ignored) {
+        } catch (Exception ignored) {
             txtMessenger.setText(getString(R.string.not_available));
             return;
         }
@@ -578,7 +580,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                         time.setText(getString(R.string.all_day));
                     else if (selectedRestaurant.getAbout().getOpenAllDay().equals("false".trim()))
                         time.setText(selectedRestaurant.getAbout().getStartTime() + " : " + selectedRestaurant.getAbout().getEndTime());
-                } catch (NullPointerException e) {
+                } catch (Exception e) {
                     time.setText(getString(R.string.all_day));
                 }
 
@@ -588,7 +590,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                     } else {
                         mTxtType.setText(selectedRestaurant.getAbout().getRestaurantType_Name());
                     }
-                } catch (NullPointerException ignored) {
+                } catch (Exception ignored) {
 
                 }
 
@@ -600,7 +602,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                         website.setText(selectedRestaurant.getAbout().getWebsite());
                         // }
                     }
-                } catch (NullPointerException e) {
+                } catch (Exception e) {
                     website.setText(getString(R.string.not_available));
                 }
                 desc.setText(selectedRestaurant.getAbout().getDescription());
@@ -647,7 +649,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                         time.setText(getString(R.string.all_day));
                     else if (selectedRestaurant.getAbout().getOpenAllDay().equals("false".trim()))
                         time.setText(selectedRestaurant.getAbout().getStartTime() + " : " + selectedRestaurant.getAbout().getEndTime());
-                } catch (NullPointerException e) {
+                } catch (Exception e) {
                     time.setText(getString(R.string.all_day));
                 }
 
@@ -657,7 +659,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                     } else {
                         mTxtType.setText(selectedRestaurant.getAbout().getRestaurantType_Name());
                     }
-                } catch (NullPointerException ignored) {
+                } catch (Exception ignored) {
 
                 }
 
@@ -669,7 +671,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                         website.setText(selectedRestaurant.getAbout().getWebsite());
                         // }
                     }
-                } catch (NullPointerException e) {
+                } catch (Exception e) {
                     website.setText(getString(R.string.not_available));
                 }
                 desc.setText(selectedRestaurant.getAbout().getDescription());
@@ -707,7 +709,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                         time.setText(getString(R.string.all_day));
                     else if (selectedRestaurant.getAbout().getOpenAllDay().equals("false".trim()))
                         time.setText(selectedRestaurant.getAbout().getStartTime() + " : " + selectedRestaurant.getAbout().getEndTime());
-                } catch (NullPointerException e) {
+                } catch (Exception e) {
                     time.setText(getString(R.string.all_day));
                 }
 
@@ -717,7 +719,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                     } else {
                         mTxtType.setText(selectedRestaurant.getAbout().getRestaurantType_Name());
                     }
-                } catch (NullPointerException ignored) {
+                } catch (Exception ignored) {
 
                 }
 
@@ -729,7 +731,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                         website.setText(selectedRestaurant.getAbout().getWebsite());
                         // }
                     }
-                } catch (NullPointerException e) {
+                } catch (Exception e) {
                     website.setText(getString(R.string.not_available));
                 }
                 desc.setText(selectedRestaurant.getAbout().getDescription());
@@ -776,7 +778,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                         time.setText(getString(R.string.all_day));
                     else if (selectedRestaurant.getAbout().getOpenAllDay().equals("false".trim()))
                         time.setText(selectedRestaurant.getAbout().getStartTime() + " : " + selectedRestaurant.getAbout().getEndTime());
-                } catch (NullPointerException e) {
+                } catch (Exception e) {
                     time.setText(getString(R.string.all_day));
                 }
 
@@ -786,7 +788,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                     } else {
                         mTxtType.setText(selectedRestaurant.getAbout().getRestaurantType_Name());
                     }
-                } catch (NullPointerException ignored) {
+                } catch (Exception ignored) {
 
                 }
 
@@ -798,7 +800,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                         website.setText(selectedRestaurant.getAbout().getWebsite());
                         // }
                     }
-                } catch (NullPointerException e) {
+                } catch (Exception e) {
                     website.setText(getString(R.string.not_available));
                 }
                 desc.setText(selectedRestaurant.getAbout().getDescription());
@@ -844,7 +846,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                         time.setText(getString(R.string.all_day));
                     else if (selectedRestaurant.getAbout().getOpenAllDay().equals("false".trim()))
                         time.setText(selectedRestaurant.getAbout().getStartTime() + " : " + selectedRestaurant.getAbout().getEndTime());
-                } catch (NullPointerException e) {
+                } catch (Exception e) {
                     time.setText(getString(R.string.all_day));
                 }
 
@@ -854,7 +856,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                     } else {
                         mTxtType.setText(selectedRestaurant.getAbout().getRestaurantType_Name());
                     }
-                } catch (NullPointerException ignored) {
+                } catch (Exception ignored) {
 
                 }
 
@@ -866,7 +868,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                         website.setText(selectedRestaurant.getAbout().getWebsite());
                         // }
                     }
-                } catch (NullPointerException e) {
+                } catch (Exception e) {
                     website.setText(getString(R.string.not_available));
                 }
                 desc.setText(selectedRestaurant.getAbout().getDescription());
@@ -919,45 +921,45 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
 
             try {
                 listNumbersDAta.clear();
-            } catch (NullPointerException ignored) {
+            } catch (Exception ignored) {
 
             }
             try {
                 if (!selectedRestaurant.getAbout().getVodafone().equals("null")) {
                     listNumbersDAta.add(selectedRestaurant.getAbout().getVodafone());
                 }
-            } catch (NullPointerException ignored) {
+            } catch (Exception ignored) {
             }
             try {
                 if (!selectedRestaurant.getAbout().getWe().equals("null")) {
                     listNumbersDAta.add(selectedRestaurant.getAbout().getWe());
                 }
-            } catch (NullPointerException ignored) {
+            } catch (Exception ignored) {
             }
 
             try {
                 if (!selectedRestaurant.getAbout().getEtisalat().equals("null")) {
                     listNumbersDAta.add(selectedRestaurant.getAbout().getEtisalat());
                 }
-            } catch (NullPointerException ignored) {
+            } catch (Exception ignored) {
             }
 
             try {
                 if (!selectedRestaurant.getAbout().getOrange().equals("null")) {
                     listNumbersDAta.add(selectedRestaurant.getAbout().getOrange());
                 }
-            } catch (NullPointerException ignored) {
+            } catch (Exception ignored) {
             }
 
             try {
                 if (!selectedRestaurant.getAbout().getHotLine().equals("null")) {
                     listNumbersDAta.add(selectedRestaurant.getAbout().getHotLine());
                 }
-            } catch (NullPointerException ignored) {
+            } catch (Exception ignored) {
             }
 
 
-        } catch (NullPointerException ignored) {
+        } catch (Exception ignored) {
             haveNumbers = false;
             // phoneNum.setText(getString(R.string.not_available));
         }
@@ -1057,7 +1059,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
             }
             // TODO MAKE MENU // true : contain only pdf , false contain list of images
             //  pdfUrl = "http://pixelserver-001-site61.ctempurl.com".trim() + selectedRestaurant.getResturant().getMenu();
-        } catch (NullPointerException e) {
+        } catch (Exception e) {
             Log.d("ERROR_", "getSelectedItemInCatData: " + e.getMessage() + e.getCause());
         }
     }
@@ -1099,7 +1101,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                 editoor.putString(Constant.KEY_VIDEO_URL, "http://pixelserver-001-site61.ctempurl.com".trim() + selectedRestaurant.getResturant().getVideo());
                 editoor.apply();
 
-            } catch (NullPointerException e) {
+            } catch (Exception e) {
                 editoor.putString(Constant.KEY_VIDEO_URL, "");
                 editoor.apply();
             }
@@ -1146,7 +1148,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                 editoor.putString(Constant.KEY_VIDEO_URL, "http://pixelserver-001-site61.ctempurl.com".trim() + selectedRestaurant.getBeauty().getVideo());
                 editoor.apply();
 
-            } catch (NullPointerException e) {
+            } catch (Exception e) {
                 editoor.putString(Constant.KEY_VIDEO_URL, "");
                 editoor.apply();
             }
@@ -1193,7 +1195,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                 editoor.putString(Constant.KEY_VIDEO_URL, "http://pixelserver-001-site61.ctempurl.com".trim() + selectedRestaurant.getGym().getVideo());
                 editoor.apply();
 
-            } catch (NullPointerException e) {
+            } catch (Exception e) {
                 editoor.putString(Constant.KEY_VIDEO_URL, "");
                 editoor.apply();
             }
@@ -1241,7 +1243,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                 editoor.putString(Constant.KEY_VIDEO_URL, "http://pixelserver-001-site61.ctempurl.com".trim() + selectedRestaurant.getHospital().getVideo());
                 editoor.apply();
 
-            } catch (NullPointerException e) {
+            } catch (Exception e) {
                 editoor.putString(Constant.KEY_VIDEO_URL, "");
                 editoor.apply();
             }
@@ -1289,7 +1291,7 @@ public class HomeRestFragment extends Fragment implements LatestNewsAdapter.OnCl
                 editoor.putString(Constant.KEY_VIDEO_URL, "http://pixelserver-001-site61.ctempurl.com".trim() + selectedRestaurant.getPharmacy().getVideo());
                 editoor.apply();
 
-            } catch (NullPointerException e) {
+            } catch (Exception e) {
                 editoor.putString(Constant.KEY_VIDEO_URL, "");
                 editoor.apply();
             }

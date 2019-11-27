@@ -19,7 +19,14 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activites.HomeActivity"></activity>
+        <activity android:name=".activites.relatedToBasket.MyOrdersActivity"></activity>
+        <activity android:name=".activites.relatedToBasket.ViewOrderActivity" />
+        <activity android:name=".activites.relatedToBasket.CheckoutActivity" />
+        <activity android:name=".activites.relatedToBasket.AddressActivity" />
+        <activity android:name=".activites.relatedToBasket.OrderDetailsActivity" />
+        <activity android:name=".activites.relatedToBasket.subDetails.ViewSelectedItemActivity"
+            android:parentActivityName=".activites.HomeActivity"/>
+        <activity android:name=".activites.HomeActivity" />
         <activity
             android:name=".activites.hotels.HotelsActivity"
             android:parentActivityName=".activites.HomeActivity" />

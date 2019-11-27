@@ -24,8 +24,10 @@ import java.util.Objects;
 import apps.pixel.al.egykey.R;
 import apps.pixel.al.egykey.activites.retaurant.jobs.jobDetails.SelectedJobActivity;
 import apps.pixel.al.egykey.adapters.restaurant.JobsAdapter;
+import apps.pixel.al.egykey.fragments.selectedCatHome.home.HomeRestFragment;
 import apps.pixel.al.egykey.models.job.JobModel;
 import apps.pixel.al.egykey.utilities.CairoBoldTextView;
+import apps.pixel.al.egykey.utilities.CairoRegularTextView;
 import apps.pixel.al.egykey.utilities.Constant;
 
 import static apps.pixel.al.egykey.utilities.Constant.setSwipeLayourColor;
@@ -50,6 +52,9 @@ public class JobsFragment extends Fragment implements JobsAdapter.OnClickHandler
     private JobsPresenter presenter;
 
     private String selectedId;
+
+    private CairoRegularTextView mTxtPrecentage, mTxtAfterScratch;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

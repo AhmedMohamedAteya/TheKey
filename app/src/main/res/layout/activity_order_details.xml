@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activites.relatedToBasket.OrderDetailsActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:fillViewport="true">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/ic_left_arrow" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/close"
+                    android:orientation="horizontal">
+
+                    <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                        android:id="@+id/txt_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="1"
+                        android:gravity="end|center"
+                        android:text="@string/my_basket"
+                        android:textColor="@color/default_text_color"
+                        android:textSize="@dimen/_13ssp" />
+
+                    <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                        android:id="@+id/txt_remove"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toEndOf="@id/txt_title"
+                        android:layout_weight="1"
+                        android:gravity="end|center"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:text="@string/remove"
+                        android:textColor="@color/pdlg_color_red"
+                        android:textSize="@dimen/_10ssp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/seperator" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linear_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="center"
+                android:background="#eeeeee"
+                android:gravity="center|start"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:cardCornerRadius="@dimen/_4sdp"
+                    app:cardElevation="0dp">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_logo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center|start"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_15sdp">
+
+                    <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center|start"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:text="@string/your_order_from"
+                        android:textColor="#777"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                        android:id="@+id/txt_rest_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center|start"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:text="@string/your_order_from"
+                        android:textColor="@color/pdlg_color_black"
+                        android:textSize="@dimen/_13ssp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_my_basket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linear_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/light_accent"
+                android:orientation="horizontal"
+                android:padding="@dimen/_8sdp">
+
+                <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:text="@string/total"
+                    android:textColor="@color/default_text_color" />
+
+                <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                    android:id="@+id/txt_salary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end|center"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:textColor="@color/default_text_color" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!--<androidx.appcompat.widget.LinearLayoutCompat-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="@dimen/_40sdp"-->
+            <!--android:layout_marginEnd="@dimen/_20sdp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:paddingTop="@dimen/_5sdp">-->
+
+            <!--<apps.pixel.al.egykey.utilities.CairoRegularTextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:gravity="center|start"-->
+            <!--android:text="@string/delivery_fees"-->
+            <!--android:textColor="@color/default_text_color"-->
+            <!--android:textSize="@dimen/_12ssp" />-->
+
+            <!--<apps.pixel.al.egykey.utilities.CairoRegularTextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:gravity="center|end"-->
+            <!--android:text="10 EGP"-->
+            <!--android:textColor="@color/default_text_color"-->
+            <!--android:textSize="@dimen/_12ssp" />-->
+
+            <!--</androidx.appcompat.widget.LinearLayoutCompat>-->
+
+
+            <!--<androidx.appcompat.widget.LinearLayoutCompat-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="@dimen/_40sdp"-->
+            <!--android:layout_marginEnd="@dimen/_20sdp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:paddingTop="@dimen/_5sdp">-->
+
+            <!--<apps.pixel.al.egykey.utilities.CairoRegularTextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:gravity="center|start"-->
+            <!--android:text="@string/tax"-->
+            <!--android:textColor="@color/default_text_color"-->
+            <!--android:textSize="@dimen/_12ssp" />-->
+
+            <!--<apps.pixel.al.egykey.utilities.CairoRegularTextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:gravity="center|end"-->
+            <!--android:text="0.0 EGP"-->
+            <!--android:textColor="@color/default_text_color"-->
+            <!--android:textSize="@dimen/_12ssp" />-->
+
+            <!--</androidx.appcompat.widget.LinearLayoutCompat>-->
+
+
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/_1sdp"-->
+            <!--android:layout_marginStart="@dimen/_35sdp"-->
+            <!--android:layout_marginTop="@dimen/_5sdp"-->
+            <!--android:layout_marginEnd="@dimen/_15sdp"-->
+            <!--android:layout_marginBottom="@dimen/_5sdp"-->
+            <!--android:background="@color/seperator" />-->
+
+            <!--<androidx.appcompat.widget.LinearLayoutCompat-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="@dimen/_20sdp"-->
+            <!--android:layout_marginEnd="@dimen/_20sdp"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<apps.pixel.al.egykey.utilities.CairoRegularTextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:gravity="center|start"-->
+            <!--android:text="@string/total"-->
+            <!--android:textColor="@color/default_text_color"-->
+            <!--android:textSize="@dimen/_12ssp" />-->
+
+            <!--<apps.pixel.al.egykey.utilities.CairoRegularTextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:gravity="center|end"-->
+            <!--android:text="150.0 EGP"-->
+            <!--android:textColor="@color/default_text_color"-->
+            <!--android:textSize="@dimen/_12ssp" />-->
+
+            <!--</androidx.appcompat.widget.LinearLayoutCompat>-->
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <apps.pixel.al.egykey.utilities.CairoBoldButton
+        android:id="@+id/btn_checkout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="@string/go_to_checkout"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp" />
+
+    <apps.pixel.al.egykey.utilities.CairoBoldTextView
+        android:id="@+id/txt_no_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="@string/there_no_data"
+        android:textColor="@color/default_text_color"
+        android:textSize="@dimen/_14ssp"
+        android:visibility="gone" />
+
+</RelativeLayout>

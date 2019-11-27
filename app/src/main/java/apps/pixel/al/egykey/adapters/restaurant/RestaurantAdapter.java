@@ -114,7 +114,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
     }
 
     public interface OnClickHandler {
-        void onClick(String position);
+        void onClick(String position, String englishName, String arabicName, String imgUrl);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -146,7 +146,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
         @Override
         public void onClick(View view) {
             int position = getAdapterPosition();
-            onClickHandler.onClick(idList.get(position));
+            onClickHandler.onClick(idList.get(position), englishNames.get(position), arabicNames.get(position), urlsLogos.get(position));
         }
     }
 }

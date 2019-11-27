@@ -20,6 +20,8 @@ import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -85,6 +87,28 @@ public final class Constant {
     public static final String CAT_GYM_VALUE = "5";
     public static final String CAT_HOSPITAL_VALUE = "6";
     public static final String CAT_THAT_SELECTED = "CAT_THAT_SELECTED";
+    public static final String SELECTED_SUB_DETAILS_KEY = "SELECTED_SUB_KEY";
+    public static final String SELECTED_RESTAURANT_DETAILS_FOR_MENU = "SELECTED_RESTAURANT_DETAILS_FOR_MENU";
+    public static final String DATA_BASE_NAME = "DATA_BASE_NAME";
+    public static final String ID_OF_RESTAURANT_ORDER = "ID_OF_RESTAURANT_ORDER";
+    public static final String FALSE = "FALSE";
+    public static final String TRUE = "TRUE";
+    public static final String ITEM_SELECTED_NAME_EN = "ITEM_SELECTED_NAME_EN";
+    public static final String ITEM_SELECTED_NAME_AR = "ITEM_SELECTED_NAME_AR";
+    public static final String ITEM_SELECTED_REST_LOGO = "ITEM_SELECTED_REST_LOGO";
+    public static final String SELECTED_RESTAURANT_AR_NAME_FOR_MENU = "SELECTED_RESTAURANT_AR_NAME_FOR_MENU";
+    public static final String SELECTED_RESTAURANT_EN_NAME_FOR_MENU = "SELECTED_RESTAURANT_EN_NAME_FOR_MENU";
+    public static final String SELECTED_RESTAURANT_LOGO_FOR_MENU = "SELECTED_RESTAURANT_LOGO_FOR_MENU";
+    public static final String SELECTED_ID_SUB_VIEW_SELECTED = "SELECTED_ID_SUB_VIEW_SELECTED";
+    public static String SELECTED_SUB_ID_FOR_BOTTOM_DIALOG;
+
+
+    public static int  ID_JOBS = 1;
+    public static int  ID_COUPON = 2;
+    public static int  ID_HOME = 3 ;
+    public static int  ID_EGY_KEY = 4 ;
+    public static int  ID_OFFERS = 5 ;
+
 
     public static String FB_LINK;
     public static String INSTAGRAM_LINK;
@@ -544,4 +568,23 @@ public final class Constant {
     }
 
 
+    public static void setListViewHeightBasedOnChildren(ListView listView) {
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter == null) {
+            // pre-condition
+            return;
+        }
+
+        int totalHeight = 0;
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, listView);
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        listView.setLayoutParams(params);
+        listView.requestLayout();
+    }
 }

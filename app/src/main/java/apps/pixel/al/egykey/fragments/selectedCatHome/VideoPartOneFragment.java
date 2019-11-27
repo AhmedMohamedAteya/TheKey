@@ -38,6 +38,7 @@ import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
 
 import apps.pixel.al.egykey.R;
+import apps.pixel.al.egykey.utilities.CairoRegularTextView;
 import apps.pixel.al.egykey.utilities.Constant;
 
 public class VideoPartOneFragment extends Fragment implements Player.EventListener {
@@ -51,6 +52,8 @@ public class VideoPartOneFragment extends Fragment implements Player.EventListen
     private ProgressBar spinnerVideoDetails;
     private AppCompatImageView imageViewExit;
     private String videoUrl;
+
+    private CairoRegularTextView mTxtPrecentage, mTxtAfterScratch;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

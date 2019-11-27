@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
@@ -134,7 +135,7 @@ public class SelectedCateagoryActivity extends AppCompatActivity implements Rest
                         presenter.searchOnGym(mEditTextSearch.getText().toString().trim());
                     } else if (getIntent().getStringExtra(Constant.CAT_THAT_SELECTED).equals(CAT_HOSPITAL_VALUE)) {
                         presenter.searchOnHospital(mEditTextSearch.getText().toString().trim());
-                    }else if (getIntent().getStringExtra(Constant.CAT_THAT_SELECTED).equals(CAT_PHARMACY_VALUE)) {
+                    } else if (getIntent().getStringExtra(Constant.CAT_THAT_SELECTED).equals(CAT_PHARMACY_VALUE)) {
                         presenter.searchOnPharmacy(mEditTextSearch.getText().toString().trim());
                     }
 
@@ -247,11 +248,15 @@ public class SelectedCateagoryActivity extends AppCompatActivity implements Rest
     }
 
     @Override
-    public void onClick(String id) {
+    public void onClick(String id, String englishName, String arabicName, String imgUrl) {
         hideSoftKeyboardAfterSearch();
 
+        Toast.makeText(this, imgUrl, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, SelectedItemKotlinActivity.class);
         intent.putExtra(Constant.ITEM_SELECTED_ID, id);
+        intent.putExtra(Constant.ITEM_SELECTED_REST_LOGO, imgUrl.trim());
+        intent.putExtra(Constant.ITEM_SELECTED_NAME_EN, englishName);
+        intent.putExtra(Constant.ITEM_SELECTED_NAME_AR, arabicName);
         intent.putExtra(Constant.CAT_THAT_SELECTED, getIntent().getStringExtra(Constant.CAT_THAT_SELECTED));
         Log.d("ID_RESTAURANT", "onCreateView: " + id);
 

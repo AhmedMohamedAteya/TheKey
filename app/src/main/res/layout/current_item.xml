@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_7sdp"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/light_accent"
+    app:cardCornerRadius="@dimen/_6sdp"
+    app:cardElevation="@dimen/_4sdp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_5sdp">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toEndOf="@+id/card"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                    android:id="@+id/restaurant_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.5"
+                    android:gravity="start|center"
+                    android:text="Pizza hut"
+                    android:textAllCaps="true"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/_12ssp" />
+
+                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                    android:id="@+id/meal_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="start|center"
+                    android:text="1 Item Accepted "
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/_12ssp" />
+
+                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="start|center"
+                    android:text="1 Item Accepted "
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/_12ssp" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_weight="1">
+
+                    <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                        android:id="@+id/desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:text="Rejected"
+                        android:textColor="@color/pdlg_color_red"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerHorizontal="true"
+                        app:cardCornerRadius="@dimen/_4sdp"
+                        app:cardElevation="0dp">
+
+                        <apps.pixel.al.egykey.utilities.CairoBoldButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="end"
+                            android:background="@color/colorPrimary"
+                            android:gravity="center"
+                            android:text="Recorder"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10ssp" />
+                    </androidx.cardview.widget.CardView>
+
+
+                    <!--<apps.pixel.ahmed.emad.captinmakuk.utilities.CairoRegularTextView-->
+                    <!--android:id="@+id/order_num"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginStart="@dimen/_20sdp"-->
+                    <!--android:gravity="start|center"-->
+                    <!--android:text="RYZN1"-->
+                    <!--android:textColor="@color/default_two"-->
+                    <!--android:textSize="@dimen/_10ssp" />-->
+
+                </RelativeLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
+                app:cardCornerRadius="@dimen/_6sdp"
+                app:cardElevation="0dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/_2sdp"
+                    android:scaleType="fitXY"
+                    android:src="@color/seperator" />
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>

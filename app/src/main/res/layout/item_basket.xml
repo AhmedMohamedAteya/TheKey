@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <apps.pixel.al.egykey.utilities.CairoBoldTextView
+            android:id="@+id/meal_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/light_accent"
+            android:gravity="start|center"
+            android:padding="@dimen/_8sdp"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:textColor="@color/default_text_color"
+            android:textSize="@dimen/_12ssp" />
+
+
+        <apps.pixel.al.egykey.utilities.CairoRegularTextView
+            android:id="@+id/meal_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:background="@color/light_accent"
+            android:gravity="end|center"
+            android:padding="@dimen/_8sdp"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:textColor="@color/default_text_color"
+            android:textSize="@dimen/_10ssp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:background="@color/light_accent"
+            android:gravity="center"
+            android:padding="@dimen/_6sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_edit"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_edit" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_delete"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_rubbish_bin" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
