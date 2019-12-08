@@ -117,8 +117,6 @@ public class OrderDetailsActivity extends AppCompatActivity implements BasketAda
         setContentView(R.layout.activity_order_details);
 
         initViews();
-
-
     }
 
     private void initViews() {
@@ -291,7 +289,8 @@ public class OrderDetailsActivity extends AppCompatActivity implements BasketAda
 
     }
 
-    private void openBottomDialog(int position, String selectedId, int id) {
+    private void
+    openBottomDialog(int position, String selectedId, int id) {
         Log.d("DATA_THAT_SAVED_TO_EDIT", "openBottomDialog: " + orderDetailsModels.get(position).toString());
         Rect displayRectangle = new Rect();
         Window window = Objects.requireNonNull(getWindow());
@@ -444,7 +443,7 @@ public class OrderDetailsActivity extends AppCompatActivity implements BasketAda
 
             finish();
             Intent intent = new Intent(OrderDetailsActivity.this, OrderDetailsActivity.class);
-            intent.putExtra(Constant.SELECTED_RESTAURANT_DETAILS_FOR_MENU , getIntent().getStringExtra(Constant.SELECTED_RESTAURANT_DETAILS_FOR_MENU));
+            intent.putExtra(Constant.SELECTED_RESTAURANT_DETAILS_FOR_MENU, getIntent().getStringExtra(Constant.SELECTED_RESTAURANT_DETAILS_FOR_MENU));
             startActivity(intent);
 
 //            orderViewModel.getAllOrders().observe(OrderDetailsActivity.this, orderDetailsModels -> {
@@ -524,7 +523,6 @@ public class OrderDetailsActivity extends AppCompatActivity implements BasketAda
                 this.orderDetailsModel.getTotalPrice(), this.orderDetailsModel.getArabicName(), this.orderDetailsModel.getEnglishName(),
                 this.orderDetailsModel.getImgLogo(), this.orderDetailsModel.getSelectedId());
 
-        Log.d("DATA_THAT_ENTERED", "openBottomDialog: " + orderDetailsModelForDB.toString());
 
 
         btnCancel.setOnClickListener(view -> dialog.cancel());

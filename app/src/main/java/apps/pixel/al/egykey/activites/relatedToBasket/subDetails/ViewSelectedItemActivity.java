@@ -85,6 +85,9 @@ public class ViewSelectedItemActivity extends AppCompatActivity implements SizeA
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_selected_items);
 
+
+
+
         if (getIntent().hasExtra(Constant.SELECTED_SUB_DETAILS_KEY)) {
             selectedId = getIntent().getStringExtra(Constant.SELECTED_SUB_DETAILS_KEY);
         }

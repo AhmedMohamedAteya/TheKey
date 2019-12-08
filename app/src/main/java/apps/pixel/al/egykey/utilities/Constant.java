@@ -103,11 +103,11 @@ public final class Constant {
     public static String SELECTED_SUB_ID_FOR_BOTTOM_DIALOG;
 
 
-    public static int  ID_JOBS = 1;
-    public static int  ID_COUPON = 2;
-    public static int  ID_HOME = 3 ;
-    public static int  ID_EGY_KEY = 4 ;
-    public static int  ID_OFFERS = 5 ;
+    public static int ID_JOBS = 1;
+    public static int ID_COUPON = 2;
+    public static int ID_HOME = 3;
+    public static int ID_EGY_KEY = 4;
+    public static int ID_OFFERS = 5;
 
 
     public static String FB_LINK;

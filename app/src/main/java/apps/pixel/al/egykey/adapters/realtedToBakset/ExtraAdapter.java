@@ -49,15 +49,15 @@ public class ExtraAdapter extends RecyclerView.Adapter<ExtraAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull final ExtraAdapter.ViewHolder holder, final int listPosition) {
+
+        holder.txtExtra.setText(extraOrderDetails.get(listPosition).getExtraName());
+        holder.txtPrice.setText(extraOrderDetails.get(listPosition).getExtraPrice() + " " + getContext().getString(R.string.egp));
+
+
+        final ExtraOrderDetails currentItem = extraOrderDetails.get(listPosition);
+
+
         try {
-
-            holder.txtExtra.setText(extraOrderDetails.get(listPosition).getExtraName());
-            holder.txtPrice.setText(extraOrderDetails.get(listPosition).getExtraPrice() + " " + getContext().getString(R.string.egp));
-
-
-            final ExtraOrderDetails currentItem = extraOrderDetails.get(listPosition);
-
-
             holder.itemView.setOnClickListener(v -> {
                 holder.checkbox.setChecked(
                         !holder.checkbox.isChecked());

@@ -72,7 +72,6 @@ class SelectedItemKotlinActivity : AppCompatActivity() {
         mImgBack = findViewById(apps.pixel.al.egykey.R.id.arrow_back_page_two)
         mImgBack?.setOnClickListener({ onBackPressed() })
 
-
         bottomNavigation.add(MeowBottomNavigation.Model(ID_HOME, apps.pixel.al.egykey.R.drawable.ic_home))
         bottomNavigation.add(MeowBottomNavigation.Model(ID_OFFERS, apps.pixel.al.egykey.R.drawable.ic_menu))
         bottomNavigation.add(MeowBottomNavigation.Model(ID_COUPON, apps.pixel.al.egykey.R.drawable.ic_nav_copoun))
@@ -82,8 +81,7 @@ class SelectedItemKotlinActivity : AppCompatActivity() {
 
         //bottomNavigation.setCount(ID_EGY_KEY, "115")
         bottomNavigation.show(ID_HOME, true)
-        //handleHomeClick()
-
+        handleHomeClick()
         bottomNavigation.setOnShowListener {
             //            val name = when (it.id) {
 //                ID_HOME -> R.string.home
@@ -165,19 +163,22 @@ class SelectedItemKotlinActivity : AppCompatActivity() {
         mImgForCoupon?.setVisibility(View.GONE)
         //mTxtRestarauntName?.setVisibility(View.GONE)
         supportFragmentManager.beginTransaction().replace(apps.pixel.al.egykey.R.id.fragment_container, OffersFramgent())
-                .setCustomAnimations(apps.pixel.al.egykey.R.anim.enter_from_right, apps.pixel.al.egykey.R.anim.exit_from_right).commit()
+                .setCustomAnimations(apps.pixel.al.egykey.R.anim.enter_from_right, apps.pixel.al.egykey.R.anim.exit_from_right)
+                .commit()
     }
 
     override fun onResume() {
         super.onResume()
 
-        bottomNavigation.show(ID_HOME, true)
-        handleHomeClick()
+        //bottomNavigation.show(ID_HOME, true)
+        //handleHomeClick()
     }
 
     override fun onBackPressed() {
         super.onBackPressed()
-
+        val fm = getSupportFragmentManager()
+        fm.popBackStack()
         finish()
     }
+
 }
