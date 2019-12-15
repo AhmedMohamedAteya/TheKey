@@ -78,7 +78,6 @@
                     android:drawablePadding="@dimen/_10sdp"
                     android:gravity="start|center"
                     android:hint="@string/password"
-                    android:inputType="textPassword"
                     android:paddingStart="@dimen/_5sdp"
                     android:paddingTop="@dimen/_9sdp"
                     android:paddingEnd="@dimen/_5sdp"
