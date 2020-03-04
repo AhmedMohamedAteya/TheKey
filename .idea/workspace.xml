@@ -183,9 +183,7 @@
     <last-search-timestamp>1571218685674</last-search-timestamp>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="957b21c7-516b-496b-9c8c-9e137cb39119" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="957b21c7-516b-496b-9c8c-9e137cb39119" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -611,7 +609,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583332438706</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="first commit">
+      <created>1583333370085</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1583333370085</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -638,7 +643,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="EGY_KEY" />
-    <option name="LAST_COMMIT_MESSAGE" value="EGY_KEY" />
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
