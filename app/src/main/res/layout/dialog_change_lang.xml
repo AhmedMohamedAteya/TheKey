@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+            <apps.pixel.the.key.utilities.CairoBoldTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -34,7 +34,7 @@
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:background="#eeeeee" />
 
-            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+            <apps.pixel.the.key.utilities.CairoRegularTextView
                 android:id="@+id/english"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:background="#eeeeee" />
 
-            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+            <apps.pixel.the.key.utilities.CairoRegularTextView
                 android:id="@+id/arabic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
         app:cardCornerRadius="@dimen/_6sdp"
         app:cardElevation="0dp">
 
-        <apps.pixel.al.egykey.utilities.CairoBoldButton
+        <apps.pixel.the.key.utilities.CairoBoldButton
             android:id="@+id/cancel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

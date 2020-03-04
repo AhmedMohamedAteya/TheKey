@@ -33,7 +33,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                <apps.pixel.the.key.utilities.CairoBoldTextView
                     android:id="@+id/restaurant_name"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -44,7 +44,7 @@
                     android:textColor="@color/default_text_color"
                     android:textSize="@dimen/_12ssp" />
 
-                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                <apps.pixel.the.key.utilities.CairoRegularTextView
                     android:id="@+id/meal_name"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -54,7 +54,7 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="@dimen/_12ssp" />
 
-                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                <apps.pixel.the.key.utilities.CairoRegularTextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
@@ -69,7 +69,7 @@
                     android:layout_height="@dimen/_30sdp"
                     android:layout_weight="1">
 
-                    <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                    <apps.pixel.the.key.utilities.CairoRegularTextView
                         android:id="@+id/desc"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -88,7 +88,7 @@
                         app:cardCornerRadius="@dimen/_4sdp"
                         app:cardElevation="0dp">
 
-                        <apps.pixel.al.egykey.utilities.CairoBoldButton
+                        <apps.pixel.the.key.utilities.CairoBoldButton
                             android:layout_width="wrap_content"
                             android:layout_height="@dimen/_30sdp"
                             android:layout_gravity="end"

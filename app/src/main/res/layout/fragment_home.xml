@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.46"
+        android:src="#B7B7B7" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/toolbar_gradiant"
+                android:elevation="@dimen/_4sdp"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:gravity="end">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/arrow_back_page_two"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/ic_code"
+                        android:visibility="gone" />
+
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true" />
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:weightSum="3">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1.3">
+                            <FrameLayout
+                                android:id="@+id/frame_view_pager"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                >
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:alpha="0.26"
+                                    android:src="#00A99D" />
+
+                                <!--<include-->
+                                <!--android:id="@+id/layout_video"-->
+                                <!--layout="@layout/activity_video_restuarant"-->
+                                <!--android:visibility="visible" />-->
+
+                                <apps.pixel.the.key.utilities.ViewPagerCustomDuration
+                                    android:id="@+id/viewPager"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" />
+
+                                <com.google.android.material.tabs.TabLayout
+                                    android:id="@+id/indicator"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom|center"
+                                    app:tabBackground="@drawable/indicator_selector"
+                                    app:tabGravity="center"
+                                    app:tabIndicatorHeight="0dp" />
+
+                            </FrameLayout>
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <!--
+                                            <FrameLayout
+                                                android:id="@+id/item_restaurant"
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_gravity="center"
+                                                android:layout_weight="1">
+
+                                                <androidx.appcompat.widget.AppCompatImageView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="bottom|center"
+                                                    android:layout_marginBottom="@dimen/_45sdp"
+                                                    android:src="@drawable/img_home_three" />
+
+                                                <FrameLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="bottom|center">
+
+                                                    <androidx.appcompat.widget.AppCompatImageView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:src="@drawable/img_home_below" />
+
+                                                    <apps.pixel.the.key.utilities.CairoBoldTextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:layout_gravity="center"
+                                                        android:layout_marginBottom="@dimen/_7sdp"
+                                                        android:gravity="bottom|center"
+                                                        android:text="@string/rest"
+                                                        android:textColor="@color/pdlg_color_white"
+                                                        android:textSize="@dimen/_13ssp" />
+                                                </FrameLayout>
+                                            </FrameLayout>
+                            -->
+
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/item_education"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/icon_education"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <!--<androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/icon_education" />
+
+                                <apps.pixel.the.key.utilities.CairoBoldTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.2"
+                                    android:text="@string/education"
+                                    android:textSize="@dimen/_13ssp" />-->
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/item_hotels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/icon_hotels"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingTop="@dimen/_30sdp"
+                                android:paddingBottom="@dimen/_30sdp">
+                                <!--
+                                                        <androidx.appcompat.widget.AppCompatImageView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_gravity="center"
+                                                            android:src="@drawable/icon_hotel" />
+
+                                                        <apps.pixel.the.key.utilities.CairoBoldTextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginTop="@dimen/_5sdp"
+                                                            android:text="@string/hotels"
+                                                            android:textSize="@dimen/_13ssp" />-->
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/item_restaurant"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/icon_rest"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingTop="@dimen/_30sdp"
+                                android:paddingBottom="@dimen/_30sdp">
+                                <!--
+                                                        <androidx.appcompat.widget.AppCompatImageView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_gravity="center"
+                                                            android:src="@drawable/icon_rest" />
+
+                                                        <apps.pixel.the.key.utilities.CairoBoldTextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginTop="@dimen/_5sdp"
+                                                            android:text="@string/rest"
+                                                            android:textSize="@dimen/_13ssp" />-->
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <!--
+                                            <FrameLayout
+                                                android:id="@+id/item_restaurant"
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_gravity="center"
+                                                android:layout_weight="1">
+
+                                                <androidx.appcompat.widget.AppCompatImageView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="bottom|center"
+                                                    android:layout_marginBottom="@dimen/_45sdp"
+                                                    android:src="@drawable/img_home_three" />
+
+                                                <FrameLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="bottom|center">
+
+                                                    <androidx.appcompat.widget.AppCompatImageView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:src="@drawable/img_home_below" />
+
+                                                    <apps.pixel.the.key.utilities.CairoBoldTextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:layout_gravity="center"
+                                                        android:layout_marginBottom="@dimen/_7sdp"
+                                                        android:gravity="bottom|center"
+                                                        android:text="@string/rest"
+                                                        android:textColor="@color/pdlg_color_white"
+                                                        android:textSize="@dimen/_13ssp" />
+                                                </FrameLayout>
+                                            </FrameLayout>
+                            -->
+
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/item_beauty"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/icon_beauty"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingTop="@dimen/_30sdp"
+                                android:paddingBottom="@dimen/_30sdp">
+                                <!--
+                                                        <androidx.appcompat.widget.AppCompatImageView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_gravity="center"
+                                                            android:src="@drawable/icon_beauty" />
+
+                                                        <apps.pixel.the.key.utilities.CairoBoldTextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginTop="@dimen/_5sdp"
+                                                            android:text="@string/beauty"
+                                                            android:textSize="@dimen/_13ssp" />-->
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/item_ticket"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/icon_tickets"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingTop="@dimen/_30sdp"
+                                android:paddingBottom="@dimen/_30sdp">
+                                <!--
+                                                        <androidx.appcompat.widget.AppCompatImageView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_gravity="center"
+                                                            android:src="@drawable/icon_ticket" />
+
+                                                        <apps.pixel.the.key.utilities.CairoBoldTextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginTop="@dimen/_5sdp"
+                                                            android:text="@string/tickets"
+                                                            android:textSize="@dimen/_13ssp" />-->
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/item_commercial"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/icon_markets"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingTop="@dimen/_30sdp"
+                                android:paddingBottom="@dimen/_30sdp">
+                                <!--
+                                                        <androidx.appcompat.widget.AppCompatImageView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_gravity="center"
+                                                            android:src="@drawable/icon_shopping" />
+
+                                                        <apps.pixel.the.key.utilities.CairoBoldTextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginTop="@dimen/_5sdp"
+                                                            android:text="@string/markets"
+                                                            android:textSize="@dimen/_13ssp" />-->
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </ScrollView>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:src="@drawable/logo_png"
+            />
+    </FrameLayout>
+</RelativeLayout>

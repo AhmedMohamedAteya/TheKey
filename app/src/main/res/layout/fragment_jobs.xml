@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.selectedCatHome.jobs.JobsFragment">
+    tools:context="apps.pixel.the.key.fragments.selectedCatHome.jobs.JobsFragment">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeContainer"
@@ -20,7 +20,7 @@
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <apps.pixel.al.egykey.utilities.CairoBoldTextView
+    <apps.pixel.the.key.utilities.CairoBoldTextView
         android:id="@+id/txt_no_data"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

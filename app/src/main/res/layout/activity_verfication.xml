@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activites.beforeHome.VerficationActivity">
+    tools:context="apps.pixel.the.key.activites.beforeHome.VerficationActivity">
 
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -29,7 +29,7 @@
             android:orientation="vertical">
 
 
-            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+            <apps.pixel.the.key.utilities.CairoBoldTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_5sdp"
@@ -40,7 +40,7 @@
                 android:textSize="@dimen/_20ssp" />
 
 
-            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+            <apps.pixel.the.key.utilities.CairoRegularTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
@@ -61,7 +61,7 @@
                 android:layout_marginEnd="@dimen/_30sdp"
                 android:orientation="horizontal">
 
-                <apps.pixel.al.egykey.utilities.CairoBoldEditText
+                <apps.pixel.the.key.utilities.CairoBoldEditText
                     android:id="@+id/txt_one"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_35sdp"
@@ -84,7 +84,7 @@
                     android:layout_width="@dimen/_5sdp"
                     android:layout_height="match_parent" />
 
-                <apps.pixel.al.egykey.utilities.CairoBoldEditText
+                <apps.pixel.the.key.utilities.CairoBoldEditText
                     android:id="@+id/txt_two"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_35sdp"
@@ -107,7 +107,7 @@
                     android:layout_width="@dimen/_5sdp"
                     android:layout_height="match_parent" />
 
-                <apps.pixel.al.egykey.utilities.CairoBoldEditText
+                <apps.pixel.the.key.utilities.CairoBoldEditText
                     android:id="@+id/txt_three"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_35sdp"
@@ -130,7 +130,7 @@
                     android:layout_width="@dimen/_5sdp"
                     android:layout_height="match_parent" />
 
-                <apps.pixel.al.egykey.utilities.CairoBoldEditText
+                <apps.pixel.the.key.utilities.CairoBoldEditText
                     android:id="@+id/txt_four"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_35sdp"
@@ -150,7 +150,7 @@
                     android:textSize="@dimen/_18sdp" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <apps.pixel.al.egykey.utilities.CairoBoldButton
+            <apps.pixel.the.key.utilities.CairoBoldButton
                 android:id="@+id/btn_continue"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_35sdp"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activites.retaurant.jobs.ApplicationJobActivity">
+    tools:context="apps.pixel.the.key.activites.retaurant.jobs.ApplicationJobActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -12,7 +12,7 @@
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="@dimen/_10sdp"
-        android:background="@drawable/bg_toolbar"
+        android:background="@drawable/toolbar_gradiant"
         android:elevation="@dimen/_4sdp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
@@ -35,7 +35,7 @@
                 android:padding="@dimen/_5sdp"
                 android:src="@drawable/ic_back" />
 
-            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+            <apps.pixel.the.key.utilities.CairoBoldTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_30sdp"
@@ -89,7 +89,7 @@
             android:orientation="vertical"
             android:paddingTop="@dimen/_15sdp">
 
-            <!--<apps.pixel.al.egykey.utilities.CairoRegularTextView-->
+            <!--<apps.pixel.the.key.utilities.CairoRegularTextView-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="wrap_content"-->
             <!--android:gravity="start"-->
@@ -97,7 +97,7 @@
             <!--android:textColor="@color/default_text_color"-->
             <!--android:textSize="@dimen/_12ssp" />-->
 
-            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+            <apps.pixel.the.key.utilities.CairoBoldTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
@@ -107,7 +107,7 @@
                 android:textSize="@dimen/_14ssp" />
 
 
-            <apps.pixel.al.egykey.utilities.CairoBoldEditText
+            <apps.pixel.the.key.utilities.CairoBoldEditText
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
                 android:layout_gravity="center"
@@ -120,7 +120,7 @@
                 android:textSize="@dimen/_14ssp" />
 
 
-            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+            <apps.pixel.the.key.utilities.CairoBoldTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
@@ -129,7 +129,7 @@
                 android:textColor="@color/default_text_color"
                 android:textSize="@dimen/_14ssp" />
 
-            <apps.pixel.al.egykey.utilities.CairoBoldEditText
+            <apps.pixel.the.key.utilities.CairoBoldEditText
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
                 android:layout_marginBottom="@dimen/_5sdp"
@@ -141,7 +141,7 @@
                 android:textSize="@dimen/_14ssp" />
 
 
-            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+            <apps.pixel.the.key.utilities.CairoBoldTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
@@ -151,7 +151,7 @@
                 android:textSize="@dimen/_14ssp" />
 
 
-            <apps.pixel.al.egykey.utilities.CairoBoldEditText
+            <apps.pixel.the.key.utilities.CairoBoldEditText
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
                 android:layout_gravity="center"
@@ -165,7 +165,7 @@
                 android:textSize="@dimen/_14ssp" />
 
 
-            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+            <apps.pixel.the.key.utilities.CairoBoldTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
@@ -175,7 +175,7 @@
                 android:textSize="@dimen/_14ssp" />
 
 
-            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+            <apps.pixel.the.key.utilities.CairoBoldTextView
                 android:id="@+id/txt_city"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
@@ -192,7 +192,7 @@
                 android:textSize="@dimen/_14ssp" />
 
 
-            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+            <apps.pixel.the.key.utilities.CairoBoldTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
@@ -202,7 +202,7 @@
                 android:textSize="@dimen/_14ssp" />
 
 
-            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+            <apps.pixel.the.key.utilities.CairoBoldTextView
                 android:id="@+id/txt_experience"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
@@ -218,7 +218,7 @@
                 android:textSize="@dimen/_14ssp" />
 
 
-            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+            <apps.pixel.the.key.utilities.CairoBoldTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
@@ -228,7 +228,7 @@
                 android:textSize="@dimen/_14ssp" />
 
 
-            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+            <apps.pixel.the.key.utilities.CairoBoldTextView
                 android:id="@+id/txt_education"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
@@ -251,7 +251,7 @@
                 android:layout_marginBottom="@dimen/_5sdp"
                 android:orientation="horizontal">
 
-                <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                <apps.pixel.the.key.utilities.CairoBoldTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
@@ -259,7 +259,7 @@
                     android:textColor="@color/default_text_color"
                     android:textSize="@dimen/_14ssp" />
 
-                <apps.pixel.al.egykey.utilities.CairoBoldButton
+                <apps.pixel.the.key.utilities.CairoBoldButton
                     android:id="@+id/choose_file"
                     android:layout_width="@dimen/_80sdp"
                     android:layout_height="@dimen/_30sdp"
@@ -270,7 +270,7 @@
                     android:textSize="@dimen/_11ssp" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <apps.pixel.al.egykey.utilities.CairoBoldEditText
+            <apps.pixel.the.key.utilities.CairoBoldEditText
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_140sdp"
                 android:background="@drawable/ic_bg_edit_text"
@@ -286,7 +286,7 @@
                 android:textColorHint="@color/default_text_color"
                 android:textSize="@dimen/_14ssp" />
 
-            <apps.pixel.al.egykey.utilities.CairoBoldButton
+            <apps.pixel.the.key.utilities.CairoBoldButton
                 android:id="@+id/btn_apply"
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_30sdp"

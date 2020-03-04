@@ -55,7 +55,7 @@
             </androidx.cardview.widget.CardView>
 
 
-            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+            <apps.pixel.the.key.utilities.CairoBoldTextView
                 android:id="@+id/txt_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
                 android:layout_marginBottom="@dimen/_5sdp"
                 android:background="@color/default_text_color" />
 
-            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+            <apps.pixel.the.key.utilities.CairoRegularTextView
                 android:id="@+id/txt_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

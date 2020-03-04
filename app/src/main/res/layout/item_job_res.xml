@@ -29,7 +29,7 @@
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
-                android:src="@drawable/test" />
+                />
         </androidx.cardview.widget.CardView>
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -40,7 +40,7 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <apps.pixel.al.egykey.utilities.CairoBoldTextView
+            <apps.pixel.the.key.utilities.CairoBoldTextView
                 android:id="@+id/job_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
                         android:layout_marginEnd="@dimen/_5sdp"
                         android:src="@drawable/ic_loc" />
 
-                    <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                    <apps.pixel.the.key.utilities.CairoRegularTextView
                         android:id="@+id/txt_des"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -104,7 +104,7 @@ salary 5000 L.E"
                         android:layout_marginEnd="@dimen/_5sdp"
                         android:src="@drawable/ic_coins" />
 
-                    <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                    <apps.pixel.the.key.utilities.CairoRegularTextView
                         android:id="@+id/txt_salary"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -128,7 +128,7 @@ salary 5000 L.E"
             android:background="@color/colorAccent" />
 
 
-        <apps.pixel.al.egykey.utilities.CairoRegularTextView
+        <apps.pixel.the.key.utilities.CairoRegularTextView
             android:id="@+id/txt_date"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

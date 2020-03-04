@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-    tools:context=".activites.relatedToBasket.subDetails.ViewSelectedItemActivity">
+    tools:context="apps.pixel.the.key.activites.relatedToBasket.subDetails.ViewSelectedItemActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
                         android:paddingEnd="@dimen/_5sdp"
                         android:src="@drawable/ic_close_black" />
 
-                    <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                    <apps.pixel.the.key.utilities.CairoBoldTextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerHorizontal="true"
@@ -51,7 +51,7 @@
                         android:textColor="@color/default_text_color"
                         android:textSize="@dimen/_12ssp" />
 
-                    <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                    <apps.pixel.the.key.utilities.CairoRegularTextView
                         android:id="@+id/meal_price"
                         android:layout_width="@dimen/_60sdp"
                         android:layout_height="match_parent"
@@ -70,7 +70,7 @@
                     android:layout_height="@dimen/_1sdp"
                     android:background="@color/seperator" />
 
-                <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                <apps.pixel.the.key.utilities.CairoBoldTextView
                     android:id="@+id/txt_meal_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
                     android:textColor="@color/default_text_color"
                     android:textSize="@dimen/_13ssp" />
 
-                <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                <apps.pixel.the.key.utilities.CairoBoldTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/light_accent"
@@ -98,7 +98,7 @@
                     android:layout_height="wrap_content"
                     android:padding="@dimen/_10sdp" />
 
-                <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                <apps.pixel.the.key.utilities.CairoBoldTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/light_accent"
@@ -116,7 +116,7 @@
                     android:layout_height="wrap_content"
                     android:padding="@dimen/_10sdp" />
 
-                <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                <apps.pixel.the.key.utilities.CairoBoldTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/light_accent"
@@ -128,7 +128,7 @@
                     android:textColor="@color/default_text_color"
                     android:textSize="@dimen/_11ssp" />
 
-                <apps.pixel.al.egykey.utilities.CairoBoldEditText
+                <apps.pixel.the.key.utilities.CairoBoldEditText
                     android:id="@+id/et_desc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -177,7 +177,7 @@
                 android:src="@drawable/id_add"
                 android:textColor="@color/white" />
 
-            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+            <apps.pixel.the.key.utilities.CairoRegularTextView
                 android:id="@+id/numer_of_items"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
@@ -199,7 +199,7 @@
                 android:textColor="@color/white" />
 
 
-            <apps.pixel.al.egykey.utilities.CairoBoldButton
+            <apps.pixel.the.key.utilities.CairoBoldButton
                 android:id="@+id/add_to_basket"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_35sdp"

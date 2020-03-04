@@ -25,10 +25,12 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/gif_loader"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_180sdp"
             android:layout_centerInParent="true"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY"
+            android:src="@drawable/egy_key_logo"
+            />
 
     </RelativeLayout>
 

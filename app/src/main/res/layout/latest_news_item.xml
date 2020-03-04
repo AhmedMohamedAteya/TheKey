@@ -26,10 +26,10 @@
                 android:layout_margin="@dimen/_5sdp"
                 android:layout_weight="30"
                 android:scaleType="fitXY"
-                android:src="@drawable/test" />
+                />
 
 
-            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+            <apps.pixel.the.key.utilities.CairoRegularTextView
                 android:id="@+id/txt_news_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"

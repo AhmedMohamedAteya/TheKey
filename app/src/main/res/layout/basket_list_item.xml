@@ -9,7 +9,7 @@
     android:paddingEnd="@dimen/_10sdp">
 
 
-    <apps.pixel.al.egykey.utilities.CairoRegularTextView
+    <apps.pixel.the.key.utilities.CairoRegularTextView
         android:id="@+id/number"
         android:layout_width="@dimen/_25sdp"
         android:layout_height="wrap_content"
@@ -19,7 +19,7 @@
         android:textColor="@color/default_text_color"
         android:textSize="@dimen/_12ssp" />
 
-    <apps.pixel.al.egykey.utilities.CairoRegularTextView
+    <apps.pixel.the.key.utilities.CairoRegularTextView
         android:id="@+id/extra_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
     <!--android:textColor="@color/whitee"-->
     <!--android:textSize="@dimen/_9ssp" />-->
 
-    <apps.pixel.al.egykey.utilities.CairoRegularTextView
+    <apps.pixel.the.key.utilities.CairoRegularTextView
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

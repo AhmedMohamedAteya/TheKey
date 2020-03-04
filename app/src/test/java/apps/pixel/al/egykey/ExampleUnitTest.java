@@ -1,4 +1,4 @@
-package apps.pixel.al.egykey;
+package apps.pixel.the.key;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package apps.pixel.al.egykey;
+package apps.pixel.the.key;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("apps.pixel.al.egykey", appContext.getPackageName());
+        assertEquals("apps.pixel.the.key", appContext.getPackageName());
     }
 }

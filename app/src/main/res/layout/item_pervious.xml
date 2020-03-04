@@ -33,7 +33,7 @@
                 android:layout_toEndOf="@+id/card"
                 android:orientation="vertical">
 
-                <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                <apps.pixel.the.key.utilities.CairoBoldTextView
                     android:id="@+id/restaurant_name"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -44,7 +44,7 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="@dimen/_12ssp" />
 
-                <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                <apps.pixel.the.key.utilities.CairoRegularTextView
                     android:id="@+id/meal_name"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -61,7 +61,7 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                    <apps.pixel.the.key.utilities.CairoRegularTextView
                         android:id="@+id/desc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
 
             </androidx.cardview.widget.CardView>
 
-            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+            <apps.pixel.the.key.utilities.CairoRegularTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"

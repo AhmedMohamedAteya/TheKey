@@ -10,7 +10,7 @@
         android:layout_height="?actionBarSize"
         android:background="#D7B767">
 
-        <apps.pixel.al.egykey.utilities.CairoBoldTextView
+        <apps.pixel.the.key.utilities.CairoBoldTextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"

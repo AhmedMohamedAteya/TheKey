@@ -12,17 +12,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_14sdp"
         android:layout_marginEnd="@dimen/_16sdp"
-        android:background="@drawable/item_bg"
+        android:background="@drawable/toolbar_gradiant"
         android:elevation="@dimen/_6sdp">
+
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_110sdp"
-            android:layout_margin="@dimen/_5sdp"
-            android:layout_marginStart="@dimen/_6sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:layout_marginEnd="@dimen/_6sdp"
-            app:cardCornerRadius="@dimen/_4sdp"
             app:cardElevation="0dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -32,11 +28,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/test" />
+                android:scaleType="centerCrop" />
         </androidx.cardview.widget.CardView>
-
-
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_65sdp"
@@ -51,7 +44,7 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/img_title" />
 
-            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+            <apps.pixel.the.key.utilities.CairoRegularTextView
                 android:id="@+id/txt_since"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_15sdp"
@@ -59,10 +52,11 @@
                 android:layout_marginTop="@dimen/_35sdp"
                 android:layout_marginEnd="@dimen/_90sdp"
                 android:padding="@dimen/_2sdp"
-                android:textColor="@color/pdlg_color_white"
-                android:textSize="@dimen/_4ssp" />
+                android:textColor="@color/blackDark"
+                android:textSize="@dimen/_6ssp"
+                />
 
-            <apps.pixel.al.egykey.utilities.CairoRegularTextView
+            <apps.pixel.the.key.utilities.CairoRegularTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
@@ -70,8 +64,9 @@
                 android:layout_marginTop="@dimen/_35sdp"
                 android:padding="@dimen/_2sdp"
                 android:text="@string/since"
-                android:textColor="@color/pdlg_color_white"
-                android:textSize="@dimen/_4ssp" />
+                android:textColor="@color/blackDark"
+                android:textSize="@dimen/_6ssp"
+                />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/img_logo"
@@ -80,7 +75,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:background="@drawable/placeholder_logo"
-                android:src="@drawable/test" />
+                 />
         </FrameLayout>
 
 
@@ -100,7 +95,7 @@
                 tools:layout_editor_absoluteX="-16dp"
                 tools:layout_editor_absoluteY="-38dp">
 
-                <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                <apps.pixel.the.key.utilities.CairoBoldTextView
                     android:id="@+id/title_english"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -109,12 +104,12 @@
                     android:gravity="center"
                     android:maxLength="23"
                     android:paddingStart="@dimen/_4sdp"
-                    android:text="Dar El fouad Hospital"
+                    android:text=""
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/_10ssp"
                     android:textStyle="bold" />
 
-                <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                <apps.pixel.the.key.utilities.CairoBoldTextView
                     android:id="@+id/title_arabic"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -125,7 +120,7 @@
                     android:gravity="center"
                     android:maxLength="23"
                     android:paddingEnd="@dimen/_4sdp"
-                    android:text="مستشفي دار الفؤاد"
+                    android:text=""
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/_10ssp"
                     android:textStyle="bold" />

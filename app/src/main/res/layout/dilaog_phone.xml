@@ -26,7 +26,7 @@
                 app:cardCornerRadius="@dimen/_3sdp"
                 app:cardElevation="0dp">
 
-                <apps.pixel.al.egykey.utilities.CairoBoldButton
+                <apps.pixel.the.key.utilities.CairoBoldButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#FAE9BF"
@@ -70,7 +70,7 @@
                     app:cardCornerRadius="@dimen/_3sdp"
                     app:cardElevation="0dp">
 
-                    <apps.pixel.al.egykey.utilities.CairoBoldButton
+                    <apps.pixel.the.key.utilities.CairoBoldButton
                         android:id="@+id/card_cancel"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -91,7 +91,7 @@
                     app:cardCornerRadius="@dimen/_3sdp"
                     app:cardElevation="0dp">
 
-                    <apps.pixel.al.egykey.utilities.CairoBoldButton
+                    <apps.pixel.the.key.utilities.CairoBoldButton
                         android:id="@+id/card_ok"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

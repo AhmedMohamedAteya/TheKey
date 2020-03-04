@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <apps.pixel.al.egykey.utilities.CairoBoldTextView
+        <apps.pixel.the.key.utilities.CairoBoldTextView
             android:id="@+id/meal_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
             android:textSize="@dimen/_12ssp" />
 
 
-        <apps.pixel.al.egykey.utilities.CairoRegularTextView
+        <apps.pixel.the.key.utilities.CairoRegularTextView
             android:id="@+id/meal_price"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

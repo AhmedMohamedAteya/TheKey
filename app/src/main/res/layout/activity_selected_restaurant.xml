@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activites.retaurant.selectedRestaurant.SelectedRestaurantActivity">
+    tools:context="apps.pixel.the.key.activites.retaurant.selectedRestaurant.SelectedRestaurantActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -12,7 +12,7 @@
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="@dimen/_10sdp"
-        android:background="@drawable/bg_toolbar"
+        android:background="@drawable/toolbar_gradiant"
         android:elevation="@dimen/_4sdp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_constraintTop_toTopOf="parent"
@@ -52,7 +52,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:padding="@dimen/_5sdp"
-                android:src="@drawable/ic_code" />
+                android:src="@drawable/ic_code"
+                android:visibility="invisible" />
 
         </RelativeLayout>
 
@@ -79,7 +80,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <apps.pixel.al.egykey.utilities.CurvedBottomNavigationView
+    <apps.pixel.the.key.utilities.CurvedBottomNavigationView
         android:id="@+id/curved_bottom"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
@@ -88,15 +89,21 @@
         app:itemTextColor="@color/pdlg_color_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"></apps.pixel.al.egykey.utilities.CurvedBottomNavigationView>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/img_for_coupon_only"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?actionBarSize"
-        android:background="#FAE9BF"
-        android:scaleType="fitXY"
+        android:alpha="0.26"
+        android:background="#00A99D" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?actionBarSize"
+        android:scaleType="centerCrop"
         android:src="@drawable/resta_bg" />
 
 
@@ -108,7 +115,7 @@
         android:layout_marginBottom="?actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></FrameLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

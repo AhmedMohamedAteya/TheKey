@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activites.beautyAndHealth.BeautyAndHealthActivty">
+    tools:context="apps.pixel.the.key.activites.beautyAndHealth.BeautyAndHealthActivty">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -12,7 +12,7 @@
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="@dimen/_10sdp"
-        android:background="@drawable/bg_toolbar"
+        android:background="@drawable/toolbar_gradiant"
         android:elevation="@dimen/_6sdp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
@@ -89,14 +89,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
-                    android:src="@drawable/bg_hospital" />
+                    android:src="@drawable/hospital_bg" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                    <apps.pixel.the.key.utilities.CairoBoldTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -132,14 +132,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
-                    android:src="@drawable/bg_doc" />
+                    android:src="@drawable/clinic_bg" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                    <apps.pixel.the.key.utilities.CairoBoldTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -183,7 +183,7 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                    <apps.pixel.the.key.utilities.CairoBoldTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -219,14 +219,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
-                    android:src="@drawable/bg_beauty" />
+                    android:src="@drawable/beauty_bg" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                    <apps.pixel.the.key.utilities.CairoBoldTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"

@@ -12,7 +12,7 @@
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="@dimen/_10sdp"
-        android:background="@drawable/bg_toolbar"
+        android:background="@drawable/toolbar_gradiant"
         android:elevation="@dimen/_6sdp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
@@ -36,7 +36,7 @@
                 android:src="@drawable/ic_back" />
             <!--android:src="@drawable/ic_back"-->
 
-            <!--<apps.pixel.al.egykey.utilities.CairoBoldEditText-->
+            <!--<apps.pixel.the.key.utilities.CairoBoldEditText-->
             <!--android:id="@+id/searchEditText"-->
             <!--android:layout_width="wrap_content"-->
             <!--android:layout_height="wrap_content"-->
@@ -58,7 +58,7 @@
             <!--android:visibility="visible">-->
 
             <!--<requestFocus />-->
-            <!--</apps.pixel.al.egykey.utilities.CairoBoldEditText>-->
+            <!--</apps.pixel.the.key.utilities.CairoBoldEditText>-->
 
             <Space
                 android:id="@+id/ic_search"
@@ -119,7 +119,7 @@
                         android:orientation="vertical">
 
 
-                        <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                        <apps.pixel.the.key.utilities.CairoBoldTextView
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="95"
@@ -156,7 +156,7 @@
                         android:orientation="vertical">
 
 
-                        <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                        <apps.pixel.the.key.utilities.CairoBoldTextView
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="95"

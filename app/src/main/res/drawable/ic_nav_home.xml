@@ -6,11 +6,11 @@
             <gradient android:centerX="35.71638"
                 android:centerY="35.69595"
                 android:gradientRadius="25.250654" android:type="radial">
-                <item android:color="#FFD7B767" android:offset="0"/>
-                <item android:color="#FFD0AD5D" android:offset="0.108"/>
-                <item android:color="#FFBE9442" android:offset="0.456"/>
-                <item android:color="#FFB38431" android:offset="0.764"/>
-                <item android:color="#FFB07F2C" android:offset="1"/>
+                <item android:color="#00A99D" android:offset="0"/>
+                <item android:color="#00A99D" android:offset="0.108"/>
+                <item android:color="#00A99D" android:offset="0.456"/>
+                <item android:color="#00A99D" android:offset="0.764"/>
+                <item android:color="#00A99D" android:offset="1"/>
             </gradient>
         </aapt:attr>
     </path>

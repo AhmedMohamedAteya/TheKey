@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activites.retaurant.restaurants.SelectedCateagoryActivity">
+    tools:context="apps.pixel.the.key.activites.retaurant.restaurants.SelectedCateagoryActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -12,7 +12,7 @@
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="@dimen/_10sdp"
-        android:background="@drawable/bg_toolbar"
+        android:background="@drawable/toolbar_gradiant"
         android:elevation="@dimen/_6sdp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
@@ -35,7 +35,7 @@
                 android:padding="@dimen/_5sdp"
                 android:src="@drawable/ic_back" />
 
-            <apps.pixel.al.egykey.utilities.CairoBoldEditText
+            <apps.pixel.the.key.utilities.CairoBoldEditText
                 android:id="@+id/searchEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
                 android:visibility="visible">
 
                 <requestFocus />
-            </apps.pixel.al.egykey.utilities.CairoBoldEditText>
+            </apps.pixel.the.key.utilities.CairoBoldEditText>
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ic_search"
@@ -116,7 +116,7 @@
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <apps.pixel.al.egykey.utilities.CairoBoldTextView
+    <apps.pixel.the.key.utilities.CairoBoldTextView
         android:id="@+id/txt_no_data"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

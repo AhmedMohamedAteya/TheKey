@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#eeeeee"
-    tools:context=".activites.retaurant.SortByActivity">
+    tools:context="apps.pixel.the.key.activites.retaurant.SortByActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -13,7 +13,7 @@
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="@dimen/_10sdp"
-        android:background="@drawable/bg_toolbar"
+        android:background="@drawable/toolbar_gradiant"
         android:elevation="@dimen/_4sdp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
@@ -107,7 +107,7 @@
                                     android:src="@drawable/ic_offers_for_sort" />
 
 
-                                <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                                <apps.pixel.the.key.utilities.CairoBoldTextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:gravity="start"
@@ -157,7 +157,7 @@
                                     android:src="@drawable/ic_delivery_for_sort" />
 
 
-                                <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                                <apps.pixel.the.key.utilities.CairoBoldTextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:gravity="start"
@@ -174,7 +174,7 @@
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-                <apps.pixel.al.egykey.utilities.CairoBoldTextView
+                <apps.pixel.the.key.utilities.CairoBoldTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|center"
@@ -213,7 +213,7 @@
                             android:gravity="center" />
 
 
-                        <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                        <apps.pixel.the.key.utilities.CairoRegularTextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_10sdp"
@@ -246,7 +246,7 @@
                             android:gravity="center" />
 
 
-                        <apps.pixel.al.egykey.utilities.CairoRegularTextView
+                        <apps.pixel.the.key.utilities.CairoRegularTextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_10sdp"
@@ -259,7 +259,7 @@
                 </FrameLayout>
 
 
-                <apps.pixel.al.egykey.utilities.CairoBoldButton
+                <apps.pixel.the.key.utilities.CairoBoldButton
                     android:id="@+id/btn_done"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/_35sdp"

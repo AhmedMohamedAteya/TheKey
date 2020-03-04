@@ -1,13 +1,28 @@
-<resources>
-    <string name="app_name">Egy Key</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">The Key</string>
     <string name="jobs">Jobs</string>
     <string name="get_copoun">Get Coupon</string>
     <string name="egy_key">Egy-Key</string>
     <string name="offers">Offers</string>
     <string name="home">Home</string>
 
+    <string name="phoneNumber_error">Phone Number is required</string>
+    <string name="phone_inavlid">phone inavlid</string>
+    <string name="email_error">Email is required</string>
+    <string name="email_inavlid">Email inavlid</string>
+    <string name="password_error">password is required</string>
+
+    <string name="name_error">Name Is Required</string>
+    <string name="phone_error">Phone is Required</string>
+    <string name="address_error">Address is Required</string>
+    <string name="confirm_error">Confirm Password is Required</string>
+    <string name="img_error">Image is Required</string>
+    <string name="Password_does_not_match">Password does not match</string>
+    <string name="account_created_successfully">Your Account Created Successfully</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="views">Views</string>
     <string name="calls">Calls</string>
     <string name="fav">Favourites</string>
@@ -27,8 +42,7 @@
     <string name="online_payment">Online Payment</string>
     <string name="about">About</string>
     <string name="offer">Offer</string>
-    <string name="offer_coupon">Any sandwich of your choice
-  And with it a combo for free</string>
+    <string name="offer_coupon">خصم 50% على اى طلب</string>
     <string name="experience_level">Experience Level</string>
     <string name="education_level">Education Level</string>
     <string name="employment_type">Employment Type</string>
@@ -166,6 +180,49 @@
     <string name="please_choose_meal_size_first">Please choose meal size first</string>
     <string name="no_extras">With no extras</string>
     <string name="you_order_was">Your order was</string>
+    <string name="tickets">Tickets</string>
+    <string name="markets">Markets</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="Email_Invalid">Email Invalid</string>
+    <string name="mobile_length">Phone Length</string>
+    <string name="Not_Found">Not Found</string>
+    <string name="wrong_password">Wrong Password</string>
+    <string name="Account_Not_Verified">Account Not Verified</string>
+    <string name="password_length">password_length</string>
+    <string name="failed_to_upload_image">Failed To Upload Image</string>
+    <string name="title_activity_maps">Map</string>
+
+
+    <string name="facebook_app_id" translatable="false">3811006392244574</string>
+    <string name="fb_login_protocol_scheme" tools:ignore="MissingTranslation">fb3811006392244574</string>
+    <string name="profile">profile</string>
+    <string name="failed_to_create_user">Failed To Create User</string>
+    <string name="wrong_verification_code">Wrong Verification Code</string>
+    <string name="user_already_exist">User Already Exist</string>
+    <string name="mobile_already_exist">Mobile Already Exist</string>
+    <string name="user_not_found">User Not Found</string>
+    <string name="coupon_not_started">Coupon Not Started</string>
+    <string name="coupon_finished">Coupon Finished</string>
+    <string name="coupon_reached_limit">coupon reached limit</string>
+    <string name="User_Reached_Coupon_Limit">"User Reached Coupon Limit "</string>
+    <string name="email_already_exist">Email Already Exist</string>
+    <string name="account_already_verified">Account Already  Verified</string>
+    <string name="builidng_error">Building Required</string>
+    <string name="floor_error">Floor Error</string>
+    <string name="apartment_error">Apartment Error</string>
+    <string name="city_not_found">City Not Found</string>
+    <string name="Restaurant_not_found">Restaurant Not Found</string>
+    <string name="Extra_not_found">Extra Not Found</string>
+    <string name="Size_not_found">Size Not Found</string>
+    <string name="Items_Size_not_found">Items Size Not Found</string>
+    <string name="Invaild_token_please_relogin">Invaild Token Please Relogin</string>
+    <string name="ExperienceYearsRequired">Experience Years Required</string>
+    <string name="Cv_Required">CV Required</string>
+    <string name="EducationalNotFound">Educational Not Found</string>
+    <string name="JobNotFound">Job Not Found</string>
+    <string name="OldPasswordIsRequired">Old Password Is Required</string>
+    <string name="NewPasswordIsRequired">New Password Is Required</string>
+    <string name="FailedtoChangePassword">Failed to Change Password</string>
 
 
 </resources>
