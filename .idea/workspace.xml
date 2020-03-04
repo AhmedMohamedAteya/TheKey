@@ -183,7 +183,9 @@
     <last-search-timestamp>1571218685674</last-search-timestamp>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="957b21c7-516b-496b-9c8c-9e137cb39119" name="Default Changelist" comment="" />
+    <list default="true" id="957b21c7-516b-496b-9c8c-9e137cb39119" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -326,7 +328,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="3.1.0" />
   </component>
   <component name="PsdUISettings">
@@ -602,7 +604,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583332265023</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="EGY_KEY">
+      <created>1583332438706</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1583332438706</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
