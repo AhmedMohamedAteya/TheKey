@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.scalified:viewmover:1.1.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/15e34bff058ab4ce4f06d1a57065411e/jetified-viewmover-1.1.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/15e34bff058ab4ce4f06d1a57065411e/jetified-viewmover-1.1.2/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.scalified/viewmover/1.1.2/647c37c488a2fb2d67c3939ab598b7af42efe4ef/viewmover-1.1.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.scalified/viewmover/1.1.2/6c13012feeff195b63fae1dd5c53d89563ddc2f6/viewmover-1.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
