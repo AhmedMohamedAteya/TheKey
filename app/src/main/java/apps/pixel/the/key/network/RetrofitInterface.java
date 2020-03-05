@@ -4,6 +4,7 @@ package apps.pixel.the.key.network;
 import java.util.List;
 
 import apps.pixel.the.key.models.ResponseHomeOthers;
+import apps.pixel.the.key.models.cities.cityModel;
 import apps.pixel.the.key.models.coupon.CouponModel;
 import apps.pixel.the.key.models.externalLogin.RequestModel;
 import apps.pixel.the.key.models.home.sliderResponse;
@@ -41,6 +42,11 @@ public interface RetrofitInterface {
     //SocialLogin
     @POST("api/Account/SocialLogin")
     Observable<UserModel> loginSocialMedia(@Body RequestModel RequestModel);
+
+
+    //Cities
+    @GET("api/Cities")
+    Observable<List<cityModel>> getCities();
 
 
     @GET("api/Resturant")

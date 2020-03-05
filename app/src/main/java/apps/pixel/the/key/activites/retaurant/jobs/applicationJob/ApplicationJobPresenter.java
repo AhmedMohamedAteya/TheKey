@@ -12,6 +12,7 @@ import java.util.List;
 import apps.pixel.the.key.R;
 import apps.pixel.the.key.activites.retaurant.restaurants.SelectedCateagoryInterface;
 import apps.pixel.the.key.dialog.DialogLoader;
+import apps.pixel.the.key.models.cities.cityModel;
 import apps.pixel.the.key.models.retaurants.SelectedCat;
 import apps.pixel.the.key.network.NetworkUtil;
 import apps.pixel.the.key.utilities.Constant;
@@ -29,9 +30,10 @@ public class ApplicationJobPresenter {
     private final Context context;
     private final SharedPreferences sharedPreferences;
     private final CompositeSubscription mSubscriptions;
-    private final SelectedCateagoryInterface selectedCateagoryInterface;
+    private SelectedCateagoryInterface selectedCateagoryInterface;
     private final FragmentManager fragmentManager;
     private final DialogLoader dialogLoaderOne;
+    private ApplicationJobInterface applicationJobInterface;
 
 
     public ApplicationJobPresenter(Context context, SelectedCateagoryInterface selectedCateagoryInterface) {
@@ -44,31 +46,31 @@ public class ApplicationJobPresenter {
         sharedPreferences = context.getSharedPreferences(Constant.SHARED_PREFERENCE, Context.MODE_PRIVATE);
     }
 
+    public ApplicationJobPresenter(Context context, ApplicationJobInterface applicationJobInterface) {
+        this.context = context;
+        mSubscriptions = new CompositeSubscription();
+        this.applicationJobInterface = applicationJobInterface;
+        fragmentManager = ((AppCompatActivity) context).getSupportFragmentManager();
+        fragmentManager.executePendingTransactions();
+        dialogLoaderOne = new DialogLoader();
+        sharedPreferences = context.getSharedPreferences(Constant.SHARED_PREFERENCE, Context.MODE_PRIVATE);
+    }
 
-    public void searchOnRestaurant(String partOnName) {
+
+    public void getCity() {
         if (Validation.isConnected(context)) {
-            swipeContainer.setRefreshing(true);
             mSubscriptions.add(NetworkUtil.getRetrofitNoHeader()
-                    .searchOnRestaurant(partOnName)
+                    .getCities()
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
-                    .subscribe(this::responseOfSearch, this::handleError));
+                    .subscribe(this::response, this::handleError));
         } else {
             Constant.showErrorDialog(context, context.getString(R.string.pls_check_connection));
         }
     }
 
-    public void getAllRestaurants() {
-        if (Validation.isConnected(context)) {
-            swipeContainer.setRefreshing(true);
-            mSubscriptions.add(NetworkUtil.getRetrofitNoHeader()
-                    .getAllRestaurants()
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribeOn(Schedulers.io())
-                    .subscribe(this::handleResponse, this::handleError));
-        } else {
-            Constant.showErrorDialog(context, context.getString(R.string.pls_check_connection));
-        }
+    private void response(List<cityModel> cityModels) {
+
     }
 
 

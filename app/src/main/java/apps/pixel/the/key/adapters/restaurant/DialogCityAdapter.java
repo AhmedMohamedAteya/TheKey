@@ -16,12 +16,13 @@ import apps.pixel.the.key.utilities.CairoRegularTextView;
 public class DialogCityAdapter extends RecyclerView.Adapter<DialogCityAdapter.ViewHolder> {
 
     private final DialogCityAdapter.OnClickHandler onClickHandler;
-    private final List<String> listLoactions;
+    private  List<String> listLoactions,listIDS;
     private Context context;
 
-    public DialogCityAdapter(Context context, List<String> listLoactions, DialogCityAdapter.OnClickHandler onClickHandler) {
+    public DialogCityAdapter(Context context, List<String> listLoactions, List<String> listIDS, DialogCityAdapter.OnClickHandler onClickHandler) {
         this.context = context;
         this.listLoactions = listLoactions;
+        this.listIDS = listIDS;
         this.onClickHandler = onClickHandler;
     }
 

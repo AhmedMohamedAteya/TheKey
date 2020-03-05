@@ -23,11 +23,14 @@ import java.util.List;
 
 import apps.pixel.the.key.R;
 import apps.pixel.the.key.activites.retaurant.jobs.applicationJob.ApplicationJobActivity;
+import apps.pixel.the.key.activites.retaurant.jobs.applicationJob.ApplicationJobInterface;
+import apps.pixel.the.key.activites.retaurant.jobs.applicationJob.ApplicationJobPresenter;
 import apps.pixel.the.key.adapters.restaurant.DialogCityAdapter;
+import apps.pixel.the.key.models.cities.cityModel;
 import apps.pixel.the.key.utilities.Constant;
 
-public class DialogCity extends DialogFragment implements DialogCityAdapter.OnClickHandler {
-    private List<String> listDAta;
+public class DialogCity extends DialogFragment implements DialogCityAdapter.OnClickHandler , ApplicationJobInterface {
+    private List<String> listDAta,listIDS;
     private RecyclerView mRV;
 
 
@@ -66,20 +69,13 @@ public class DialogCity extends DialogFragment implements DialogCityAdapter.OnCl
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         mRV.setLayoutManager(layoutManager);
         loadRecyclerData();
+        ApplicationJobPresenter applicationJobPresenter=new ApplicationJobPresenter(getContext(),this);
+        applicationJobPresenter.getCity();
 
     }
 
     private void loadRecyclerData() {
-        listDAta = new ArrayList<>();
-        listDAta.add("Giza");
-        listDAta.add("Cairo");
-        listDAta.add("Aswan");
-        listDAta.add("Sharqaia");
-        listDAta.add("Fayioum");
 
-        DialogCityAdapter adapter = new DialogCityAdapter(getContext(), listDAta, this);
-        mRV.setAdapter(adapter);
-        Constant.runLayoutAnimation(mRV);
     }
 
     @Override
@@ -103,8 +99,24 @@ public class DialogCity extends DialogFragment implements DialogCityAdapter.OnCl
 
     @Override
     public void onClick(int position) {
-        ApplicationJobActivity.txtCity.setText(listDAta.get(position));
+        ApplicationJobActivity.txtCity.setText(listIDS.get(position));
         dismiss();
+    }
+
+    @Override
+    public void getCities(List<cityModel> cityModels) {
+        listDAta = new ArrayList<>();
+        listIDS = new ArrayList<>();
+
+        for (int i=0;i<cityModels.size();i++)
+        {
+            listDAta.add(cityModels.get(i).getName());
+            listIDS.add(cityModels.get(i).getId());
+        }
+
+        DialogCityAdapter adapter = new DialogCityAdapter(getContext(), listDAta, listIDS, this);
+        mRV.setAdapter(adapter);
+        Constant.runLayoutAnimation(mRV);
     }
 }
 
