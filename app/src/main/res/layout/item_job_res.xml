@@ -45,7 +45,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:lines="1"
-                android:text="Job Name"
+                android:text=""
+                android:gravity="center"
+                android:layout_gravity="center"
                 android:textColor="@color/colorAccent"
                 android:textSize="@dimen/_12ssp" />
 
@@ -68,6 +70,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="top|center"
                     android:gravity="start|center"
+                    android:visibility="gone"
                     android:orientation="horizontal">
 
                     <androidx.appcompat.widget.AppCompatImageView
@@ -84,8 +87,7 @@
                         android:gravity="top|start"
                         android:maxLength="120"
                         android:maxLines="2"
-                        android:text="Manager  in maadi branch \n
-salary 5000 L.E"
+                        android:text=""
                         android:textColor="@color/colorAccent"
                         android:textSize="@dimen/_8ssp" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -109,7 +111,7 @@ salary 5000 L.E"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="top|start"
-                        android:text="3000 L.E"
+                        android:text=""
                         android:textColor="@color/colorAccent"
                         android:textSize="@dimen/_8ssp" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -134,7 +136,7 @@ salary 5000 L.E"
             android:layout_height="match_parent"
             android:gravity="bottom|start"
             android:padding="@dimen/_5sdp"
-            android:text="2 days ago"
+            android:text=""
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/_9ssp" />
 

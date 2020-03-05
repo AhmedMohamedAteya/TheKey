@@ -2,6 +2,7 @@ package apps.pixel.the.key.fragments.selectedCatHome.jobs;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,10 +15,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.blogspot.atifsoftwares.animatoolib.Animatoo;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import apps.pixel.the.key.R;
+import apps.pixel.the.key.activites.retaurant.jobs.jobDetails.SelectedJobActivity;
 import apps.pixel.the.key.adapters.restaurant.JobsAdapter;
 import apps.pixel.the.key.models.job.JobModel;
 import apps.pixel.the.key.utilities.CairoBoldTextView;
@@ -85,7 +90,7 @@ public class JobsFragment extends Fragment implements JobsAdapter.OnClickHandler
     }
 
     private void loadRecyclerData() {
-        JobsAdapter adapter = new JobsAdapter(getContext(), idList, listSalaries, listDescs, listTitles, imgUrls, listDates, this);
+        JobsAdapter adapter = new JobsAdapter(getContext(), idList, listSalaries, listTitles, imgUrls, listDates, this);
         mRV.setAdapter(adapter);
         Constant.runLayoutAnimation(mRV);
     }
@@ -114,9 +119,9 @@ public class JobsFragment extends Fragment implements JobsAdapter.OnClickHandler
 
     @Override
     public void onClick(int position) {
-//        Intent openSelectedJop = new Intent(getContext(), SelectedJobActivity.class);
-//        openSelectedJop.putExtra(Constant.SELECTED_JOB_ID, idList.get(position));
-//        startActivity(openSelectedJop);
-//        Animatoo.animateSlideRight(Objects.requireNonNull(getContext()));
+        Intent openSelectedJop = new Intent(getContext(), SelectedJobActivity.class);
+        openSelectedJop.putExtra(Constant.SELECTED_JOB_ID, idList.get(position));
+        startActivity(openSelectedJop);
+        Animatoo.animateSlideRight(Objects.requireNonNull(getContext()));
     }
 }

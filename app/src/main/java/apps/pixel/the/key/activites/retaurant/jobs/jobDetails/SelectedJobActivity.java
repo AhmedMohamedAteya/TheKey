@@ -12,7 +12,7 @@ import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.squareup.picasso.Picasso;
 
 import apps.pixel.the.key.R;
-import apps.pixel.the.key.activites.retaurant.jobs.ApplicationJobActivity;
+import apps.pixel.the.key.activites.retaurant.jobs.applicationJob.ApplicationJobActivity;
 import apps.pixel.the.key.models.jobDetails.JobDetailsModel;
 import apps.pixel.the.key.utilities.CairoBoldButton;
 import apps.pixel.the.key.utilities.CairoBoldTextView;

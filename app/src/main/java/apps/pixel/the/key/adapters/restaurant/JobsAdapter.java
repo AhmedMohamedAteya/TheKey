@@ -20,7 +20,6 @@ import apps.pixel.the.key.utilities.CairoRegularTextView;
 public class JobsAdapter extends RecyclerView.Adapter<JobsAdapter.ViewHolder> {
 
     private final JobsAdapter.OnClickHandler onClickHandler;
-    private final List<String> listDesc;
     private final List<String> listImgUrls;
     private final List<String> listJobTitles;
     private final List<String> listDates;
@@ -28,9 +27,14 @@ public class JobsAdapter extends RecyclerView.Adapter<JobsAdapter.ViewHolder> {
     private List<String> idList;
     private Context context;
 
-    public JobsAdapter(Context context, List<String> idList, List<String> listSalaries, List<String> listDesc, List<String> listTitles, List<String> listImgUrls, List<String> listDates, JobsAdapter.OnClickHandler onClickHandler) {
+    public JobsAdapter(Context context,
+                       List<String> idList
+            , List<String> listSalaries
+            ,  List<String> listTitles
+            , List<String> listImgUrls
+            , List<String> listDates
+            , JobsAdapter.OnClickHandler onClickHandler) {
         this.context = context;
-        this.listDesc = listDesc;
         this.idList = idList;
         this.listSalaries = listSalaries;
         this.listImgUrls = listImgUrls;
@@ -62,7 +66,6 @@ public class JobsAdapter extends RecyclerView.Adapter<JobsAdapter.ViewHolder> {
         try {
             holder.txtDate.setText(listDates.get(listPosition));
             holder.jobName.setText(listJobTitles.get(listPosition));
-            holder.txtDes.setText(listDesc.get(listPosition));
             holder.txtSalary.setText(listSalaries.get(listPosition));
 
 
@@ -92,7 +95,6 @@ public class JobsAdapter extends RecyclerView.Adapter<JobsAdapter.ViewHolder> {
 
         private AppCompatImageView imgJob;
         private CairoBoldTextView jobName;
-        private CairoRegularTextView txtDes;
         private CairoRegularTextView txtDate;
         private CairoRegularTextView txtSalary;
 
@@ -107,7 +109,6 @@ public class JobsAdapter extends RecyclerView.Adapter<JobsAdapter.ViewHolder> {
             txtSalary = itemView.findViewById(R.id.txt_salary);
             imgJob = itemView.findViewById(R.id.img_job);
             jobName = itemView.findViewById(R.id.job_name);
-            txtDes = itemView.findViewById(R.id.txt_des);
             txtDate = itemView.findViewById(R.id.txt_date);
 
 

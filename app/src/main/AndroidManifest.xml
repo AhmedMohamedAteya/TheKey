@@ -109,7 +109,7 @@
             android:name=".activites.retaurant.OpenPdfActivity"
             android:parentActivityName=".activites.retaurant.selectedRestaurant.SelectedItemKotlinActivity" />
         <activity
-            android:name=".activites.retaurant.jobs.ApplicationJobActivity"
+            android:name=".activites.retaurant.jobs.applicationJob.ApplicationJobActivity"
             android:parentActivityName=".activites.retaurant.jobs.jobDetails.SelectedJobActivity" />
         <activity
             android:name=".activites.retaurant.jobs.jobDetails.SelectedJobActivity"

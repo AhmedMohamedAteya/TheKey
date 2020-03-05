@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import apps.pixel.the.key.R;
-import apps.pixel.the.key.activites.retaurant.jobs.ApplicationJobActivity;
+import apps.pixel.the.key.activites.retaurant.jobs.applicationJob.ApplicationJobActivity;
 import apps.pixel.the.key.adapters.restaurant.DialogEducationalAdapter;
 import apps.pixel.the.key.utilities.Constant;
 

@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.recruit-lifestyle:WaveSwipeRefreshLayout:1.6@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/51e428b13f341f0d15fc1076c17373bc/jetified-WaveSwipeRefreshLayout-1.6/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2ad2770baa0a3714b77280166a102538/jetified-WaveSwipeRefreshLayout-1.6/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/51e428b13f341f0d15fc1076c17373bc/jetified-WaveSwipeRefreshLayout-1.6/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/51e428b13f341f0d15fc1076c17373bc/jetified-WaveSwipeRefreshLayout-1.6/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2ad2770baa0a3714b77280166a102538/jetified-WaveSwipeRefreshLayout-1.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2ad2770baa0a3714b77280166a102538/jetified-WaveSwipeRefreshLayout-1.6/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.recruit-lifestyle/WaveSwipeRefreshLayout/1.6/736182ca264436c4bcd79296d12b3b9c1de424fb/WaveSwipeRefreshLayout-1.6-javadoc.jar!/" />
