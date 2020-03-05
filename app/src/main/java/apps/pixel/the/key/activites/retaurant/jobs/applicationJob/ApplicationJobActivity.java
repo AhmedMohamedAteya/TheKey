@@ -18,7 +18,6 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 
 import apps.pixel.the.key.R;
-import apps.pixel.the.key.activites.retaurant.jobs.ApplicationJobActivityPermissionsDispatcher;
 import apps.pixel.the.key.dialog.restuarant.DialogCity;
 import apps.pixel.the.key.dialog.restuarant.DialogEducational;
 import apps.pixel.the.key.dialog.restuarant.DialogExperience;
